@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-marker: "Permanent Marker", cursive, sans-serif;
+  --font-hand: "Kalam", cursive, sans-serif;
+  --font-script: "Caveat", cursive, sans-serif;
+
+  /* Flier Brand Theme: Deep Teal & Fresh Oak Leaf Green */
+  --color-brand-950: #05181C;
+  --color-brand-900: #09262C;
+  --color-brand-800: #004D55;
+  --color-brand-700: #006D77;
+  --color-brand-600: #00868F;
+  --color-brand-500: #009EA8;
+  --color-brand-400: #00BCC7;
+
+  /* Leaf Green from Flier Badge Tree */
+  --color-leaf-700: #4B8C24;
+  --color-leaf-600: #5C9E31;
+  --color-leaf-500: #6DB33F;
+  --color-leaf-400: #86C95A;
+  --color-leaf-100: #EBF7E3;
+  --color-leaf-50: #F4FAEE;
+
+  /* Warm Accent */
+  --color-accent-600: #E04318;
+  --color-accent-500: #F95738;
+
+  /* Light Ice Tinted Background */
+  --color-ice-50: #F2F8F8;
+  --color-ice-100: #E5F1F2;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base typography refinement */
+h1, h2, h3, .font-display {
+  letter-spacing: -0.015em;
+}
+
+.font-marker {
+  font-family: var(--font-marker), cursive, sans-serif;
+}
+
+.font-hand {
+  font-family: var(--font-hand), cursive, sans-serif;
+}
+
+.font-script {
+  font-family: var(--font-script), cursive, sans-serif;
+}
+
+/* Subtle transitions */
+a, button {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}

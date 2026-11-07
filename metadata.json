@@ -1,0 +1,6 @@
+{
+  "name": "Oak International Christian School",
+  "description": "Official website of Oak International Christian School. Raising tomorrow's leaders through Christ-centred, individualised Accelerated Christian Education (ACE) in Buwate, Kira, Uganda.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
