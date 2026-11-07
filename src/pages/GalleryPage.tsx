@@ -19,13 +19,11 @@ import {
 interface GalleryPageProps {
   onNavigate: (page: PageId) => void;
   onOpenEnquiry: () => void;
-  onOpenProspectus: () => void;
 }
 
 export const GalleryPage: React.FC<GalleryPageProps> = ({
   onNavigate,
   onOpenEnquiry,
-  onOpenProspectus,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [isFlierPreviewOpen, setIsFlierPreviewOpen] = useState(false);
@@ -113,17 +111,16 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
               <div className="pt-2 flex flex-wrap gap-3">
                 <button
                   onClick={() => setIsFlierPreviewOpen(true)}
-                  className="px-5 py-2.5 bg-[#00868F] hover:bg-[#00747C] text-white text-xs font-bold rounded-lg transition-colors cursor-pointer inline-flex items-center gap-1.5"
+                  className="px-5 py-2.5 bg-[#00868F] hover:bg-[#00747C] text-white text-xs font-bold rounded-xl transition-colors cursor-pointer inline-flex items-center gap-1.5"
                 >
                   <ExternalLink className="w-3.5 h-3.5" />
                   <span>View Full Size Flier</span>
                 </button>
                 <button
-                  onClick={onOpenProspectus}
-                  className="px-5 py-2.5 border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg transition-colors cursor-pointer inline-flex items-center gap-1.5"
+                  onClick={onOpenEnquiry}
+                  className="px-5 py-2.5 border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-xl transition-colors cursor-pointer inline-flex items-center gap-1.5"
                 >
-                  <FileText className="w-3.5 h-3.5 text-[#6DB33F]" />
-                  <span>Read School Prospectus (PDF)</span>
+                  <span>Enquire About Admissions</span>
                 </button>
               </div>
             </div>

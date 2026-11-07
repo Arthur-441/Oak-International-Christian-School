@@ -125,19 +125,10 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({
                 <div className="pt-2 flex flex-col gap-2.5">
                   <button
                     onClick={onOpenEnquiry}
-                    className="w-full py-3 bg-[#00868F] hover:bg-[#00747C] text-white font-bold text-xs sm:text-sm rounded-lg shadow-sm transition-colors cursor-pointer text-center"
+                    className="w-full py-3 bg-[#00868F] hover:bg-[#00747C] text-white font-bold text-xs sm:text-sm rounded-xl shadow-sm transition-colors cursor-pointer text-center"
                   >
                     Ask About Our Diagnostic Test
                   </button>
-                  <a
-                    href={SCHOOL_INFO.prospectusPdfUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full py-2.5 bg-white/10 hover:bg-white/15 text-white border border-white/20 text-center font-semibold text-xs rounded-lg transition-colors inline-flex items-center justify-center gap-1.5"
-                  >
-                    <FileText className="w-3.5 h-3.5 text-[#6DB33F]" />
-                    <span>Download Official School Guide (PDF)</span>
-                  </a>
                 </div>
               </div>
             </div>

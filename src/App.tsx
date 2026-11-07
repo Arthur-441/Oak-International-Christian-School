@@ -3,7 +3,6 @@ import { PageId } from './types';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { EnquiryModal } from './components/EnquiryModal';
-import { ProspectusModal } from './components/ProspectusModal';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { AcademicsPage } from './pages/AcademicsPage';
@@ -14,7 +13,6 @@ import { ContactPage } from './pages/ContactPage';
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageId>('home');
   const [isEnquiryModalOpen, setIsEnquiryModalOpen] = useState(false);
-  const [isProspectusModalOpen, setIsProspectusModalOpen] = useState(false);
 
   // Guarantee Home page is always shown first when the website opens or reloads
   useEffect(() => {
@@ -63,7 +61,6 @@ export default function App() {
         currentPage={currentPage}
         onNavigate={navigateTo}
         onOpenEnquiry={() => setIsEnquiryModalOpen(true)}
-        onOpenProspectus={() => setIsProspectusModalOpen(true)}
       />
 
       {/* Main Multi-Page Content Area */}
@@ -72,7 +69,6 @@ export default function App() {
           <HomePage
             onNavigate={navigateTo}
             onOpenEnquiry={() => setIsEnquiryModalOpen(true)}
-            onOpenProspectus={() => setIsProspectusModalOpen(true)}
           />
         )}
         {currentPage === 'about' && (
@@ -97,7 +93,6 @@ export default function App() {
           <GalleryPage
             onNavigate={navigateTo}
             onOpenEnquiry={() => setIsEnquiryModalOpen(true)}
-            onOpenProspectus={() => setIsProspectusModalOpen(true)}
           />
         )}
         {currentPage === 'contact' && (
@@ -115,13 +110,6 @@ export default function App() {
       <EnquiryModal
         isOpen={isEnquiryModalOpen}
         onClose={() => setIsEnquiryModalOpen(false)}
-      />
-
-      {/* School Information Guide / Prospectus Modal */}
-      <ProspectusModal
-        isOpen={isProspectusModalOpen}
-        onClose={() => setIsProspectusModalOpen(false)}
-        onOpenEnquiry={() => setIsEnquiryModalOpen(true)}
       />
     </div>
   );

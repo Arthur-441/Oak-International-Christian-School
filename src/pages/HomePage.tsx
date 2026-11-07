@@ -32,13 +32,11 @@ import {
 interface HomePageProps {
   onNavigate: (page: PageId) => void;
   onOpenEnquiry: () => void;
-  onOpenProspectus: () => void;
 }
 
 export const HomePage: React.FC<HomePageProps> = ({
   onNavigate,
   onOpenEnquiry,
-  onOpenProspectus,
 }) => {
   return (
     <div className="w-full">
@@ -199,10 +197,13 @@ export const HomePage: React.FC<HomePageProps> = ({
                 <div className="flex items-center justify-between text-xs text-slate-500 pt-1">
                   <span>Step by Step (3 yrs) to Grade 12</span>
                   <button
-                    onClick={onOpenProspectus}
+                    onClick={() => {
+                      onNavigate('academics');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
                     className="text-[#00868F] font-bold hover:underline cursor-pointer"
                   >
-                    View School Guide &rarr;
+                    View Academic Stages &rarr;
                   </button>
                 </div>
               </div>
@@ -225,11 +226,10 @@ export const HomePage: React.FC<HomePageProps> = ({
 
           <div className="flex items-center gap-4 text-xs">
             <button
-              onClick={onOpenProspectus}
-              className="text-[#E4F1F2] hover:text-white font-semibold underline flex items-center gap-1 cursor-pointer"
+              onClick={onOpenEnquiry}
+              className="text-[#E4F1F2] hover:text-white font-semibold underline cursor-pointer"
             >
-              <FileText className="w-3.5 h-3.5" />
-              <span>School Guide (PDF)</span>
+              Schedule Diagnostic Test
             </button>
             <span className="opacity-40 hidden sm:inline">|</span>
             <a

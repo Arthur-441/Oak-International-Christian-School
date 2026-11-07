@@ -14,7 +14,6 @@ export const SCHOOL_INFO = {
   whatsappUrl: 'https://wa.me/256783368459?text=Hello%20Oak%20International%20Christian%20School%2C%20I%20would%20like%20to%20make%20an%20enquiry.',
   googleMapsUrl: 'https://maps.google.com/?q=Kira-Kasangati+Road,+Buwate,+Kira+Division,+Wakiso+District,+Uganda',
   googleMapsEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15958.825272661858!2d32.6288!3d0.3951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb7e8d6722d3%3A0x7d6f5f9aa9b45bf9!2sBuwate%2C%20Kira%2C%20Uganda!5e0!3m2!1sen!2sug!4v1700000000000!5m2!1sen!2sug',
-  prospectusPdfUrl: '/assets/aistudio/ACFrOgD49JvfjF0Fz9Qd-6PC1e_SqhVSl2BBCQtYWKOrrg9xXI4SCn-VfA1AFjclM6wUW_4FYwVUCJOOI0elGQiVHzIOykQPB4yU-2_Htkpkp9H6-oPesALLpEMzr1NnrKnFo0GsUgTYKoWkAAWo_b2505449.pdf',
   flierImageUrl: '/assets/aistudio/image_99934b46.png',
   logoImageUrl: '/assets/aistudio/oak_school_logo_transparent.png',
   curriculum: 'Accelerated Christian Education (ACE)',
@@ -27,6 +26,8 @@ export const SCHOOL_INFO = {
   instagramHandle: '@oicacademyug',
   facebookUrl: 'https://www.facebook.com/OICAcademyUg/',
   facebookHandle: 'OICAcademyUg',
+  xUrl: 'https://x.com/OICAcademyUg?lang=en',
+  xHandle: '@OICAcademyUg',
 };
 
 // Pillars directly featured on the official school flier

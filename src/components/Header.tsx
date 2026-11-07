@@ -9,14 +9,12 @@ interface HeaderProps {
   currentPage: PageId;
   onNavigate: (page: PageId) => void;
   onOpenEnquiry: () => void;
-  onOpenProspectus?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   currentPage,
   onNavigate,
   onOpenEnquiry,
-  onOpenProspectus,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -72,7 +70,7 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           <div className="flex items-center gap-3.5 text-xs ml-auto">
-            {/* Social Media Links */}
+            {/* Social Media Links: Instagram, Facebook, X */}
             <div className="flex items-center gap-2 border-r border-[#0A333A] pr-3.5 mr-1">
               <a
                 href={SCHOOL_INFO.instagramUrl}
@@ -92,27 +90,19 @@ export const Header: React.FC<HeaderProps> = ({
               >
                 <Facebook className="w-3.5 h-3.5" />
               </a>
-            </div>
-
-            {onOpenProspectus ? (
-              <button
-                onClick={onOpenProspectus}
-                className="hidden lg:flex items-center gap-1.5 text-slate-200 hover:text-[#00C2B8] transition-colors cursor-pointer"
-              >
-                <FileText className="w-3.5 h-3.5 text-[#6DB33F]" />
-                <span>School Guide (PDF)</span>
-              </button>
-            ) : (
               <a
-                href={SCHOOL_INFO.prospectusPdfUrl}
+                href={SCHOOL_INFO.xUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden lg:flex items-center gap-1.5 text-slate-200 hover:text-[#00C2B8] transition-colors"
+                title="Follow Oak International on X (@OICAcademyUg)"
+                className="w-6 h-6 rounded-md bg-white/5 hover:bg-black text-slate-300 hover:text-white transition-all flex items-center justify-center cursor-pointer"
               >
-                <FileText className="w-3.5 h-3.5 text-[#6DB33F]" />
-                <span>School Guide (PDF)</span>
+                <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
               </a>
-            )}
+            </div>
+
             <WhatsAppButton size="sm" />
           </div>
         </div>
@@ -222,37 +212,37 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
               <WhatsAppButton className="w-full justify-center" />
 
-              <div className="grid grid-cols-2 gap-2 pt-1">
+              <div className="grid grid-cols-3 gap-2 pt-1">
                 <a
                   href={SCHOOL_INFO.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="py-2 px-3 text-center text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 flex items-center justify-center gap-1.5 transition-colors"
+                  className="py-2 px-2 text-center text-[11px] font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 flex items-center justify-center gap-1 transition-colors"
                 >
-                  <Instagram className="w-4 h-4 text-rose-600" />
+                  <Instagram className="w-3.5 h-3.5 text-rose-600" />
                   <span>Instagram</span>
                 </a>
                 <a
                   href={SCHOOL_INFO.facebookUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="py-2 px-3 text-center text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 flex items-center justify-center gap-1.5 transition-colors"
+                  className="py-2 px-2 text-center text-[11px] font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 flex items-center justify-center gap-1 transition-colors"
                 >
-                  <Facebook className="w-4 h-4 text-[#1877F2]" />
+                  <Facebook className="w-3.5 h-3.5 text-[#1877F2]" />
                   <span>Facebook</span>
                 </a>
+                <a
+                  href={SCHOOL_INFO.xUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="py-2 px-2 text-center text-[11px] font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 flex items-center justify-center gap-1 transition-colors"
+                >
+                  <svg className="w-3.5 h-3.5 fill-current text-slate-900" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                  <span>X</span>
+                </a>
               </div>
-
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  if (onOpenProspectus) onOpenProspectus();
-                }}
-                className="w-full py-2 text-center text-xs text-slate-600 hover:text-slate-900 underline flex items-center justify-center gap-1 cursor-pointer"
-              >
-                <FileText className="w-3.5 h-3.5 text-[#6DB33F]" />
-                <span>View School Information Guide (PDF)</span>
-              </button>
             </div>
           </div>
         )}
