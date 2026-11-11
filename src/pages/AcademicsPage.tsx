@@ -223,9 +223,22 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({
                     </p>
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-white/10 text-[11px] text-[#6DB33F] font-semibold flex items-center gap-1.5">
-                    <Award className="w-4 h-4" />
-                    <span>Mastery Verified & Recorded</span>
+                  <div className="mt-4 pt-3 border-t border-white/10 text-[11px] text-[#6DB33F] font-semibold flex items-center justify-between flex-wrap gap-2">
+                    <div className="flex items-center gap-1.5">
+                      <Award className="w-4 h-4" />
+                      <span>Mastery Verified & Recorded</span>
+                    </div>
+                    {index === 3 && (
+                      <button
+                        onClick={() => {
+                          onNavigate('gallery');
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }}
+                        className="text-[#00C2B8] hover:underline font-bold text-[11px] cursor-pointer"
+                      >
+                        View Graduation &rarr;
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>
@@ -236,31 +249,56 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({
 
       {/* DIAGNOSTIC TEST CALLOUT SECTION */}
       <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-br from-[#061C20] via-[#09262C] to-[#005C66] text-white rounded-3xl p-8 sm:p-12 border border-[#00868F]/30 shadow-xl relative overflow-hidden">
-            <div className="relative z-10 max-w-2xl space-y-4">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#00C2B8]">
-                Admissions Diagnostic Testing
-              </span>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white">
-                Wondering Where Your Child Fits?
-              </h3>
-              <p className="text-slate-200 text-sm sm:text-base leading-relaxed">
-                Whether transitioning from UNEB, Cambridge, or another international curriculum, our comprehensive Diagnostic Test pinpoints your child's exact reading, mathematical, and comprehension levels without guesswork.
-              </p>
-              <div className="pt-2 flex flex-wrap items-center gap-4">
-                <button
-                  onClick={onOpenEnquiry}
-                  className="px-6 py-3.5 bg-[#00868F] hover:bg-[#00747C] text-white font-bold text-sm rounded-xl shadow-md transition-colors cursor-pointer"
-                >
-                  Book a Diagnostic Test Consultation
-                </button>
-                <WhatsAppButton size="md" />
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+              <div className="lg:col-span-7 space-y-4">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#00C2B8]">
+                  Admissions Diagnostic Testing
+                </span>
+                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white">
+                  Wondering Where Your Child Fits?
+                </h3>
+                <p className="text-slate-200 text-sm sm:text-base leading-relaxed">
+                  Whether transitioning from UNEB, Cambridge, or another international curriculum, our comprehensive Diagnostic Test pinpoints your child's exact reading, mathematical, and comprehension levels without guesswork.
+                </p>
+                <div className="pt-2 flex flex-wrap items-center gap-4">
+                  <button
+                    onClick={onOpenEnquiry}
+                    className="px-6 py-3.5 bg-[#00868F] hover:bg-[#00747C] text-white font-bold text-sm rounded-xl shadow-md transition-colors cursor-pointer"
+                  >
+                    Book a Diagnostic Consultation
+                  </button>
+                  <WhatsAppButton size="md" />
+                </div>
+              </div>
+
+              <div className="lg:col-span-5">
+                <div className="relative rounded-2xl overflow-hidden border-2 border-white/20 shadow-xl group">
+                  <div className="aspect-[4/3] bg-slate-900">
+                    <img
+                      src="https://i.ibb.co/hxgJHZ0g/Whats-App-Image-2026-11-11-at-10-28-37-AM-1.jpg"
+                      alt="Career Exploration - Inspiring Young Minds to Dream Big and Explore Different Professions"
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-500 ease-out"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#09262C]/90 via-[#09262C]/30 to-transparent flex flex-col justify-end p-4 text-white">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#00C2B8] block mb-0.5">
+                      Career Exploration
+                    </span>
+                    <p className="text-xs font-semibold text-white">
+                      Inspiring Young Minds to Dream Big and Explore Different Professions
+                    </p>
+                  </div>
+
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
 
       {/* CURRICULUM PARTNERS WITH REAL CROPPED LOGOS */}
       <section className="py-16 bg-[#F2F8F8] border-t border-[#00868F]/15">

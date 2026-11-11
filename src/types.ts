@@ -51,3 +51,21 @@ export interface CurriculumPartner {
   logo: string;
 }
 
+export type GalleryCategory =
+  | 'All'
+  | 'Graduation'
+  | 'Events'
+  | 'Co-curricular Activities'
+  | 'Logo'
+  | 'Convention'
+  | 'Sports';
+
+export interface GalleryPhoto {
+  id: string;
+  url: string;
+  category: Exclude<GalleryCategory, 'All'>;
+  title: string;
+  caption?: string;
+}
+
+

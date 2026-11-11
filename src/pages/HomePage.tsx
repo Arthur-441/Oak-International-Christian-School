@@ -9,6 +9,7 @@ import {
   DISCIPLINE_SHOWCASES,
   CURRICULUM_PARTNERS,
   ADMISSION_STEPS,
+  GRADUATION_GALLERY,
 } from '../data/schoolData';
 import { SchoolCrest } from '../components/SchoolCrest';
 import { WhatsAppButton } from '../components/WhatsAppButton';
@@ -247,20 +248,47 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* 3. WELCOME & PHILOSOPHY SECTION */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F2F8F8] border border-[#00868F]/30 text-[#00868F] text-xs font-bold uppercase tracking-wider">
-              <span>Welcome to Oak International Christian School</span>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16">
+            <div className="lg:col-span-7 space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F2F8F8] border border-[#00868F]/30 text-[#00868F] text-xs font-bold uppercase tracking-wider">
+                <span>Welcome to Oak International Christian School</span>
+              </div>
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#09262C] font-bold leading-tight">
+                An Educational Experience That Nurtures an Outstanding Leader
+              </h2>
+              <div className="w-16 h-1 bg-[#00868F] rounded-full" />
+              <p className="text-slate-700 text-base sm:text-lg leading-relaxed pt-2">
+                {SCHOOL_INFO.welcomeIntro}
+              </p>
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                Located along Kira–Kasangati Road in Buwate, our campus provides a tranquil, focused atmosphere where learners master concepts with joy and develop deep-seated Christian character.
+              </p>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl text-[#09262C] font-bold leading-tight">
-              An Educational Experience That Nurtures an Outstanding Leader
-            </h2>
-            <div className="w-16 h-1 bg-[#00868F] mx-auto rounded-full" />
-            <p className="text-slate-700 text-base sm:text-lg leading-relaxed pt-2">
-              {SCHOOL_INFO.welcomeIntro}
-            </p>
+
+            <div className="lg:col-span-5">
+              <div className="relative rounded-3xl overflow-hidden border-2 border-[#00868F]/25 shadow-xl group">
+                <div className="aspect-[16/11] overflow-hidden bg-slate-100">
+                  <img
+                    src="https://i.ibb.co/x8Rwk7LM/Whats-App-Image-2026-11-11-at-10-41-52-AM-2.jpg"
+                    alt="Oak International Christian School Campus Community"
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-500 ease-out"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#09262C]/85 via-[#09262C]/20 to-transparent flex flex-col justify-end p-5 text-white">
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-[#00C2B8] block mb-1">
+                    Buwate Campus Life
+                  </span>
+                  <p className="text-sm font-semibold text-white leading-snug">
+                    Oak International Christian Community & Fellowship
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* 3 Philosophy Cards with Enhanced Handwriting Annotations & Visual Beauty */}
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {CORE_PHILOSOPHY.map((item, idx) => {
               const scriptSubtitles = [
@@ -503,8 +531,92 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* 7. EXTRACURRICULAR ACTIVITIES PREVIEW - Clean Activity Cards (No Stock Photos) */}
+      {/* GRADUATION CELEBRATIONS SPOTLIGHT - Real Students in Caps & Gowns */}
       <section className="py-20 bg-[#F2F8F8] border-t border-[#00868F]/15">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-[#00868F]/25 text-[#00868F] text-xs font-bold uppercase tracking-wider mb-3 shadow-2xs">
+                <GraduationCap className="w-4 h-4 text-[#6DB33F]" />
+                <span>Student Milestones & Celebrations</span>
+              </div>
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#09262C] font-bold">
+                Graduation at Oak International
+              </h2>
+              <p className="text-slate-600 text-sm mt-2 max-w-xl">
+                Honoring our students' diligence, character, and academic mastery as they complete their learning stages and prepare for higher education.
+              </p>
+            </div>
+
+            <button
+              onClick={() => {
+                onNavigate('gallery');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="px-5 py-2.5 bg-[#00868F] hover:bg-[#00747C] text-white text-xs sm:text-sm font-bold rounded-xl shadow-sm transition-colors inline-flex items-center gap-2 cursor-pointer self-start md:self-auto"
+            >
+              <span>View All Graduation Ceremonies</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {GRADUATION_GALLERY.slice(0, 3).map((photo) => (
+              <div
+                key={photo.id}
+                onClick={() => {
+                  onNavigate('gallery');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="bg-white rounded-3xl overflow-hidden border-2 border-[#00868F]/20 hover:border-[#00868F] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+              >
+                <div className="relative aspect-4/3 overflow-hidden bg-slate-100">
+                  <img
+                    src={photo.url}
+                    alt={photo.title}
+                    loading="lazy"
+                    onError={(e) => {
+                      if (photo.fallbackUrl && e.currentTarget.src !== photo.fallbackUrl) {
+                        e.currentTarget.src = photo.fallbackUrl;
+                      }
+                    }}
+                    className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-500 ease-out"
+                  />
+                  <div className="absolute top-3 left-3">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#09262C]/85 backdrop-blur-xs px-2.5 py-1 rounded-full border border-white/20">
+                      {photo.category}
+                    </span>
+                  </div>
+                  <div className="absolute top-3 right-3">
+                    <span className="text-[10px] font-bold text-white bg-[#00868F]/90 backdrop-blur-xs px-2 py-0.5 rounded-full">
+                      {photo.year}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="font-serif text-lg font-bold text-[#09262C] group-hover:text-[#00868F] transition-colors mb-2">
+                      {photo.title}
+                    </h3>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      {photo.caption || photo.description}
+                    </p>
+                  </div>
+
+                  <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs text-[#00868F] font-bold">
+                    <span>Explore Graduation &rarr;</span>
+                    <span className="text-[11px] text-slate-400 font-normal">Buwate Campus</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. EXTRACURRICULAR ACTIVITIES PREVIEW - Clean Activity Cards (No Stock Photos) */}
+      <section className="py-20 bg-white border-t border-[#00868F]/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div>

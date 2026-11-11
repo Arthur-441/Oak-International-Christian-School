@@ -201,10 +201,62 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
               </div>
             </div>
           </div>
+
+          {/* Authentic Campus Fellowship & Community Spotlight */}
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="group bg-white rounded-3xl overflow-hidden border-2 border-[#00868F]/20 hover:border-[#00868F] shadow-sm hover:shadow-xl transition-all duration-300">
+              <div className="aspect-[16/10] overflow-hidden bg-slate-100 relative">
+                <img
+                  src="https://i.ibb.co/yBWrh5VK/Whats-App-Image-2026-11-11-at-10-41-52-AM-1.jpg"
+                  alt="School Assembly & Chapel Devotion at Oak International"
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-500 ease-out"
+                />
+                <div className="absolute top-3 left-3">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#09262C]/85 backdrop-blur-xs px-3 py-1 rounded-full border border-white/20">
+                    Chapel & Devotion
+                  </span>
+                </div>
+              </div>
+              <div className="p-5">
+                <h4 className="font-serif text-lg font-bold text-[#09262C] group-hover:text-[#00868F] transition-colors">
+                  Morning Chapel & Worship
+                </h4>
+                <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                  Pupils, educators, and supervisors united in scripture recitation, character pledges, and joyful praise to start each school day.
+                </p>
+              </div>
+            </div>
+
+            <div className="group bg-white rounded-3xl overflow-hidden border-2 border-[#00868F]/20 hover:border-[#00868F] shadow-sm hover:shadow-xl transition-all duration-300">
+              <div className="aspect-[16/10] overflow-hidden bg-slate-100 relative">
+                <img
+                  src="https://i.ibb.co/Xr1Tdqxd/Whats-App-Image-2026-11-11-at-10-28-37-AM.jpg"
+                  alt="Learning Through Play at Oak International Christian School"
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-500 ease-out"
+                />
+                <div className="absolute top-3 left-3">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#09262C]/85 backdrop-blur-xs px-3 py-1 rounded-full border border-white/20">
+                    Interactive Learning
+                  </span>
+                </div>
+              </div>
+              <div className="p-5">
+                <h4 className="font-serif text-lg font-bold text-[#09262C] group-hover:text-[#00868F] transition-colors">
+                  Learning Through Play
+                </h4>
+                <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                  Encouraging creativity, imagination and discovery through engaging activities that make learning enjoyable, meaningful and memorable.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Educational Philosophy & Three Core Pillars */}
+
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">

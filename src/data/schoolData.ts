@@ -1,4 +1,4 @@
-import { GradeLevel, Activity, DisciplineShowcase, QuoteItem, CurriculumPartner } from '../types';
+import { GradeLevel, Activity, DisciplineShowcase, QuoteItem, CurriculumPartner, GalleryPhoto } from '../types';
 
 export const SCHOOL_INFO = {
   name: 'Oak International Christian School',
@@ -14,7 +14,7 @@ export const SCHOOL_INFO = {
   whatsappUrl: 'https://wa.me/256783368459?text=Hello%20Oak%20International%20Christian%20School%2C%20I%20would%20like%20to%20make%20an%20enquiry.',
   googleMapsUrl: 'https://maps.google.com/?q=Kira-Kasangati+Road,+Buwate,+Kira+Division,+Wakiso+District,+Uganda',
   googleMapsEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15958.825272661858!2d32.6288!3d0.3951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb7e8d6722d3%3A0x7d6f5f9aa9b45bf9!2sBuwate%2C%20Kira%2C%20Uganda!5e0!3m2!1sen!2sug!4v1700000000000!5m2!1sen!2sug',
-  flierImageUrl: '/assets/aistudio/image_99934b46.png',
+  flierImageUrl: 'https://i.ibb.co/fG4CsFf5/Oak-Admission-Flyer-3.png',
   logoImageUrl: '/assets/aistudio/oak_school_logo_transparent.png',
   curriculum: 'Accelerated Christian Education (ACE)',
   mission: 'Our mission is to equip each learner with essential life skills and Godly character through academic and physical programs based on the Word of God.',
@@ -328,4 +328,220 @@ export const CURRICULUM_PARTNERS: CurriculumPartner[] = [
     logo: '/assets/aistudio/partner_skillspro.png'
   }
 ];
+
+export const SCHOOL_LIFE_GALLERY: GalleryPhoto[] = [
+  // Graduation (5 images)
+  {
+    id: 'grad-1',
+    url: 'https://i.ibb.co/xqQgZ4Bc/Grad-2.jpg',
+    category: 'Graduation',
+    title: 'Graduation Honours Ceremony',
+    caption: 'Celebrating academic milestones and Godly accomplishment at Oak International.'
+  },
+  {
+    id: 'grad-2',
+    url: 'https://i.ibb.co/vvYZ88Dh/Grad-3.jpg',
+    category: 'Graduation',
+    title: 'Commencement Joy & Fellowship',
+    caption: 'Graduates, parents, and faculty rejoicing in the fruit of disciplined Christian education.'
+  },
+  {
+    id: 'grad-3',
+    url: 'https://i.ibb.co/1phSZH2/Grad-4.jpg',
+    category: 'Graduation',
+    title: 'Graduate Recognition & Award',
+    caption: 'Honouring perseverance, self-paced mastery, and Christian leadership virtues.'
+  },
+  {
+    id: 'grad-4',
+    url: 'https://i.ibb.co/bMn4v4dM/Grad-1.jpg',
+    category: 'Graduation',
+    title: 'Oak International Graduate Procession',
+    caption: 'Graduates stepping forth as transformational leaders equipped for societal impact.'
+  },
+  {
+    id: 'grad-5',
+    url: 'https://i.ibb.co/VY6J01st/Whats-App-Image-2026-11-11-at-10-30-27-AM.jpg',
+    category: 'Graduation',
+    title: 'Graduation Presentation & Praise',
+    caption: 'Learners presenting their talents and giving glory to God during graduation ceremonies.'
+  },
+
+  // Events (8 images)
+  {
+    id: 'event-1',
+    url: 'https://i.ibb.co/yBWrh5VK/Whats-App-Image-2026-11-11-at-10-41-52-AM-1.jpg',
+    category: 'Events',
+    title: 'School Assembly & Chapel Devotion',
+    caption: 'Pupils and supervisors uniting in praise, scripture meditation, and daily announcements.'
+  },
+  {
+    id: 'event-2',
+    url: 'https://i.ibb.co/x8Rwk7LM/Whats-App-Image-2026-11-11-at-10-41-52-AM-2.jpg',
+    category: 'Events',
+    title: 'Campus Community Gathering',
+    caption: 'Fostering unity, warmth, and Christian fellowship across all grade levels.'
+  },
+  {
+    id: 'event-3',
+    url: 'https://i.ibb.co/FbbSfQTm/Whats-App-Image-2026-11-11-at-10-43-05-AM.jpg',
+    category: 'Events',
+    title: 'Special Student Recitations',
+    caption: 'Learners sharing presentations, memorised Scripture, and academic achievements.'
+  },
+  {
+    id: 'event-4',
+    url: 'https://i.ibb.co/RT9jsBrf/Whats-App-Image-2026-11-11-at-10-28-38-AM.jpg',
+    category: 'Events',
+    title: 'Student Leadership & Community Outreach',
+    caption: 'Practical training in servanthood, responsibility, and team-oriented leadership.'
+  },
+  {
+    id: 'event-5',
+    url: 'https://i.ibb.co/Xr1Tdqxd/Whats-App-Image-2026-11-11-at-10-28-37-AM.jpg',
+    category: 'Events',
+    title: 'Learning Through Play',
+    caption: 'Encouraging creativity, imagination and discovery through engaging activities that make learning enjoyable, meaningful and memorable.'
+  },
+  {
+    id: 'event-6',
+    url: 'https://i.ibb.co/hxgJHZ0g/Whats-App-Image-2026-11-11-at-10-28-37-AM-1.jpg',
+    category: 'Events',
+    title: 'Career Exploration',
+    caption: 'Inspiring young minds to dream big and explore different professions through hands-on role play.'
+  },
+  {
+    id: 'event-7',
+    url: 'https://i.ibb.co/d4vp0sK3/Whats-App-Image-2026-11-11-at-10-41-51-AM.jpg',
+    category: 'Events',
+    title: 'Worship & Musical Praise Session',
+    caption: 'Singing joyful praises to the Lord during our weekly campus chapel service.'
+  },
+  {
+    id: 'event-8',
+    url: 'https://i.ibb.co/QFr4n0Nh/Whats-App-Image-2026-11-11-at-10-41-52-AM-2.jpg',
+    category: 'Events',
+    title: 'School Community Celebration',
+    caption: 'A vibrant day of celebration, student talent displays, and shared joy in Buwate.'
+  },
+
+  // Co-curricular Activities (4 images)
+  {
+    id: 'cocurr-1',
+    url: 'https://i.ibb.co/RGGrCntr/Whats-App-Image-2026-11-09-at-2-08-36-PM.jpg',
+    category: 'Co-curricular Activities',
+    title: 'Practical Living & Kitchen Skills',
+    caption: 'Building everyday independence, teamwork, and self-reliance through safe food preparation and hands-on, real-world practice with caring instructors.'
+  },
+  {
+    id: 'cocurr-2',
+    url: 'https://i.ibb.co/BKZWFLJ9/Whats-App-Image-2026-11-09-at-12-24-41-PM.jpg',
+    category: 'Co-curricular Activities',
+    title: 'Practical Life Skills Club',
+    caption: 'Equipping young boys and girls with self-reliance, practical chores, and stewardship.'
+  },
+  {
+    id: 'cocurr-3',
+    url: 'https://i.ibb.co/57rRTBD/Whats-App-Image-2026-11-09-at-1-38-46-PM.jpg',
+    category: 'Co-curricular Activities',
+    title: 'Music & Instrumental Training',
+    caption: 'Developing rhythm, vocal harmony, and confidence in worshipful musical performance.'
+  },
+  {
+    id: 'cocurr-4',
+    url: 'https://i.ibb.co/XZTQ1YwX/Whats-App-Image-2026-11-09-at-2-08-35-PM.jpg',
+    category: 'Co-curricular Activities',
+    title: 'Culinary & Baking Arts Club',
+    caption: 'Learning kitchen hygiene, recipe comprehension, and the joy of shared culinary craft.'
+  },
+
+  // Logo (1 image)
+  {
+    id: 'logo-1',
+    url: 'https://i.ibb.co/YBCkMvbN/Whats-App-Image-2026-11-11-at-10-30-46-AM.jpg',
+    category: 'Logo',
+    title: 'Oak International Official School Crest',
+    caption: 'The flourishing Oak emblem rooted in God\'s Word, symbolizing strength, wisdom, and righteousness.'
+  },
+
+  // Convention (1 image)
+  {
+    id: 'conv-1',
+    url: 'https://i.ibb.co/0VD1KwXh/Whats-App-Image-2026-11-09-at-1-21-26-PM.jpg',
+    category: 'Convention',
+    title: 'Regional Christian Student Convention',
+    caption: 'Learners representing Oak International in inter-school academic, athletic, and talent competitions.'
+  },
+
+  // Sports (1 image)
+  {
+    id: 'sports-1',
+    url: 'https://i.ibb.co/DgmYZ1zr/Whats-App-Image-2026-11-09-at-12-25-21-PM-1.jpg',
+    category: 'Sports',
+    title: 'Physical Education & Team Athletics',
+    caption: 'Nurturing strong, healthy bodies, athletic discipline, and Christ-like sportsmanship.'
+  }
+];
+
+export interface GraduationPhoto {
+  id: string;
+  url: string;
+  fallbackUrl?: string;
+  title: string;
+  category: string;
+  year: string;
+  caption: string;
+  description?: string;
+  honors: string;
+}
+
+export const GRADUATION_GALLERY: GraduationPhoto[] = [
+  {
+    id: 'grad-1',
+    url: 'https://i.ibb.co/xqQgZ4Bc/Grad-2.jpg',
+    title: 'Graduation Honours Ceremony',
+    category: 'Commencement',
+    year: 'Oak Academy',
+    caption: 'Celebrating academic milestones and Godly accomplishment at Oak International.',
+    honors: 'Academic Excellence & Character'
+  },
+  {
+    id: 'grad-2',
+    url: 'https://i.ibb.co/vvYZ88Dh/Grad-3.jpg',
+    title: 'Commencement Joy & Fellowship',
+    category: 'Celebration',
+    year: 'Oak Academy',
+    caption: 'Graduates, parents, and faculty rejoicing in the fruit of disciplined Christian education.',
+    honors: 'Character & Leadership'
+  },
+  {
+    id: 'grad-3',
+    url: 'https://i.ibb.co/1phSZH2/Grad-4.jpg',
+    title: 'Graduate Recognition & Award',
+    category: 'Recognition',
+    year: 'Oak Academy',
+    caption: 'Honouring perseverance, self-paced mastery, and Christian leadership virtues.',
+    honors: 'PACE Mastery & Honor Roll'
+  },
+  {
+    id: 'grad-4',
+    url: 'https://i.ibb.co/bMn4v4dM/Grad-1.jpg',
+    title: 'Oak International Graduate Procession',
+    category: 'Procession',
+    year: 'Oak Academy',
+    caption: 'Graduates stepping forth as transformational leaders equipped for societal impact.',
+    honors: 'Future Leadership Award'
+  },
+  {
+    id: 'grad-5',
+    url: 'https://i.ibb.co/VY6J01st/Whats-App-Image-2026-11-11-at-10-30-27-AM.jpg',
+    title: 'Graduation Presentation & Praise',
+    category: 'Presentation',
+    year: 'Oak Academy',
+    caption: 'Learners presenting their talents and giving glory to God during graduation ceremonies.',
+    honors: 'Talent & Christian Devotion'
+  }
+];
+
+
 

@@ -192,11 +192,102 @@ export const ActivitiesPage: React.FC<ActivitiesPageProps> = ({
               </div>
             ))}
           </div>
+
+          {/* Authentic Campus Clubs in Action Spotlight */}
+          <div className="mt-16 pt-12 border-t border-slate-200">
+            <div className="mb-8">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#00868F] block mb-1">
+                Authentic Campus Life
+              </span>
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#09262C]">
+                Oak Learners in Action
+              </h3>
+              <p className="text-slate-600 text-sm mt-1">
+                Real moments from our creative arts workshops, sports training, and inter-school Christian student conventions.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="group bg-white rounded-3xl overflow-hidden border-2 border-[#00868F]/20 hover:border-[#00868F] shadow-sm hover:shadow-xl transition-all duration-300">
+                <div className="aspect-[4/3] overflow-hidden bg-slate-100 relative">
+                  <img
+                    src="https://i.ibb.co/RGGrCntr/Whats-App-Image-2026-11-09-at-2-08-36-PM.jpg"
+                    alt="Practical Living & Kitchen Skills at Oak International"
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                  />
+                  <div className="absolute top-3 left-3">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#09262C]/85 backdrop-blur-xs px-2.5 py-1 rounded-full border border-white/20">
+                      Life Skills
+                    </span>
+                  </div>
+                </div>
+                <div className="p-5">
+                  <h4 className="font-serif text-lg font-bold text-[#09262C] group-hover:text-[#00868F] transition-colors">
+                    Practical Living & Kitchen Skills
+                  </h4>
+                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                    Building everyday independence, teamwork, and self-reliance through safe food preparation and hands-on, real-world practice with caring instructors.
+                  </p>
+                </div>
+              </div>
+
+
+              <div className="group bg-white rounded-3xl overflow-hidden border-2 border-[#00868F]/20 hover:border-[#00868F] shadow-sm hover:shadow-xl transition-all duration-300">
+                <div className="aspect-[4/3] overflow-hidden bg-slate-100 relative">
+                  <img
+                    src="https://i.ibb.co/DgmYZ1zr/Whats-App-Image-2026-11-09-at-12-25-21-PM-1.jpg"
+                    alt="Physical Athletics & Sports at Oak International"
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                  />
+                  <div className="absolute top-3 left-3">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#09262C]/85 backdrop-blur-xs px-2.5 py-1 rounded-full border border-white/20">
+                      Physical Sports
+                    </span>
+                  </div>
+                </div>
+                <div className="p-5">
+                  <h4 className="font-serif text-lg font-bold text-[#09262C] group-hover:text-[#00868F] transition-colors">
+                    Athletics & Physical Fitness
+                  </h4>
+                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                    Building cardiovascular stamina, agility, sportsmanship, and teamwork through active physical games.
+                  </p>
+                </div>
+              </div>
+
+              <div className="group bg-white rounded-3xl overflow-hidden border-2 border-[#00868F]/20 hover:border-[#00868F] shadow-sm hover:shadow-xl transition-all duration-300">
+                <div className="aspect-[4/3] overflow-hidden bg-slate-100 relative">
+                  <img
+                    src="https://i.ibb.co/0VD1KwXh/Whats-App-Image-2026-11-09-at-1-21-26-PM.jpg"
+                    alt="Student Christian Convention"
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                  />
+                  <div className="absolute top-3 left-3">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#09262C]/85 backdrop-blur-xs px-2.5 py-1 rounded-full border border-white/20">
+                      Student Convention
+                    </span>
+                  </div>
+                </div>
+                <div className="p-5">
+                  <h4 className="font-serif text-lg font-bold text-[#09262C] group-hover:text-[#00868F] transition-colors">
+                    Christian Convention
+                  </h4>
+                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                    Representing Oak International with excellence in academic, artistic, and biblical student conventions.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Enquiry Callout */}
       <section className="py-16 bg-[#F2F8F8] border-t border-[#00868F]/15">
+
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#09262C]">
             Want to learn more about our student clubs?

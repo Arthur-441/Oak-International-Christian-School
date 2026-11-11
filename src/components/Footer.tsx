@@ -163,7 +163,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry }) => 
                   className="flex items-center gap-1.5 hover:text-[#00C2B8] transition-colors cursor-pointer"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-[#00868F]" />
-                  <span>School Life & Flier</span>
+                  <span>Graduation & School Life</span>
                 </button>
               </li>
               <li>
