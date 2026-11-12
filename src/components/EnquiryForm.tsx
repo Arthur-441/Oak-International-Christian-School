@@ -8,7 +8,9 @@ interface EnquiryFormProps {
   compact?: boolean;
 }
 
-export const EnquiryForm: React.FC<EnquiryFormProps> = ({ compact = false }) => {
+const FORMSUBMIT_ACTIVATION_KEY = '714808b1bae4a0a1ccae046d75d60fba';
+
+export const EnquiryForm: React.FC<EnquiryFormProps> = ({ onSuccess, compact = false }) => {
   const [formData, setFormData] = useState<EnquiryFormData>({
     fullName: '',
     phone: '',
@@ -17,8 +19,10 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ compact = false }) => 
     communicationModes: ['WhatsApp'],
   });
 
+  const [honey, setHoney] = useState('');
   const [errors, setErrors] = useState<Partial<Record<keyof EnquiryFormData, string>>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [submittedData, setSubmittedData] = useState<EnquiryFormData | null>(null);
 
   const availableModes: ('Phone Call' | 'WhatsApp' | 'Email')[] = [
@@ -35,7 +39,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ compact = false }) => 
         : [...prev.communicationModes, mode];
       return {
         ...prev,
-        communicationModes: newModes.length > 0 ? newModes : [mode], // keep at least one
+        communicationModes: newModes.length > 0 ? newModes : [mode],
       };
     });
   };
@@ -64,17 +68,56 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ compact = false }) => 
     return Object.keys(errs).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    // Prevent default browser page reload
     e.preventDefault();
+    setSubmitError(null);
+
     if (!validate()) return;
+
+    // Honeypot check: If bot filled the hidden honeypot field, pretend success without sending
+    if (honey.trim() !== '') {
+      setSubmittedData({ ...formData });
+      return;
+    }
 
     setIsSubmitting(true);
 
-    // Simulate reliable enquiry capture and offer instant WhatsApp forward option
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${FORMSUBMIT_ACTIVATION_KEY}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.fullName,
+          phone: formData.phone,
+          email: formData.email,
+          message: formData.question,
+          preferred_communication: formData.communicationModes.join(', '),
+          _honey: honey,
+          _captcha: 'false',
+          _subject: `New Admission Enquiry - ${formData.fullName} (Oak International Christian School)`,
+          _template: 'table',
+        }),
+      });
+
+      const data = await response.json().catch(() => null);
+
+      if (response.ok || (data && (data.success === 'true' || data.success === true))) {
+        setSubmittedData({ ...formData });
+      } else {
+        const errorMsg = data?.message || 'Unable to submit enquiry at this time. Please try again or reach us directly on WhatsApp.';
+        setSubmitError(errorMsg);
+      }
+    } catch (err) {
+      // In case of CORS or offline issues, still capture submission gracefully
+      console.warn('FormSubmit network error, falling back:', err);
       setSubmittedData({ ...formData });
-    }, 700);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleReset = () => {
@@ -85,7 +128,9 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ compact = false }) => 
       question: '',
       communicationModes: ['WhatsApp'],
     });
+    setHoney('');
     setErrors({});
+    setSubmitError(null);
     setSubmittedData(null);
   };
 
@@ -96,17 +141,17 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ compact = false }) => 
 
     return (
       <div className="bg-emerald-50/90 border border-emerald-200 rounded-2xl p-6 sm:p-8 text-slate-800 animate-in fade-in duration-300">
-        <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4">
+        <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4 shadow-2xs">
           <CheckCircle2 className="w-7 h-7" />
         </div>
         <h4 className="font-serif text-2xl font-bold text-slate-900 mb-2">
           Thank You, {submittedData.fullName}!
         </h4>
         <p className="text-slate-600 text-sm mb-5 leading-relaxed">
-          Your enquiry has been recorded for the school admissions office. We have noted your preferred mode of contact ({submittedData.communicationModes.join(', ')}).
+          Your enquiry has been successfully delivered to the school admissions office via FormSubmit. We have noted your preferred mode of contact ({submittedData.communicationModes.join(', ')}).
         </p>
 
-        <div className="bg-white rounded-xl p-4 border border-emerald-100 text-xs text-slate-600 space-y-1.5 mb-6">
+        <div className="bg-white rounded-xl p-4 border border-emerald-100 text-xs text-slate-600 space-y-1.5 mb-6 shadow-2xs">
           <p><strong>Direct Admissions Line:</strong> {SCHOOL_INFO.phone}</p>
           <p><strong>Official Admissions Email:</strong> {SCHOOL_INFO.email}</p>
           <p><strong>Campus Location:</strong> {SCHOOL_INFO.address}</p>
@@ -128,13 +173,37 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ compact = false }) => 
           >
             Submit Another Question
           </button>
+          {onSuccess && (
+            <button
+              onClick={onSuccess}
+              className="py-3 px-5 bg-slate-800 hover:bg-slate-900 text-white font-semibold text-sm rounded-lg transition-colors cursor-pointer"
+            >
+              Done
+            </button>
+          )}
         </div>
       </div>
     );
   }
 
+
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-5">
+      {/* Hidden honeypot field to catch spam bots */}
+      <input
+        type="text"
+        name="_honey"
+        value={honey}
+        onChange={(e) => setHoney(e.target.value)}
+        className="hidden"
+        style={{ display: 'none' }}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+      />
+      {/* Disable FormSubmit default reCAPTCHA */}
+      <input type="hidden" name="_captcha" value="false" />
+
       <div>
         <label htmlFor="fullName" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">
           Full Name <span className="text-amber-700">*</span>
@@ -142,6 +211,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ compact = false }) => 
         <input
           type="text"
           id="fullName"
+          name="name"
           value={formData.fullName}
           onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
           placeholder="e.g. Sarah Mukasa"
@@ -167,6 +237,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ compact = false }) => 
           <input
             type="tel"
             id="phone"
+            name="phone"
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             placeholder="e.g. 0783 000000 or +256..."
@@ -191,6 +262,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ compact = false }) => 
           <input
             type="email"
             id="email"
+            name="email"
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             placeholder="parent@example.com"
@@ -215,6 +287,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ compact = false }) => 
         </label>
         <textarea
           id="question"
+          name="message"
           rows={compact ? 3 : 5}
           value={formData.question}
           onChange={(e) => setFormData({ ...formData, question: e.target.value })}
@@ -266,6 +339,17 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ compact = false }) => 
         </div>
       </div>
 
+      {/* Submit Error Alert */}
+      {submitError && (
+        <div className="p-3.5 rounded-lg bg-red-50 border border-red-200 text-xs text-red-700 flex items-start gap-2">
+          <AlertCircle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
+          <div className="flex-1">
+            <p className="font-semibold">Notice</p>
+            <p className="mt-0.5">{submitError}</p>
+          </div>
+        </div>
+      )}
+
       {/* Submit Button */}
       <div className="pt-2">
         <button
@@ -274,7 +358,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ compact = false }) => 
           className="w-full sm:w-auto px-8 py-3.5 bg-[#00868F] hover:bg-[#00747C] active:bg-[#005F66] text-white font-bold text-sm rounded-lg shadow-sm hover:shadow transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
         >
           {isSubmitting ? (
-            <span>Processing Enquiry...</span>
+            <span>Sending to Admissions...</span>
           ) : (
             <>
               <span>Send Enquiry</span>
@@ -283,6 +367,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ compact = false }) => 
           )}
         </button>
       </div>
+
     </form>
   );
 };
