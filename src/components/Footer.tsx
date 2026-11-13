@@ -20,25 +20,25 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry, onOpe
   };
 
   return (
-    <footer className="bg-[#061C20] text-slate-300 border-t border-[#0A333A]">
-      {/* Upper Footer CTA Strip - Flier Teal */}
-      <div className="bg-[#00868F] py-8 px-4 sm:px-6 lg:px-8 text-white">
+    <footer className="bg-[#071E12] text-slate-300 border-t border-[#144027]">
+      {/* Upper Footer CTA Strip - Brand Green */}
+      <div className="bg-[#1B7A43] py-8 px-4 sm:px-6 lg:px-8 text-white">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <span className="text-xs uppercase tracking-wider font-bold text-[#E4F1F2] block mb-1">
+            <span className="text-xs uppercase tracking-wider font-bold text-[#E2F3E7] block mb-1">
               Admissions & Enquiries Open
             </span>
             <h3 className="font-serif text-2xl text-white font-bold">
               Ready to nurture your child's leadership potential?
             </h3>
-            <p className="text-[#E4F1F2] text-sm mt-1">
+            <p className="text-[#E2F3E7] text-sm mt-1">
               Ask about our Diagnostic Test, curriculum switching, and individualised learning in Buwate, Kira.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <button
               onClick={onOpenEnquiry}
-              className="px-6 py-3 rounded-lg text-sm font-bold bg-[#09262C] hover:bg-[#061C20] text-white shadow-md transition-colors cursor-pointer"
+              className="px-6 py-3 rounded-lg text-sm font-bold bg-[#0D2E1B] hover:bg-[#071E12] text-white shadow-md transition-colors cursor-pointer"
             >
               Enrol Now
             </button>
@@ -58,13 +58,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry, onOpe
                 <span className="block font-serif font-bold text-lg text-white leading-tight">
                   Oak International
                 </span>
-                <span className="block text-xs font-bold text-[#00C2B8] tracking-wider uppercase">
+                <span className="block text-xs font-bold text-[#68D37E] tracking-wider uppercase">
                   Christian School
                 </span>
               </div>
             </div>
 
-            <p className="text-[#00C2B8] font-serif italic text-sm font-medium">
+            <p className="text-[#68D37E] font-serif italic text-sm font-medium">
               "{SCHOOL_INFO.tagline}"
             </p>
 
@@ -79,7 +79,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry, onOpe
 
             {/* Official Social Media Channels */}
             <div className="pt-2">
-              <span className="text-[10px] uppercase font-bold tracking-widest text-[#00C2B8] block mb-2">
+              <span className="text-[10px] uppercase font-bold tracking-widest text-[#68D37E] block mb-2">
                 Follow Us Online
               </span>
               <div className="flex items-center gap-2.5">
@@ -125,54 +125,54 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry, onOpe
               <li>
                 <button
                   onClick={() => handleNav('home')}
-                  className="flex items-center gap-1.5 hover:text-[#00C2B8] transition-colors cursor-pointer"
+                  className="flex items-center gap-1.5 hover:text-[#68D37E] transition-colors cursor-pointer"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#00868F]" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#1B7A43]" />
                   <span>Home</span>
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => handleNav('about')}
-                  className="flex items-center gap-1.5 hover:text-[#00C2B8] transition-colors cursor-pointer"
+                  className="flex items-center gap-1.5 hover:text-[#68D37E] transition-colors cursor-pointer"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#00868F]" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#1B7A43]" />
                   <span>About Us</span>
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => handleNav('academics')}
-                  className="flex items-center gap-1.5 hover:text-[#00C2B8] transition-colors cursor-pointer"
+                  className="flex items-center gap-1.5 hover:text-[#68D37E] transition-colors cursor-pointer"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#00868F]" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#1B7A43]" />
                   <span>Academics & ACE Curriculum</span>
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => handleNav('activities')}
-                  className="flex items-center gap-1.5 hover:text-[#00C2B8] transition-colors cursor-pointer"
+                  className="flex items-center gap-1.5 hover:text-[#68D37E] transition-colors cursor-pointer"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#00868F]" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#1B7A43]" />
                   <span>Extracurricular Activities</span>
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => handleNav('gallery')}
-                  className="flex items-center gap-1.5 hover:text-[#00C2B8] transition-colors cursor-pointer"
+                  className="flex items-center gap-1.5 hover:text-[#68D37E] transition-colors cursor-pointer"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#00868F]" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#1B7A43]" />
                   <span>Graduation & School Life</span>
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => handleNav('contact')}
-                  className="flex items-center gap-1.5 hover:text-[#00C2B8] transition-colors cursor-pointer"
+                  className="flex items-center gap-1.5 hover:text-[#68D37E] transition-colors cursor-pointer"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#00868F]" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#1B7A43]" />
                   <span>Contact & Enquiries</span>
                 </button>
               </li>
@@ -180,7 +180,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry, onOpe
                 {onOpenEnrollmentForm ? (
                   <button
                     onClick={onOpenEnrollmentForm}
-                    className="flex items-center gap-1.5 text-[#00C2B8] hover:text-white font-semibold transition-colors cursor-pointer"
+                    className="flex items-center gap-1.5 text-[#68D37E] hover:text-white font-semibold transition-colors cursor-pointer"
                   >
                     <FileText className="w-3.5 h-3.5" />
                     <span>Enrollment Form (PDF)</span>
@@ -189,7 +189,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry, onOpe
                   <a
                     href={SCHOOL_INFO.enrollmentFormPdfUrl}
                     download="Oak_International_Enrollment_Form.pdf"
-                    className="flex items-center gap-1.5 text-[#00C2B8] hover:text-white font-semibold transition-colors"
+                    className="flex items-center gap-1.5 text-[#68D37E] hover:text-white font-semibold transition-colors"
                   >
                     <Download className="w-3.5 h-3.5" />
                     <span>Enrollment Form (PDF)</span>
@@ -206,23 +206,23 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry, onOpe
             </h4>
             <ul className="space-y-3.5 text-sm text-slate-300">
               <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-[#00C2B8] mt-1 shrink-0" />
+                <MapPin className="w-4 h-4 text-[#68D37E] mt-1 shrink-0" />
                 <span className="leading-snug">{SCHOOL_INFO.address}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#6DB33F] shrink-0" />
                 <a
                   href={SCHOOL_INFO.phoneTel}
-                  className="hover:text-[#00C2B8] transition-colors font-medium text-white"
+                  className="hover:text-[#68D37E] transition-colors font-medium text-white"
                 >
                   {SCHOOL_INFO.phone}
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <Mail className="w-4 h-4 text-[#00C2B8] mt-0.5 shrink-0" />
+                <Mail className="w-4 h-4 text-[#68D37E] mt-0.5 shrink-0" />
                 <a
                   href={SCHOOL_INFO.emailMailto}
-                  className="hover:text-[#00C2B8] transition-colors break-all"
+                  className="hover:text-[#68D37E] transition-colors break-all"
                 >
                   {SCHOOL_INFO.email}
                 </a>
@@ -242,7 +242,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry, onOpe
               {CURRICULUM_PARTNERS.map((partner) => (
                 <div
                   key={partner.short}
-                  className="bg-white rounded-lg p-2 flex flex-col items-center justify-center border border-white/20 hover:border-[#00868F] transition-all group"
+                  className="bg-white rounded-lg p-2 flex flex-col items-center justify-center border border-white/20 hover:border-[#1B7A43] transition-all group"
                   title={`${partner.name} - ${partner.motto}`}
                 >
                   <div className="h-9 w-full flex items-center justify-center p-1">
@@ -253,7 +253,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry, onOpe
                       loading="lazy"
                     />
                   </div>
-                  <span className="text-[10px] font-bold text-[#09262C] tracking-tight truncate w-full text-center mt-1">
+                  <span className="text-[10px] font-bold text-[#0D2E1B] tracking-tight truncate w-full text-center mt-1">
                     {partner.short}
                   </span>
                 </div>

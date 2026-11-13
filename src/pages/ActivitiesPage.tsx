@@ -37,7 +37,7 @@ export const ActivitiesPage: React.FC<ActivitiesPageProps> = ({
   const getActivityIcon = (iconType: string) => {
     switch (iconType) {
       case 'swim':
-        return <Waves className="w-6 h-6 text-[#00868F]" />;
+        return <Waves className="w-6 h-6 text-[#1B7A43]" />;
       case 'cook':
         return <UtensilsCrossed className="w-6 h-6 text-[#6DB33F]" />;
       case 'craft':
@@ -45,25 +45,25 @@ export const ActivitiesPage: React.FC<ActivitiesPageProps> = ({
       case 'dance':
         return <ActivityIcon className="w-6 h-6 text-rose-500" />;
       case 'music':
-        return <Music className="w-6 h-6 text-indigo-600" />;
+        return <Music className="w-6 h-6 text-emerald-700" />;
       case 'table-tennis':
         return <CircleDot className="w-6 h-6 text-emerald-600" />;
       case 'volleyball':
-        return <Trophy className="w-6 h-6 text-[#00868F]" />;
+        return <Trophy className="w-6 h-6 text-[#1B7A43]" />;
       case 'football':
         return <Trophy className="w-6 h-6 text-[#6DB33F]" />;
       default:
-        return <ActivityIcon className="w-6 h-6 text-[#00868F]" />;
+        return <ActivityIcon className="w-6 h-6 text-[#1B7A43]" />;
     }
   };
 
   return (
     <div className="w-full">
       {/* Page Header Banner */}
-      <section className="bg-gradient-to-br from-[#061C20] via-[#09262C] to-[#005C66] text-white py-16 lg:py-20 border-b border-[#0A333A]">
+      <section className="bg-gradient-to-br from-[#071E12] via-[#0D2E1B] to-[#14532D] text-white py-16 lg:py-20 border-b border-[#144027]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#00C2B8] block mb-2">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#68D37E] block mb-2">
               Holistic Student Development
             </span>
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight mb-4">
@@ -77,35 +77,35 @@ export const ActivitiesPage: React.FC<ActivitiesPageProps> = ({
       </section>
 
       {/* Core Values Strip */}
-      <section className="bg-[#F2F8F8] border-b border-[#00868F]/15 py-8">
+      <section className="bg-[#F2F9F4] border-b border-[#1B7A43]/15 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="flex items-center gap-4 bg-white p-5 rounded-2xl border border-[#00868F]/20 shadow-2xs">
-              <div className="w-12 h-12 rounded-xl bg-[#F2F8F8] text-[#00868F] flex items-center justify-center shrink-0 border border-[#00868F]/20">
+            <div className="flex items-center gap-4 bg-white p-5 rounded-2xl border border-[#1B7A43]/20 shadow-2xs">
+              <div className="w-12 h-12 rounded-xl bg-[#F2F9F4] text-[#1B7A43] flex items-center justify-center shrink-0 border border-[#1B7A43]/20">
                 <Heart className="w-6 h-6" />
               </div>
               <div>
-                <h2 className="text-sm font-bold text-[#09262C]">Self-Esteem</h2>
+                <h2 className="text-sm font-bold text-[#0D2E1B]">Self-Esteem</h2>
                 <p className="text-xs text-slate-600">Discovering talents and positive self-worth</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 bg-white p-5 rounded-2xl border border-[#00868F]/20 shadow-2xs">
-              <div className="w-12 h-12 rounded-xl bg-[#F2F8F8] text-[#6DB33F] flex items-center justify-center shrink-0 border border-[#6DB33F]/20">
+            <div className="flex items-center gap-4 bg-white p-5 rounded-2xl border border-[#1B7A43]/20 shadow-2xs">
+              <div className="w-12 h-12 rounded-xl bg-[#F2F9F4] text-[#6DB33F] flex items-center justify-center shrink-0 border border-[#6DB33F]/20">
                 <Trophy className="w-6 h-6" />
               </div>
               <div>
-                <h2 className="text-sm font-bold text-[#09262C]">Healthy Competitiveness</h2>
+                <h2 className="text-sm font-bold text-[#0D2E1B]">Healthy Competitiveness</h2>
                 <p className="text-xs text-slate-600">Striving for excellence with godly sportsmanship</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 bg-white p-5 rounded-2xl border border-[#00868F]/20 shadow-2xs">
-              <div className="w-12 h-12 rounded-xl bg-[#F2F8F8] text-[#09262C] flex items-center justify-center shrink-0 border border-slate-300">
+            <div className="flex items-center gap-4 bg-white p-5 rounded-2xl border border-[#1B7A43]/20 shadow-2xs">
+              <div className="w-12 h-12 rounded-xl bg-[#F2F9F4] text-[#0D2E1B] flex items-center justify-center shrink-0 border border-slate-300">
                 <Users className="w-6 h-6" />
               </div>
               <div>
-                <h2 className="text-sm font-bold text-[#09262C]">Unshakable Confidence</h2>
+                <h2 className="text-sm font-bold text-[#0D2E1B]">Unshakable Confidence</h2>
                 <p className="text-xs text-slate-600">Courage to participate and lead in group settings</p>
               </div>
             </div>
@@ -122,7 +122,7 @@ export const ActivitiesPage: React.FC<ActivitiesPageProps> = ({
               <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block">
                 Filter By Discipline
               </span>
-              <p className="text-sm text-[#09262C] font-semibold">
+              <p className="text-sm text-[#0D2E1B] font-semibold">
                 Showing {filteredActivities.length} Clubs & Activities
               </p>
             </div>
@@ -134,8 +134,8 @@ export const ActivitiesPage: React.FC<ActivitiesPageProps> = ({
                   onClick={() => setSelectedCategory(cat)}
                   className={`px-4 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
                     selectedCategory === cat
-                      ? 'bg-[#00868F] text-white shadow-2xs'
-                      : 'bg-[#F2F8F8] text-slate-700 hover:bg-[#E5F1F2]'
+                      ? 'bg-[#1B7A43] text-white shadow-2xs'
+                      : 'bg-[#F2F9F4] text-slate-700 hover:bg-[#E2F3E7]'
                   }`}
                 >
                   {cat}
@@ -149,15 +149,15 @@ export const ActivitiesPage: React.FC<ActivitiesPageProps> = ({
             {filteredActivities.map((act) => (
               <div
                 key={act.id}
-                className="bg-white rounded-3xl p-6 sm:p-7 border-2 border-[#00868F]/20 hover:border-[#00868F] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white rounded-3xl p-6 sm:p-7 border-2 border-[#1B7A43]/20 hover:border-[#1B7A43] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   {/* Card Header with Thematic Icon & Category */}
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-[#F2F8F8] border border-[#00868F]/20 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                    <div className="w-12 h-12 rounded-2xl bg-[#F2F9F4] border border-[#1B7A43]/20 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                       {getActivityIcon(act.iconType)}
                     </div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#00868F] bg-[#F2F8F8] px-2.5 py-1 rounded-full border border-[#00868F]/20">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#1B7A43] bg-[#F2F9F4] px-2.5 py-1 rounded-full border border-[#1B7A43]/20">
                       {act.category}
                     </span>
                   </div>
@@ -166,7 +166,7 @@ export const ActivitiesPage: React.FC<ActivitiesPageProps> = ({
                     Leadership & Skill Club
                   </span>
 
-                  <h3 className="font-serif text-xl font-bold text-[#09262C] mb-2 group-hover:text-[#00868F] transition-colors">
+                  <h3 className="font-serif text-xl font-bold text-[#0D2E1B] mb-2 group-hover:text-[#1B7A43] transition-colors">
                     {act.title}
                   </h3>
 
@@ -175,16 +175,16 @@ export const ActivitiesPage: React.FC<ActivitiesPageProps> = ({
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-[#00868F]/15 space-y-2">
+                <div className="pt-4 border-t border-[#1B7A43]/15 space-y-2">
                   <div className="text-[11px] text-slate-600">
-                    <strong className="text-[#09262C] block font-semibold mb-0.5">Value Nurtured:</strong>
-                    <span className="font-script text-base text-[#00868F] font-bold block leading-tight">
+                    <strong className="text-[#0D2E1B] block font-semibold mb-0.5">Value Nurtured:</strong>
+                    <span className="font-script text-base text-[#1B7A43] font-bold block leading-tight">
                       {act.benefits}
                     </span>
                   </div>
 
                   {act.scheduleNote && (
-                    <div className="text-[10px] text-[#00868F] font-semibold bg-[#F2F8F8] p-2 rounded-xl border border-[#00868F]/15">
+                    <div className="text-[10px] text-[#1B7A43] font-semibold bg-[#F2F9F4] p-2 rounded-xl border border-[#1B7A43]/15">
                       {act.scheduleNote}
                     </div>
                   )}
@@ -196,10 +196,10 @@ export const ActivitiesPage: React.FC<ActivitiesPageProps> = ({
           {/* Authentic Campus Clubs in Action Spotlight */}
           <div className="mt-16 pt-12 border-t border-slate-200">
             <div className="mb-8">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#00868F] block mb-1">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#1B7A43] block mb-1">
                 Authentic Campus Life
               </span>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#09262C]">
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0D2E1B]">
                 Oak Learners in Action
               </h3>
               <p className="text-slate-600 text-sm mt-1">
@@ -208,7 +208,7 @@ export const ActivitiesPage: React.FC<ActivitiesPageProps> = ({
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="group bg-white rounded-3xl overflow-hidden border-2 border-[#00868F]/20 hover:border-[#00868F] shadow-sm hover:shadow-xl transition-all duration-300">
+              <div className="group bg-white rounded-3xl overflow-hidden border-2 border-[#1B7A43]/20 hover:border-[#1B7A43] shadow-sm hover:shadow-xl transition-all duration-300">
                 <div className="aspect-[4/3] overflow-hidden bg-slate-100 relative">
                   <img
                     src="https://i.ibb.co/RGGrCntr/Whats-App-Image-2026-11-09-at-2-08-36-PM.jpg"
@@ -217,13 +217,13 @@ export const ActivitiesPage: React.FC<ActivitiesPageProps> = ({
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                   />
                   <div className="absolute top-3 left-3">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#09262C]/85 backdrop-blur-xs px-2.5 py-1 rounded-full border border-white/20">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#0D2E1B]/85 backdrop-blur-xs px-2.5 py-1 rounded-full border border-white/20">
                       Life Skills
                     </span>
                   </div>
                 </div>
                 <div className="p-5">
-                  <h4 className="font-serif text-lg font-bold text-[#09262C] group-hover:text-[#00868F] transition-colors">
+                  <h4 className="font-serif text-lg font-bold text-[#0D2E1B] group-hover:text-[#1B7A43] transition-colors">
                     Practical Living & Kitchen Skills
                   </h4>
                   <p className="text-xs text-slate-600 mt-1 leading-relaxed">
@@ -233,7 +233,7 @@ export const ActivitiesPage: React.FC<ActivitiesPageProps> = ({
               </div>
 
 
-              <div className="group bg-white rounded-3xl overflow-hidden border-2 border-[#00868F]/20 hover:border-[#00868F] shadow-sm hover:shadow-xl transition-all duration-300">
+              <div className="group bg-white rounded-3xl overflow-hidden border-2 border-[#1B7A43]/20 hover:border-[#1B7A43] shadow-sm hover:shadow-xl transition-all duration-300">
                 <div className="aspect-[4/3] overflow-hidden bg-slate-100 relative">
                   <img
                     src="https://i.ibb.co/DgmYZ1zr/Whats-App-Image-2026-11-09-at-12-25-21-PM-1.jpg"
@@ -242,13 +242,13 @@ export const ActivitiesPage: React.FC<ActivitiesPageProps> = ({
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                   />
                   <div className="absolute top-3 left-3">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#09262C]/85 backdrop-blur-xs px-2.5 py-1 rounded-full border border-white/20">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#0D2E1B]/85 backdrop-blur-xs px-2.5 py-1 rounded-full border border-white/20">
                       Physical Sports
                     </span>
                   </div>
                 </div>
                 <div className="p-5">
-                  <h4 className="font-serif text-lg font-bold text-[#09262C] group-hover:text-[#00868F] transition-colors">
+                  <h4 className="font-serif text-lg font-bold text-[#0D2E1B] group-hover:text-[#1B7A43] transition-colors">
                     Athletics & Physical Fitness
                   </h4>
                   <p className="text-xs text-slate-600 mt-1 leading-relaxed">
@@ -257,7 +257,7 @@ export const ActivitiesPage: React.FC<ActivitiesPageProps> = ({
                 </div>
               </div>
 
-              <div className="group bg-white rounded-3xl overflow-hidden border-2 border-[#00868F]/20 hover:border-[#00868F] shadow-sm hover:shadow-xl transition-all duration-300">
+              <div className="group bg-white rounded-3xl overflow-hidden border-2 border-[#1B7A43]/20 hover:border-[#1B7A43] shadow-sm hover:shadow-xl transition-all duration-300">
                 <div className="aspect-[4/3] overflow-hidden bg-slate-100 relative">
                   <img
                     src="https://i.ibb.co/0VD1KwXh/Whats-App-Image-2026-11-09-at-1-21-26-PM.jpg"
@@ -266,13 +266,13 @@ export const ActivitiesPage: React.FC<ActivitiesPageProps> = ({
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                   />
                   <div className="absolute top-3 left-3">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#09262C]/85 backdrop-blur-xs px-2.5 py-1 rounded-full border border-white/20">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#0D2E1B]/85 backdrop-blur-xs px-2.5 py-1 rounded-full border border-white/20">
                       Student Convention
                     </span>
                   </div>
                 </div>
                 <div className="p-5">
-                  <h4 className="font-serif text-lg font-bold text-[#09262C] group-hover:text-[#00868F] transition-colors">
+                  <h4 className="font-serif text-lg font-bold text-[#0D2E1B] group-hover:text-[#1B7A43] transition-colors">
                     Christian Convention
                   </h4>
                   <p className="text-xs text-slate-600 mt-1 leading-relaxed">
@@ -286,10 +286,10 @@ export const ActivitiesPage: React.FC<ActivitiesPageProps> = ({
       </section>
 
       {/* Enquiry Callout */}
-      <section className="py-16 bg-[#F2F8F8] border-t border-[#00868F]/15">
+      <section className="py-16 bg-[#F2F9F4] border-t border-[#1B7A43]/15">
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#09262C]">
+          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0D2E1B]">
             Want to learn more about our student clubs?
           </h2>
           <p className="text-slate-600 text-sm max-w-lg mx-auto">
@@ -298,7 +298,7 @@ export const ActivitiesPage: React.FC<ActivitiesPageProps> = ({
           <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
             <button
               onClick={onOpenEnquiry}
-              className="px-6 py-3.5 bg-[#00868F] hover:bg-[#00747C] text-white font-bold text-sm rounded-xl shadow-md transition-colors cursor-pointer"
+              className="px-6 py-3.5 bg-[#1B7A43] hover:bg-[#156334] text-white font-bold text-sm rounded-xl shadow-md transition-colors cursor-pointer"
             >
               Enquire About Activities
             </button>

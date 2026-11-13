@@ -25,10 +25,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
   return (
     <div className="w-full">
       {/* Page Header Banner */}
-      <section className="bg-gradient-to-br from-[#061C20] via-[#09262C] to-[#005C66] text-white py-16 lg:py-20 border-b border-[#0A333A]">
+      <section className="bg-gradient-to-br from-[#071E12] via-[#0D2E1B] to-[#14532D] text-white py-16 lg:py-20 border-b border-[#144027]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#00C2B8] block mb-2">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#68D37E] block mb-2">
               About Our School
             </span>
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight mb-4">
@@ -50,12 +50,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
             <div className="lg:col-span-7 space-y-6">
               <div className="flex items-center gap-3">
                 <SchoolCrest size="sm" />
-                <span className="text-xs font-bold uppercase tracking-widest text-[#00868F]">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#1B7A43]">
                   Welcome to Oak International
                 </span>
               </div>
 
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#09262C] leading-tight">
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#0D2E1B] leading-tight">
                 An Educational Experience That Nurtures an Outstanding Leader
               </h2>
 
@@ -67,8 +67,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
                 We believe that every child is uniquely crafted by God with individual talents, cognitive strengths, and a divine destiny. Rather than forcing every student into a rigid, one-size-fits-all conveyor belt, our educational structure honours each learner's unique pace and mastery.
               </p>
 
-              <div className="bg-[#F2F8F8] border border-[#00868F]/20 rounded-2xl p-6 space-y-3">
-                <div className="font-serif font-bold text-lg text-[#09262C]">
+              <div className="bg-[#F2F9F4] border border-[#1B7A43]/20 rounded-2xl p-6 space-y-3">
+                <div className="font-serif font-bold text-lg text-[#0D2E1B]">
                   "{SCHOOL_INFO.tagline}"
                 </div>
                 <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
@@ -79,9 +79,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
 
             {/* Right Column: Refined Card Box (Replaced Image with Flier Pillars Card) */}
             <div className="lg:col-span-5">
-              <div className="bg-[#09262C] text-white rounded-3xl p-8 border border-[#00868F]/30 shadow-xl space-y-6">
+              <div className="bg-[#0D2E1B] text-white rounded-3xl p-8 border border-[#1B7A43]/30 shadow-xl space-y-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-white p-1 border-2 border-[#00868F] flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-white p-1 border-2 border-[#1B7A43] flex items-center justify-center shrink-0">
                     <img
                       src="/assets/aistudio/oak_school_logo_transparent.png"
                       alt="Oak International Badge"
@@ -89,7 +89,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
                     />
                   </div>
                   <div>
-                    <span className="text-xs font-bold uppercase tracking-widest text-[#00C2B8] block">
+                    <span className="text-xs font-bold uppercase tracking-widest text-[#68D37E] block">
                       Core Institutional Tenets
                     </span>
                     <h3 className="font-serif text-xl font-bold text-white">
@@ -99,8 +99,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
                 </div>
 
                 <div className="space-y-4 pt-2">
-                  <div className="p-4 rounded-2xl bg-[#061C20] border border-[#00868F]/30 space-y-1">
-                    <div className="font-marker text-lg text-[#00C2B8] uppercase tracking-wide">
+                  <div className="p-4 rounded-2xl bg-[#071E12] border border-[#1B7A43]/30 space-y-1">
+                    <div className="font-marker text-lg text-[#68D37E] uppercase tracking-wide">
                       Academic Excellence
                     </div>
                     <span className="font-script text-base text-emerald-300 font-bold block">
@@ -111,7 +111,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
                     </p>
                   </div>
 
-                  <div className="p-4 rounded-2xl bg-[#061C20] border border-[#00868F]/30 space-y-1">
+                  <div className="p-4 rounded-2xl bg-[#071E12] border border-[#1B7A43]/30 space-y-1">
                     <div className="font-marker text-lg text-[#6DB33F] uppercase tracking-wide">
                       Godly Character
                     </div>
@@ -123,7 +123,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
                     </p>
                   </div>
 
-                  <div className="p-4 rounded-2xl bg-[#061C20] border border-[#00868F]/30 space-y-1">
+                  <div className="p-4 rounded-2xl bg-[#071E12] border border-[#1B7A43]/30 space-y-1">
                     <div className="font-marker text-lg text-amber-300 uppercase tracking-wide">
                       Leadership Development
                     </div>
@@ -145,20 +145,46 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
         </div>
       </section>
 
-      {/* Mission & Goal in Depth */}
-      <section className="py-20 bg-[#F2F8F8] border-y border-[#00868F]/15">
+      {/* Vision, Mission & Goal in Depth */}
+      <section className="py-20 bg-[#F2F9F4] border-y border-[#1B7A43]/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Mission Card */}
-            <div className="bg-white rounded-3xl p-8 sm:p-10 border border-[#00868F]/20 shadow-xs flex flex-col justify-between">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Vision Card */}
+            <div className="bg-white rounded-3xl p-8 sm:p-9 border border-[#1B7A43]/20 shadow-xs flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 rounded-xl bg-[#00868F] text-white flex items-center justify-center mb-6">
+                <div className="w-12 h-12 rounded-xl bg-[#6DB33F] text-white flex items-center justify-center mb-6">
+                  <Sparkles className="w-6 h-6" />
+                </div>
+                <span className="text-xs font-bold uppercase tracking-wider text-[#1B7A43] block mb-2">
+                  Our Vision
+                </span>
+                <h3 className="font-serif text-2xl font-bold text-[#0D2E1B] mb-4">
+                  Epitome of Transformation
+                </h3>
+                <p className="text-[#1B7A43] text-base sm:text-lg leading-relaxed font-serif italic font-semibold mb-6">
+                  "{SCHOOL_INFO.vision}"
+                </p>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Nurturing every learner in Christ-like character and academic mastery so their lives stand as a testimony of purposeful transformation.
+                </p>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-[#6DB33F]">
+                <CheckCircle className="w-4 h-4" />
+                <span>Christ-Centred Transformation</span>
+              </div>
+            </div>
+
+            {/* Mission Card */}
+            <div className="bg-white rounded-3xl p-8 sm:p-9 border border-[#1B7A43]/20 shadow-xs flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-[#1B7A43] text-white flex items-center justify-center mb-6">
                   <Compass className="w-6 h-6" />
                 </div>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#00868F] block mb-2">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#1B7A43] block mb-2">
                   Our Mission
                 </span>
-                <h3 className="font-serif text-2xl font-bold text-[#09262C] mb-4">
+                <h3 className="font-serif text-2xl font-bold text-[#0D2E1B] mb-4">
                   Life Skills & Godly Character
                 </h3>
                 <p className="text-slate-800 text-base sm:text-lg leading-relaxed font-serif italic mb-6">
@@ -176,18 +202,18 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
             </div>
 
             {/* Goal Card */}
-            <div className="bg-white rounded-3xl p-8 sm:p-10 border border-[#00868F]/30 shadow-xs flex flex-col justify-between">
+            <div className="bg-white rounded-3xl p-8 sm:p-10 border border-[#1B7A43]/30 shadow-xs flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 rounded-xl bg-[#09262C] text-[#00C2B8] flex items-center justify-center mb-6">
+                <div className="w-12 h-12 rounded-xl bg-[#0D2E1B] text-[#68D37E] flex items-center justify-center mb-6">
                   <Award className="w-6 h-6" />
                 </div>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#00868F] block mb-2">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#1B7A43] block mb-2">
                   Our Goal
                 </span>
-                <h3 className="font-serif text-2xl font-bold text-[#09262C] mb-4">
+                <h3 className="font-serif text-2xl font-bold text-[#0D2E1B] mb-4">
                   Developing Transformational Leaders
                 </h3>
-                <p className="text-[#09262C] text-base sm:text-lg leading-relaxed font-serif italic mb-6 font-semibold">
+                <p className="text-[#0D2E1B] text-base sm:text-lg leading-relaxed font-serif italic mb-6 font-semibold">
                   "{SCHOOL_INFO.goal}"
                 </p>
                 <p className="text-slate-600 text-sm leading-relaxed">
@@ -195,7 +221,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
                 </p>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-[#00868F]">
+              <div className="mt-8 pt-6 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-[#1B7A43]">
                 <CheckCircle className="w-4 h-4" />
                 <span>God-Fearing &middot; Dependable &middot; Transformational</span>
               </div>
@@ -204,7 +230,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
 
           {/* Authentic Campus Fellowship & Community Spotlight */}
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="group bg-white rounded-3xl overflow-hidden border-2 border-[#00868F]/20 hover:border-[#00868F] shadow-sm hover:shadow-xl transition-all duration-300">
+            <div className="group bg-white rounded-3xl overflow-hidden border-2 border-[#1B7A43]/20 hover:border-[#1B7A43] shadow-sm hover:shadow-xl transition-all duration-300">
               <div className="aspect-[16/10] overflow-hidden bg-slate-100 relative">
                 <img
                   src="https://i.ibb.co/yBWrh5VK/Whats-App-Image-2026-11-11-at-10-41-52-AM-1.jpg"
@@ -213,13 +239,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
                   className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-500 ease-out"
                 />
                 <div className="absolute top-3 left-3">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#09262C]/85 backdrop-blur-xs px-3 py-1 rounded-full border border-white/20">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#0D2E1B]/85 backdrop-blur-xs px-3 py-1 rounded-full border border-white/20">
                     Chapel & Devotion
                   </span>
                 </div>
               </div>
               <div className="p-5">
-                <h4 className="font-serif text-lg font-bold text-[#09262C] group-hover:text-[#00868F] transition-colors">
+                <h4 className="font-serif text-lg font-bold text-[#0D2E1B] group-hover:text-[#1B7A43] transition-colors">
                   Morning Chapel & Worship
                 </h4>
                 <p className="text-xs text-slate-600 mt-1 leading-relaxed">
@@ -228,7 +254,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
               </div>
             </div>
 
-            <div className="group bg-white rounded-3xl overflow-hidden border-2 border-[#00868F]/20 hover:border-[#00868F] shadow-sm hover:shadow-xl transition-all duration-300">
+            <div className="group bg-white rounded-3xl overflow-hidden border-2 border-[#1B7A43]/20 hover:border-[#1B7A43] shadow-sm hover:shadow-xl transition-all duration-300">
               <div className="aspect-[16/10] overflow-hidden bg-slate-100 relative">
                 <img
                   src="https://i.ibb.co/Xr1Tdqxd/Whats-App-Image-2026-11-11-at-10-28-37-AM.jpg"
@@ -237,13 +263,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
                   className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-500 ease-out"
                 />
                 <div className="absolute top-3 left-3">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#09262C]/85 backdrop-blur-xs px-3 py-1 rounded-full border border-white/20">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#0D2E1B]/85 backdrop-blur-xs px-3 py-1 rounded-full border border-white/20">
                     Interactive Learning
                   </span>
                 </div>
               </div>
               <div className="p-5">
-                <h4 className="font-serif text-lg font-bold text-[#09262C] group-hover:text-[#00868F] transition-colors">
+                <h4 className="font-serif text-lg font-bold text-[#0D2E1B] group-hover:text-[#1B7A43] transition-colors">
                   Learning Through Play
                 </h4>
                 <p className="text-xs text-slate-600 mt-1 leading-relaxed">
@@ -260,10 +286,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#00868F]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#1B7A43]">
               Our Educational Philosophy
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#09262C] mt-2">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#0D2E1B] mt-2">
               The Three Core Tenets
             </h2>
             <p className="text-slate-600 text-sm sm:text-base mt-3">
@@ -273,12 +299,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
 
           <div className="space-y-8">
             {/* Pillar 1 */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#F2F8F8] rounded-2xl p-8 sm:p-10 border border-[#00868F]/20">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#F2F9F4] rounded-2xl p-8 sm:p-10 border border-[#1B7A43]/20">
               <div className="lg:col-span-1 flex items-center justify-center">
-                <span className="font-serif text-4xl font-bold text-[#00868F]">01</span>
+                <span className="font-serif text-4xl font-bold text-[#1B7A43]">01</span>
               </div>
               <div className="lg:col-span-7 space-y-3">
-                <h3 className="font-serif text-2xl font-bold text-[#09262C]">
+                <h3 className="font-serif text-2xl font-bold text-[#0D2E1B]">
                   Academic Excellence Through Individualised Learning
                 </h3>
                 <p className="text-slate-800 text-base leading-relaxed">
@@ -289,7 +315,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
                 </p>
               </div>
               <div className="lg:col-span-4 bg-white p-5 rounded-xl border border-slate-200 text-xs text-slate-700 space-y-2">
-                <div className="font-semibold text-[#09262C]">Key Outcomes:</div>
+                <div className="font-semibold text-[#0D2E1B]">Key Outcomes:</div>
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-3.5 h-3.5 text-[#6DB33F]" />
                   <span>No student left behind with undetected gaps</span>
@@ -306,12 +332,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
             </div>
 
             {/* Pillar 2 */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#F2F8F8] rounded-2xl p-8 sm:p-10 border border-[#00868F]/20">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#F2F9F4] rounded-2xl p-8 sm:p-10 border border-[#1B7A43]/20">
               <div className="lg:col-span-1 flex items-center justify-center">
-                <span className="font-serif text-4xl font-bold text-[#00868F]">02</span>
+                <span className="font-serif text-4xl font-bold text-[#1B7A43]">02</span>
               </div>
               <div className="lg:col-span-7 space-y-3">
-                <h3 className="font-serif text-2xl font-bold text-[#09262C]">
+                <h3 className="font-serif text-2xl font-bold text-[#0D2E1B]">
                   Christian Character & Biblical Foundation
                 </h3>
                 <p className="text-slate-800 text-base leading-relaxed">
@@ -322,7 +348,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
                 </p>
               </div>
               <div className="lg:col-span-4 bg-white p-5 rounded-xl border border-slate-200 text-xs text-slate-700 space-y-2">
-                <div className="font-semibold text-[#09262C]">Key Outcomes:</div>
+                <div className="font-semibold text-[#0D2E1B]">Key Outcomes:</div>
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-3.5 h-3.5 text-[#6DB33F]" />
                   <span>Biblical worldview integrated into all subjects</span>
@@ -339,12 +365,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
             </div>
 
             {/* Pillar 3 */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#F2F8F8] rounded-2xl p-8 sm:p-10 border border-[#00868F]/20">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#F2F9F4] rounded-2xl p-8 sm:p-10 border border-[#1B7A43]/20">
               <div className="lg:col-span-1 flex items-center justify-center">
-                <span className="font-serif text-4xl font-bold text-[#00868F]">03</span>
+                <span className="font-serif text-4xl font-bold text-[#1B7A43]">03</span>
               </div>
               <div className="lg:col-span-7 space-y-3">
-                <h3 className="font-serif text-2xl font-bold text-[#09262C]">
+                <h3 className="font-serif text-2xl font-bold text-[#0D2E1B]">
                   Leadership Development for Today and Tomorrow
                 </h3>
                 <p className="text-slate-800 text-base leading-relaxed">
@@ -355,7 +381,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
                 </p>
               </div>
               <div className="lg:col-span-4 bg-white p-5 rounded-xl border border-slate-200 text-xs text-slate-700 space-y-2">
-                <div className="font-semibold text-[#09262C]">Key Outcomes:</div>
+                <div className="font-semibold text-[#0D2E1B]">Key Outcomes:</div>
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-3.5 h-3.5 text-[#6DB33F]" />
                   <span>Dependable and proactive initiative</span>
@@ -375,10 +401,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
       </section>
 
       {/* Leadership Quotes Showcase */}
-      <section className="py-20 bg-[#09262C] text-white">
+      <section className="py-20 bg-[#0D2E1B] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#00C2B8]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#68D37E]">
               Words That Guide Us
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold mt-2">
@@ -388,14 +414,14 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {LEADERSHIP_QUOTES.map((q, idx) => (
-              <div key={idx} className="bg-[#061C20] p-6 rounded-2xl border border-[#00868F]/30 flex flex-col justify-between">
+              <div key={idx} className="bg-[#071E12] p-6 rounded-2xl border border-[#1B7A43]/30 flex flex-col justify-between">
                 <div>
-                  <Quote className="w-6 h-6 text-[#00C2B8]/40 mb-3" />
+                  <Quote className="w-6 h-6 text-[#68D37E]/40 mb-3" />
                   <p className="font-serif text-base sm:text-lg italic text-slate-100 mb-4">
                     "{q.quote}"
                   </p>
                 </div>
-                <div className="text-xs text-[#00C2B8] font-semibold">
+                <div className="text-xs text-[#68D37E] font-semibold">
                   {q.author || q.context}
                 </div>
               </div>
@@ -407,7 +433,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
       {/* Bottom CTA */}
       <section className="py-16 bg-white border-t border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
-          <h2 className="font-serif text-3xl text-[#09262C] font-bold">
+          <h2 className="font-serif text-3xl text-[#0D2E1B] font-bold">
             Visit Our School in Buwate, Kira
           </h2>
           <p className="text-slate-600 text-sm sm:text-base max-w-xl mx-auto">
@@ -416,7 +442,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
           <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
             <button
               onClick={onOpenEnquiry}
-              className="px-6 py-3 rounded-lg text-sm font-semibold bg-[#00868F] hover:bg-[#00747C] text-white shadow-sm transition-colors cursor-pointer"
+              className="px-6 py-3 rounded-lg text-sm font-semibold bg-[#1B7A43] hover:bg-[#156334] text-white shadow-sm transition-colors cursor-pointer"
             >
               Make an Enquiry
             </button>
@@ -428,7 +454,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
               className="px-6 py-3 rounded-lg text-sm font-semibold border border-slate-300 hover:bg-slate-50 text-slate-800 transition-colors cursor-pointer inline-flex items-center gap-2"
             >
               <span>Explore Academics & ACE</span>
-              <ArrowRight className="w-4 h-4 text-[#00868F]" />
+              <ArrowRight className="w-4 h-4 text-[#1B7A43]" />
             </button>
           </div>
         </div>

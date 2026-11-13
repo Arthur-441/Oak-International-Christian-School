@@ -4,7 +4,7 @@ import {
   SCHOOL_INFO,
   FLIER_PILLARS,
   CORE_PHILOSOPHY,
-  LEADERSHIP_QUOTES,
+  CORE_VALUES,
   EXTRACURRICULAR_ACTIVITIES,
   DISCIPLINE_SHOWCASES,
   CURRICULUM_PARTNERS,
@@ -18,7 +18,7 @@ import {
   BookOpen,
   Shield,
   GraduationCap,
-  Quote,
+  Heart,
   CheckCircle,
   FileText,
   Compass,
@@ -45,12 +45,12 @@ export const HomePage: React.FC<HomePageProps> = ({
 }) => {
   return (
     <div className="w-full">
-      {/* 1. HERO SECTION - Flier Teal & Leaf Green Color Scheme (Pure Card & Graphic Dignity, No Stock Photos) */}
-      <section className="relative bg-gradient-to-br from-[#061C20] via-[#09262C] to-[#005C66] text-white py-20 lg:py-28 overflow-hidden">
+      {/* 1. HERO SECTION - Forest Green & Oak Leaf Green Color Scheme */}
+      <section className="relative bg-gradient-to-br from-[#071E12] via-[#0D2E1B] to-[#14532D] text-white py-20 lg:py-28 overflow-hidden">
         {/* Subtle Geometric Background Waves matching Flier Style */}
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <circle cx="10" cy="10" r="40" fill="#00868F" />
+            <circle cx="10" cy="10" r="40" fill="#1B7A43" />
             <circle cx="90" cy="80" r="50" fill="#6DB33F" />
           </svg>
         </div>
@@ -63,7 +63,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               <div className="flex items-center gap-3">
                 <SchoolCrest size="md" variant="dark" />
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#00C2B8] block">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#68D37E] block">
                     Oak International Christian School
                   </span>
                   <span className="text-xs text-slate-300 font-serif italic">
@@ -75,7 +75,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               {/* Main Heading */}
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.12] text-balance">
                 Raising Tomorrow's Leaders Through{' '}
-                <span className="text-[#00C2B8]">Christ-Centred Education.</span>
+                <span className="text-[#68D37E]">Christ-Centred Education.</span>
               </h1>
 
               {/* Subheading */}
@@ -89,7 +89,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               <div className="flex flex-wrap items-center gap-3.5 pt-2">
                 <button
                   onClick={onOpenEnquiry}
-                  className="px-7 py-3.5 rounded-xl text-sm sm:text-base font-bold text-white bg-[#00868F] hover:bg-[#00747C] shadow-lg shadow-[#00868F]/25 transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-98"
+                  className="px-7 py-3.5 rounded-xl text-sm sm:text-base font-bold text-white bg-[#1B7A43] hover:bg-[#156334] shadow-lg shadow-[#1B7A43]/25 transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-98"
                 >
                   <span>Enrol Now</span>
                   <ArrowRight className="w-4 h-4" />
@@ -127,21 +127,21 @@ export const HomePage: React.FC<HomePageProps> = ({
 
             {/* Right Card: Modern Flier Feature Showcase Card (No Stock Photos) */}
             <div className="lg:col-span-5">
-              <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border-4 border-[#00868F]/30 text-slate-800 space-y-6 relative overflow-hidden">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border-4 border-[#1B7A43]/30 text-slate-800 space-y-6 relative overflow-hidden">
                 {/* Decorative Top Accent */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#00868F]/10 rounded-bl-full pointer-events-none" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#1B7A43]/10 rounded-bl-full pointer-events-none" />
 
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-widest text-[#00868F] block">
+                    <span className="text-[11px] font-bold uppercase tracking-widest text-[#1B7A43] block">
                       Official Curriculum
                     </span>
-                    <h3 className="font-serif text-2xl font-bold text-[#09262C]">
+                    <h3 className="font-serif text-2xl font-bold text-[#0D2E1B]">
                       ACE Curriculum
                     </h3>
                   </div>
 
-                  <div className="w-14 h-14 rounded-full bg-[#F2F8F8] p-1.5 border-2 border-[#00868F] flex items-center justify-center shrink-0 shadow-sm">
+                  <div className="w-14 h-14 rounded-full bg-[#F2F9F4] p-1.5 border-2 border-[#1B7A43] flex items-center justify-center shrink-0 shadow-sm">
                     <img
                       src="/assets/aistudio/oak_school_logo_transparent.png"
                       alt="Oak International Badge"
@@ -155,17 +155,17 @@ export const HomePage: React.FC<HomePageProps> = ({
                   {FLIER_PILLARS.map((p, i) => (
                     <div
                       key={i}
-                      className="p-4 rounded-2xl bg-gradient-to-r from-[#F2F8F8] to-white border border-[#00868F]/25 hover:border-[#00868F] transition-all shadow-2xs group"
+                      className="p-4 rounded-2xl bg-gradient-to-r from-[#F2F9F4] to-white border border-[#1B7A43]/25 hover:border-[#1B7A43] transition-all shadow-2xs group"
                     >
                       <div className="flex items-start gap-3">
-                        <div className="w-7 h-7 rounded-lg bg-[#00868F] text-white flex items-center justify-center shrink-0 font-bold text-xs mt-0.5 group-hover:bg-[#6DB33F] transition-colors">
+                        <div className="w-7 h-7 rounded-lg bg-[#1B7A43] text-white flex items-center justify-center shrink-0 font-bold text-xs mt-0.5 group-hover:bg-[#6DB33F] transition-colors">
                           <Check className="w-4 h-4" />
                         </div>
                         <div className="flex-1">
-                          <div className="font-marker text-lg sm:text-xl text-[#09262C] uppercase tracking-wide leading-tight group-hover:text-[#00868F] transition-colors">
+                          <div className="font-marker text-lg sm:text-xl text-[#0D2E1B] uppercase tracking-wide leading-tight group-hover:text-[#1B7A43] transition-colors">
                             {p.title}
                           </div>
-                          <div className="font-script text-base text-[#00868F] font-bold leading-tight mt-0.5">
+                          <div className="font-script text-base text-[#1B7A43] font-bold leading-tight mt-0.5">
                             {p.highlight}
                           </div>
                           <p className="text-xs text-slate-600 leading-snug mt-1">
@@ -178,15 +178,15 @@ export const HomePage: React.FC<HomePageProps> = ({
                 </div>
 
                 {/* Call / WhatsApp Banner using uploaded WhatsApp button */}
-                <div className="p-4 rounded-2xl bg-[#09262C] text-white space-y-3 border border-[#00868F]/30 shadow-md">
+                <div className="p-4 rounded-2xl bg-[#0D2E1B] text-white space-y-3 border border-[#1B7A43]/30 shadow-md">
                   <div className="flex items-center justify-between gap-2">
                     <div>
-                      <span className="text-[10px] uppercase tracking-widest text-[#00C2B8] font-bold block">
+                      <span className="text-[10px] uppercase tracking-widest text-[#68D37E] font-bold block">
                         Admissions Desk &middot; Buwate
                       </span>
                       <a
                         href={SCHOOL_INFO.phoneTel}
-                        className="font-serif text-lg font-bold text-white hover:text-[#00C2B8] transition-colors"
+                        className="font-serif text-lg font-bold text-white hover:text-[#68D37E] transition-colors"
                       >
                         {SCHOOL_INFO.phone}
                       </a>
@@ -206,7 +206,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                       onNavigate('academics');
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }}
-                    className="text-[#00868F] font-bold hover:underline cursor-pointer"
+                    className="text-[#1B7A43] font-bold hover:underline cursor-pointer"
                   >
                     View Academic Stages &rarr;
                   </button>
@@ -218,7 +218,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* 2. ADMISSIONS BULLETIN STRIP */}
-      <section className="bg-[#00747C] py-3.5 px-4 text-white text-xs">
+      <section className="bg-[#156334] py-3.5 px-4 text-white text-xs">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-center md:text-left">
           <div className="flex items-center gap-2.5">
             <span className="font-bold uppercase tracking-wider text-slate-900 bg-white px-2 py-0.5 rounded text-[11px]">
@@ -232,7 +232,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           <div className="flex items-center gap-4 text-xs">
             <button
               onClick={onOpenEnquiry}
-              className="text-[#E4F1F2] hover:text-white font-semibold underline cursor-pointer"
+              className="text-[#E2F3E7] hover:text-white font-semibold underline cursor-pointer"
             >
               Schedule Diagnostic Test
             </button>
@@ -254,13 +254,13 @@ export const HomePage: React.FC<HomePageProps> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16">
             <div className="lg:col-span-7 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F2F8F8] border border-[#00868F]/30 text-[#00868F] text-xs font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F2F9F4] border border-[#1B7A43]/30 text-[#1B7A43] text-xs font-bold uppercase tracking-wider">
                 <span>Welcome to Oak International Christian School</span>
               </div>
-              <h2 className="font-serif text-3xl sm:text-4xl text-[#09262C] font-bold leading-tight">
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#0D2E1B] font-bold leading-tight">
                 An Educational Experience That Nurtures an Outstanding Leader
               </h2>
-              <div className="w-16 h-1 bg-[#00868F] rounded-full" />
+              <div className="w-16 h-1 bg-[#1B7A43] rounded-full" />
               <p className="text-slate-700 text-base sm:text-lg leading-relaxed pt-2">
                 {SCHOOL_INFO.welcomeIntro}
               </p>
@@ -270,7 +270,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             </div>
 
             <div className="lg:col-span-5">
-              <div className="relative rounded-3xl overflow-hidden border-2 border-[#00868F]/25 shadow-xl group">
+              <div className="relative rounded-3xl overflow-hidden border-2 border-[#1B7A43]/25 shadow-xl group">
                 <div className="aspect-[16/11] overflow-hidden bg-slate-100">
                   <img
                     src="https://i.ibb.co/x8Rwk7LM/Whats-App-Image-2026-11-11-at-10-41-52-AM-2.jpg"
@@ -278,14 +278,6 @@ export const HomePage: React.FC<HomePageProps> = ({
                     loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-500 ease-out"
                   />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#09262C]/85 via-[#09262C]/20 to-transparent flex flex-col justify-end p-5 text-white">
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-[#00C2B8] block mb-1">
-                    Buwate Campus Life
-                  </span>
-                  <p className="text-sm font-semibold text-white leading-snug">
-                    Oak International Christian Community & Fellowship
-                  </p>
                 </div>
               </div>
             </div>
@@ -308,26 +300,26 @@ export const HomePage: React.FC<HomePageProps> = ({
               return (
                 <div
                   key={item.id}
-                  className="bg-white rounded-3xl p-8 border-2 border-[#00868F]/20 hover:border-[#00868F] hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden group"
+                  className="bg-white rounded-3xl p-8 border-2 border-[#1B7A43]/20 hover:border-[#1B7A43] hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden group"
                 >
                   {/* Subtle Top Wave/Corner Accent */}
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-[#F2F8F8] rounded-bl-full pointer-events-none group-hover:bg-[#E5F1F2] transition-colors" />
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-[#F2F9F4] rounded-bl-full pointer-events-none group-hover:bg-[#E2F3E7] transition-colors" />
 
                   <div className="relative z-10">
                     <div className="flex items-center justify-between mb-4">
-                      <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#00868F] to-[#005C66] text-white flex items-center justify-center font-bold text-sm shadow-sm group-hover:scale-105 transition-transform">
+                      <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#1B7A43] to-[#14532D] text-white flex items-center justify-center font-bold text-sm shadow-sm group-hover:scale-105 transition-transform">
                         0{idx + 1}
                       </div>
-                      <span className="font-script text-lg font-bold text-[#00868F]">
+                      <span className="font-script text-lg font-bold text-[#1B7A43]">
                         {scriptTags[idx]}
                       </span>
                     </div>
 
-                    <span className="font-script text-2xl text-[#00868F] font-bold block mb-1 tracking-wide">
+                    <span className="font-script text-2xl text-[#1B7A43] font-bold block mb-1 tracking-wide">
                       {scriptSubtitles[idx]}
                     </span>
 
-                    <h3 className="font-serif text-2xl font-bold text-[#09262C] mb-3 group-hover:text-[#00868F] transition-colors">
+                    <h3 className="font-serif text-2xl font-bold text-[#0D2E1B] mb-3 group-hover:text-[#1B7A43] transition-colors">
                       {item.title}
                     </h3>
 
@@ -336,7 +328,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                     </p>
                   </div>
 
-                  <div className="relative z-10 pt-4 border-t border-[#00868F]/15 flex items-center gap-2 text-xs text-[#00868F] font-semibold bg-[#F2F8F8]/60 p-3 rounded-xl">
+                  <div className="relative z-10 pt-4 border-t border-[#1B7A43]/15 flex items-center gap-2 text-xs text-[#1B7A43] font-semibold bg-[#F2F9F4]/60 p-3 rounded-xl">
                     <CheckCircle className="w-4 h-4 text-[#6DB33F] shrink-0" />
                     <span>{item.principle}</span>
                   </div>
@@ -347,18 +339,42 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* 4. MISSION & GOAL SECTION - Replaced Photo with Editorial Statement Card */}
-      <section className="py-20 bg-[#F2F8F8] border-y border-[#00868F]/15">
+      {/* 4. VISION, MISSION & GOAL SECTION */}
+      <section className="py-20 bg-[#F2F9F4] border-y border-[#1B7A43]/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-            {/* Left Card: Mission */}
-            <div className="lg:col-span-6 bg-white rounded-3xl p-8 sm:p-10 border border-[#00868F]/20 shadow-xs flex flex-col justify-between">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+            {/* Card 1: Vision */}
+            <div className="bg-white rounded-3xl p-8 sm:p-9 border border-[#1B7A43]/20 shadow-xs flex flex-col justify-between">
               <div className="space-y-4">
-                <div className="flex items-center gap-2.5 text-[#00868F] text-xs font-bold uppercase tracking-wider">
+                <div className="flex items-center gap-2.5 text-[#1B7A43] text-xs font-bold uppercase tracking-wider">
+                  <Sparkles className="w-4 h-4" />
+                  <span>Our Vision</span>
+                </div>
+                <h3 className="font-serif text-2xl font-bold text-[#0D2E1B]">
+                  Epitome of Transformation
+                </h3>
+                <p className="font-serif text-xl text-[#1B7A43] italic font-semibold leading-relaxed pt-2">
+                  "{SCHOOL_INFO.vision}"
+                </p>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Nurturing every learner in Christ-like character and academic mastery so their lives stand as a testimony of purposeful transformation.
+                </p>
+              </div>
+
+              <div className="pt-6 mt-6 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-[#6DB33F]">
+                <CheckCircle className="w-4 h-4" />
+                <span>Christ-Centred Transformation</span>
+              </div>
+            </div>
+
+            {/* Card 2: Mission */}
+            <div className="bg-white rounded-3xl p-8 sm:p-9 border border-[#1B7A43]/20 shadow-xs flex flex-col justify-between">
+              <div className="space-y-4">
+                <div className="flex items-center gap-2.5 text-[#1B7A43] text-xs font-bold uppercase tracking-wider">
                   <Compass className="w-4 h-4" />
                   <span>Our Mission</span>
                 </div>
-                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#09262C]">
+                <h3 className="font-serif text-2xl font-bold text-[#0D2E1B]">
                   Equipping Each Learner
                 </h3>
                 <p className="font-serif text-lg text-slate-800 italic leading-relaxed pt-2">
@@ -375,17 +391,17 @@ export const HomePage: React.FC<HomePageProps> = ({
               </div>
             </div>
 
-            {/* Right Card: Goal & Leadership Vision */}
-            <div className="lg:col-span-6 bg-gradient-to-br from-[#061C20] to-[#005C66] text-white rounded-3xl p-8 sm:p-10 shadow-md flex flex-col justify-between">
+            {/* Card 3: Goal & Leadership Vision */}
+            <div className="bg-gradient-to-br from-[#071E12] to-[#14532D] text-white rounded-3xl p-8 sm:p-9 shadow-md flex flex-col justify-between">
               <div className="space-y-4">
-                <div className="flex items-center gap-2.5 text-[#00C2B8] text-xs font-bold uppercase tracking-wider">
+                <div className="flex items-center gap-2.5 text-[#68D37E] text-xs font-bold uppercase tracking-wider">
                   <Award className="w-4 h-4" />
                   <span>Our Goal</span>
                 </div>
-                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white">
+                <h3 className="font-serif text-2xl font-bold text-white">
                   Developing Transformational Leaders
                 </h3>
-                <p className="font-serif text-xl sm:text-2xl text-[#E4F1F2] font-semibold leading-relaxed pt-2">
+                <p className="font-serif text-xl text-[#E2F3E7] font-semibold leading-relaxed pt-2">
                   "{SCHOOL_INFO.goal}"
                 </p>
                 <p className="text-slate-200 text-sm leading-relaxed">
@@ -402,41 +418,56 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* 5. LEADERSHIP QUOTES */}
-      <section className="py-20 bg-[#09262C] text-white">
+      {/* 5. GUIDING CONVICTIONS - OUR CORE VALUES */}
+      <section className="py-20 bg-[#0D2E1B] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#00C2B8]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#68D37E]">
               Guiding Convictions
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold mt-2 text-white">
-              Leadership Quotes
+              Our Core Values
             </h2>
             <p className="text-slate-300 text-sm mt-3">
-              Words that guide our supervisors, students, and school culture every day.
+              The Biblical virtues of Godliness, Integrity, Care and Excellence that anchor our daily life and learning at Oak International.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {LEADERSHIP_QUOTES.map((item, idx) => (
-              <div
-                key={idx}
-                className="bg-[#061C20]/80 rounded-2xl p-7 border border-[#00868F]/30 flex flex-col justify-between hover:border-[#00868F] transition-colors"
-              >
-                <div>
-                  <Quote className="w-6 h-6 text-[#00C2B8]/40 mb-4" />
-                  <p className="font-serif text-lg text-slate-100 italic leading-snug mb-4">
-                    "{item.quote}"
-                  </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {CORE_VALUES.map((val) => {
+              const IconComp =
+                val.title === 'Godliness'
+                  ? Sparkles
+                  : val.title === 'Integrity'
+                  ? Shield
+                  : val.title === 'Care'
+                  ? Heart
+                  : Award;
+              return (
+                <div
+                  key={val.id}
+                  className="bg-[#071E12]/80 rounded-2xl p-7 border border-[#1B7A43]/30 flex flex-col justify-between hover:border-[#68D37E]/60 transition-colors"
+                >
+                  <div>
+                    <div className="w-11 h-11 rounded-xl bg-[#1B7A43]/30 border border-[#68D37E]/30 text-[#68D37E] flex items-center justify-center mb-5">
+                      <IconComp className="w-5 h-5" />
+                    </div>
+                    <h3 className="font-serif text-2xl font-bold text-white mb-3">
+                      {val.title}
+                    </h3>
+                    <p className="text-slate-200 text-sm leading-relaxed mb-5">
+                      {val.description}
+                    </p>
+                  </div>
+                  <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                    <span className="font-semibold text-[#68D37E]">
+                      {val.tag}
+                    </span>
+                    <span className="text-[11px] text-slate-400 uppercase">Oak Value</span>
+                  </div>
                 </div>
-                <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
-                  <span className="font-medium text-[#00C2B8]">
-                    {item.author || item.context}
-                  </span>
-                  <span className="text-[11px] text-slate-400 uppercase">Oak Ethos</span>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -446,10 +477,10 @@ export const HomePage: React.FC<HomePageProps> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#00868F] block">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#1B7A43] block">
                 Academics & ACE Curriculum
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl text-[#09262C] font-bold leading-tight">
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#0D2E1B] font-bold leading-tight">
                 An Individualised Approach to Learning
               </h2>
               <p className="text-slate-700 text-base leading-relaxed">
@@ -457,19 +488,19 @@ export const HomePage: React.FC<HomePageProps> = ({
               </p>
 
               <div className="space-y-3 pt-2">
-                <div className="p-3 rounded-lg bg-[#F2F8F8] border border-[#00868F]/20 flex items-center gap-3 text-xs sm:text-sm text-slate-800">
+                <div className="p-3 rounded-lg bg-[#F2F9F4] border border-[#1B7A43]/20 flex items-center gap-3 text-xs sm:text-sm text-slate-800">
                   <CheckCircle className="w-4 h-4 text-[#6DB33F] shrink-0" />
                   <span><strong>Step by Step (3 years):</strong> Introduction to school environment and independence</span>
                 </div>
-                <div className="p-3 rounded-lg bg-[#F2F8F8] border border-[#00868F]/20 flex items-center gap-3 text-xs sm:text-sm text-slate-800">
+                <div className="p-3 rounded-lg bg-[#F2F9F4] border border-[#1B7A43]/20 flex items-center gap-3 text-xs sm:text-sm text-slate-800">
                   <CheckCircle className="w-4 h-4 text-[#6DB33F] shrink-0" />
                   <span><strong>Preschool (4–5 years):</strong> Concepts preparing children to "be ready to read"</span>
                 </div>
-                <div className="p-3 rounded-lg bg-[#F2F8F8] border border-[#00868F]/20 flex items-center gap-3 text-xs sm:text-sm text-slate-800">
+                <div className="p-3 rounded-lg bg-[#F2F9F4] border border-[#1B7A43]/20 flex items-center gap-3 text-xs sm:text-sm text-slate-800">
                   <CheckCircle className="w-4 h-4 text-[#6DB33F] shrink-0" />
                   <span><strong>ABC's with ACE and Christi (5–6 years):</strong> Multisensory phonetics program</span>
                 </div>
-                <div className="p-3 rounded-lg bg-[#F2F8F8] border border-[#00868F]/20 flex items-center gap-3 text-xs sm:text-sm text-slate-800">
+                <div className="p-3 rounded-lg bg-[#F2F9F4] border border-[#1B7A43]/20 flex items-center gap-3 text-xs sm:text-sm text-slate-800">
                   <CheckCircle className="w-4 h-4 text-[#6DB33F] shrink-0" />
                   <span><strong>Grade 1–12:</strong> Self-paced mastery leading to universities in Uganda and abroad</span>
                 </div>
@@ -481,7 +512,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                     onNavigate('academics');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className="px-6 py-3 bg-[#00868F] hover:bg-[#00747C] text-white text-xs sm:text-sm font-semibold rounded-lg shadow-sm transition-colors inline-flex items-center gap-2 cursor-pointer"
+                  className="px-6 py-3 bg-[#1B7A43] hover:bg-[#156334] text-white text-xs sm:text-sm font-semibold rounded-lg shadow-sm transition-colors inline-flex items-center gap-2 cursor-pointer"
                 >
                   <span>Explore Academic Pathway</span>
                   <ArrowRight className="w-4 h-4" />
@@ -491,14 +522,14 @@ export const HomePage: React.FC<HomePageProps> = ({
 
             {/* Right Diagnostic Test Card */}
             <div className="lg:col-span-6">
-              <div className="bg-[#09262C] text-white rounded-3xl p-8 sm:p-10 border border-[#00868F]/30 shadow-xl space-y-6">
+              <div className="bg-[#0D2E1B] text-white rounded-3xl p-8 sm:p-10 border border-[#1B7A43]/30 shadow-xl space-y-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-[#00868F] text-white flex items-center justify-center font-bold">
+                  <div className="w-10 h-10 rounded-lg bg-[#1B7A43] text-white flex items-center justify-center font-bold">
                     <GraduationCap className="w-5 h-5" />
                   </div>
                   <div>
                     <h3 className="font-serif font-bold text-xl text-white">Diagnostic Testing</h3>
-                    <p className="text-xs text-[#00C2B8]">Personalised Placement</p>
+                    <p className="text-xs text-[#68D37E]">Personalised Placement</p>
                   </div>
                 </div>
 
@@ -524,9 +555,9 @@ export const HomePage: React.FC<HomePageProps> = ({
                 <div className="pt-2">
                   <button
                     onClick={onOpenEnquiry}
-                    className="w-full py-3 bg-[#00868F] hover:bg-[#00747C] text-white font-semibold text-xs sm:text-sm rounded-lg shadow-sm transition-colors cursor-pointer text-center"
+                    className="w-full py-3 bg-[#1B7A43] hover:bg-[#156334] text-white font-semibold text-xs sm:text-sm rounded-lg shadow-sm transition-colors cursor-pointer text-center"
                   >
-                    Ask About Diagnostic Testing
+                    Have any questions for us?
                   </button>
                 </div>
               </div>
@@ -536,15 +567,15 @@ export const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* GRADUATION CELEBRATIONS SPOTLIGHT - Real Students in Caps & Gowns */}
-      <section className="py-20 bg-[#F2F8F8] border-t border-[#00868F]/15">
+      <section className="py-20 bg-[#F2F9F4] border-t border-[#1B7A43]/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-[#00868F]/25 text-[#00868F] text-xs font-bold uppercase tracking-wider mb-3 shadow-2xs">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-[#1B7A43]/25 text-[#1B7A43] text-xs font-bold uppercase tracking-wider mb-3 shadow-2xs">
                 <GraduationCap className="w-4 h-4 text-[#6DB33F]" />
                 <span>Student Milestones & Celebrations</span>
               </div>
-              <h2 className="font-serif text-3xl sm:text-4xl text-[#09262C] font-bold">
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#0D2E1B] font-bold">
                 Graduation at Oak International
               </h2>
               <p className="text-slate-600 text-sm mt-2 max-w-xl">
@@ -557,7 +588,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 onNavigate('gallery');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="px-5 py-2.5 bg-[#00868F] hover:bg-[#00747C] text-white text-xs sm:text-sm font-bold rounded-xl shadow-sm transition-colors inline-flex items-center gap-2 cursor-pointer self-start md:self-auto"
+              className="px-5 py-2.5 bg-[#1B7A43] hover:bg-[#156334] text-white text-xs sm:text-sm font-bold rounded-xl shadow-sm transition-colors inline-flex items-center gap-2 cursor-pointer self-start md:self-auto"
             >
               <span>View All Graduation Ceremonies</span>
               <ArrowRight className="w-4 h-4" />
@@ -572,7 +603,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                   onNavigate('gallery');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="bg-white rounded-3xl overflow-hidden border-2 border-[#00868F]/20 hover:border-[#00868F] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+                className="bg-white rounded-3xl overflow-hidden border-2 border-[#1B7A43]/20 hover:border-[#1B7A43] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer"
               >
                 <div className="relative aspect-4/3 overflow-hidden bg-slate-100">
                   <img
@@ -587,12 +618,12 @@ export const HomePage: React.FC<HomePageProps> = ({
                     className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-500 ease-out"
                   />
                   <div className="absolute top-3 left-3">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#09262C]/85 backdrop-blur-xs px-2.5 py-1 rounded-full border border-white/20">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#0D2E1B]/85 backdrop-blur-xs px-2.5 py-1 rounded-full border border-white/20">
                       {photo.category}
                     </span>
                   </div>
                   <div className="absolute top-3 right-3">
-                    <span className="text-[10px] font-bold text-white bg-[#00868F]/90 backdrop-blur-xs px-2 py-0.5 rounded-full">
+                    <span className="text-[10px] font-bold text-white bg-[#1B7A43]/90 backdrop-blur-xs px-2 py-0.5 rounded-full">
                       {photo.year}
                     </span>
                   </div>
@@ -600,7 +631,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="font-serif text-lg font-bold text-[#09262C] group-hover:text-[#00868F] transition-colors mb-2">
+                    <h3 className="font-serif text-lg font-bold text-[#0D2E1B] group-hover:text-[#1B7A43] transition-colors mb-2">
                       {photo.title}
                     </h3>
                     <p className="text-xs text-slate-600 leading-relaxed">
@@ -608,7 +639,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                     </p>
                   </div>
 
-                  <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs text-[#00868F] font-bold">
+                  <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs text-[#1B7A43] font-bold">
                     <span>Explore Graduation &rarr;</span>
                     <span className="text-[11px] text-slate-400 font-normal">Buwate Campus</span>
                   </div>
@@ -620,14 +651,14 @@ export const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* 7. EXTRACURRICULAR ACTIVITIES PREVIEW - Clean Activity Cards (No Stock Photos) */}
-      <section className="py-20 bg-white border-t border-[#00868F]/15">
+      <section className="py-20 bg-white border-t border-[#1B7A43]/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-[#00868F] block mb-2">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#1B7A43] block mb-2">
                 Learning Beyond the Classroom
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl text-[#09262C] font-bold">
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#0D2E1B] font-bold">
                 Extracurricular Clubs & Activities
               </h2>
               <p className="text-slate-600 text-sm mt-2 max-w-xl">
@@ -640,7 +671,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 onNavigate('activities');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="text-xs sm:text-sm font-semibold text-[#00868F] hover:underline transition-colors inline-flex items-center gap-1.5 cursor-pointer"
+              className="text-xs sm:text-sm font-semibold text-[#1B7A43] hover:underline transition-colors inline-flex items-center gap-1.5 cursor-pointer"
             >
               <span>View All 8 Activities</span>
               <ArrowRight className="w-4 h-4" />
@@ -655,17 +686,17 @@ export const HomePage: React.FC<HomePageProps> = ({
                   onNavigate('activities');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="bg-white rounded-2xl p-6 border border-[#00868F]/20 hover:border-[#00868F] hover:shadow-md transition-all cursor-pointer flex flex-col justify-between"
+                className="bg-white rounded-2xl p-6 border border-[#1B7A43]/20 hover:border-[#1B7A43] hover:shadow-md transition-all cursor-pointer flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#00868F] bg-[#F2F8F8] px-2.5 py-1 rounded-md border border-[#00868F]/20">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#1B7A43] bg-[#F2F9F4] px-2.5 py-1 rounded-md border border-[#1B7A43]/20">
                       {act.category}
                     </span>
                     <span className="text-xs text-slate-400">Oak Club</span>
                   </div>
 
-                  <h3 className="font-serif text-xl font-bold text-[#09262C] mb-2">
+                  <h3 className="font-serif text-xl font-bold text-[#0D2E1B] mb-2">
                     {act.title}
                   </h3>
 
@@ -675,7 +706,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 </div>
 
                 <div className="pt-3 border-t border-slate-100 text-xs text-slate-700">
-                  <strong className="block text-[#09262C] text-[11px] uppercase tracking-wide mb-0.5">
+                  <strong className="block text-[#0D2E1B] text-[11px] uppercase tracking-wide mb-0.5">
                     Value Nurtured:
                   </strong>
                   <span className="text-slate-600">{act.benefits}</span>
@@ -690,10 +721,10 @@ export const HomePage: React.FC<HomePageProps> = ({
       <section className="py-20 bg-white border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#00868F]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#1B7A43]">
               Admissions Procedure
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#09262C] mt-2">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#0D2E1B] mt-2">
               How to Enrol Your Child
             </h2>
             <p className="text-slate-600 text-sm sm:text-base mt-3">
@@ -703,11 +734,11 @@ export const HomePage: React.FC<HomePageProps> = ({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {ADMISSION_STEPS.map((s) => (
-              <div key={s.step} className="bg-[#F2F8F8] p-6 rounded-2xl border border-[#00868F]/20">
-                <span className="font-mono text-2xl font-bold text-[#00868F] block mb-2">
+              <div key={s.step} className="bg-[#F2F9F4] p-6 rounded-2xl border border-[#1B7A43]/20">
+                <span className="font-mono text-2xl font-bold text-[#1B7A43] block mb-2">
                   {s.step}
                 </span>
-                <h3 className="font-serif font-bold text-base text-[#09262C] mb-2">
+                <h3 className="font-serif font-bold text-base text-[#0D2E1B] mb-2">
                   {s.title}
                 </h3>
                 <p className="text-slate-600 text-xs leading-relaxed">
@@ -718,13 +749,13 @@ export const HomePage: React.FC<HomePageProps> = ({
           </div>
 
           {/* Official Enrollment Form PDF Download Banner */}
-          <div className="mt-10 bg-gradient-to-r from-[#09262C] to-[#005C66] rounded-3xl p-6 sm:p-8 text-white border border-[#00868F]/30 shadow-lg flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div className="mt-10 bg-gradient-to-r from-[#0D2E1B] to-[#14532D] rounded-3xl p-6 sm:p-8 text-white border border-[#1B7A43]/30 shadow-lg flex flex-col lg:flex-row lg:items-center justify-between gap-6">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center shrink-0 text-[#00C2B8]">
+              <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center shrink-0 text-[#68D37E]">
                 <FileText className="w-6 h-6" />
               </div>
               <div className="space-y-1">
-                <span className="text-[11px] font-bold uppercase tracking-widest text-[#00C2B8] block">
+                <span className="text-[11px] font-bold uppercase tracking-widest text-[#68D37E] block">
                   Official Admissions Document &middot; 7-Page PDF
                 </span>
                 <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">
@@ -742,24 +773,24 @@ export const HomePage: React.FC<HomePageProps> = ({
                   onClick={onOpenEnrollmentForm}
                   className="px-5 py-3 bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-semibold rounded-xl border border-white/25 transition-colors inline-flex items-center gap-2 cursor-pointer"
                 >
-                  <Eye className="w-4 h-4 text-[#00C2B8]" />
+                  <Eye className="w-4 h-4 text-[#68D37E]" />
                   <span>Preview Form</span>
                 </button>
               )}
               <a
                 href={SCHOOL_INFO.enrollmentFormPdfUrl}
                 download="Oak_International_Enrollment_Form.pdf"
-                className="px-5 py-3 bg-[#00868F] hover:bg-[#00747C] text-white text-xs sm:text-sm font-bold rounded-xl shadow-md transition-colors inline-flex items-center gap-2 cursor-pointer"
+                className="px-5 py-3 bg-[#1B7A43] hover:bg-[#156334] text-white text-xs sm:text-sm font-bold rounded-xl shadow-md transition-colors inline-flex items-center gap-2 cursor-pointer"
               >
                 <Download className="w-4 h-4" />
                 <span>Download Enrollment PDF</span>
               </a>
               <button
                 onClick={onOpenEnquiry}
-                className="px-5 py-3 bg-white hover:bg-slate-100 text-[#09262C] text-xs sm:text-sm font-bold rounded-xl shadow-sm transition-colors inline-flex items-center gap-2 cursor-pointer"
+                className="px-5 py-3 bg-white hover:bg-slate-100 text-[#0D2E1B] text-xs sm:text-sm font-bold rounded-xl shadow-sm transition-colors inline-flex items-center gap-2 cursor-pointer"
               >
                 <span>Enquire Online</span>
-                <ArrowRight className="w-4 h-4 text-[#00868F]" />
+                <ArrowRight className="w-4 h-4 text-[#1B7A43]" />
               </button>
             </div>
           </div>
@@ -767,13 +798,13 @@ export const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* 9. CURRICULUM PARTNERS STRIP - Genuine Partner Logos */}
-      <section className="py-16 bg-[#F2F8F8] border-y border-[#00868F]/15">
+      <section className="py-16 bg-[#F2F9F4] border-y border-[#1B7A43]/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#00868F]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#1B7A43]">
               Accreditation & Partners
             </span>
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#09262C] mt-1">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0D2E1B] mt-1">
               Curriculum Partners & Global Qualifications
             </h2>
             <p className="text-slate-600 text-xs sm:text-sm mt-2">
@@ -785,11 +816,11 @@ export const HomePage: React.FC<HomePageProps> = ({
             {CURRICULUM_PARTNERS.map((partner) => (
               <div
                 key={partner.short}
-                className="bg-white rounded-2xl p-6 border-2 border-[#00868F]/20 hover:border-[#00868F] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between text-center group"
+                className="bg-white rounded-2xl p-6 border-2 border-[#1B7A43]/20 hover:border-[#1B7A43] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between text-center group"
               >
                 <div>
                   {/* Clean Logo Container */}
-                  <div className="h-20 w-full flex items-center justify-center p-3 mb-4 rounded-xl bg-slate-50/60 border border-slate-100 group-hover:bg-[#F2F8F8] transition-colors">
+                  <div className="h-20 w-full flex items-center justify-center p-3 mb-4 rounded-xl bg-slate-50/60 border border-slate-100 group-hover:bg-[#F2F9F4] transition-colors">
                     <img
                       src={partner.logo}
                       alt={partner.name}
@@ -798,7 +829,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                     />
                   </div>
 
-                  <h3 className="font-serif font-bold text-lg text-[#09262C] mb-1 group-hover:text-[#00868F] transition-colors">
+                  <h3 className="font-serif font-bold text-lg text-[#0D2E1B] mb-1 group-hover:text-[#1B7A43] transition-colors">
                     {partner.short}
                   </h3>
                   <div className="text-xs text-slate-700 font-medium mb-2 leading-snug">
@@ -810,7 +841,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 </div>
 
                 <div className="mt-4 pt-3 border-t border-slate-100 text-xs">
-                  <span className="font-script text-base text-[#00868F] font-bold block leading-tight">
+                  <span className="font-script text-base text-[#1B7A43] font-bold block leading-tight">
                     "{partner.motto}"
                   </span>
                 </div>
@@ -821,9 +852,9 @@ export const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* 10. CALL TO ACTION SECTION */}
-      <section className="py-20 bg-gradient-to-br from-[#061C20] via-[#09262C] to-[#005C66] text-white">
+      <section className="py-20 bg-gradient-to-br from-[#071E12] via-[#0D2E1B] to-[#14532D] text-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#00C2B8]">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#68D37E]">
             Admissions & Enquiries
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
@@ -836,7 +867,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
             <button
               onClick={onOpenEnquiry}
-              className="px-8 py-4 rounded-xl text-base font-bold bg-[#00868F] hover:bg-[#00747C] text-white shadow-lg shadow-[#00868F]/30 transition-all cursor-pointer"
+              className="px-8 py-4 rounded-xl text-base font-bold bg-[#1B7A43] hover:bg-[#156334] text-white shadow-lg shadow-[#1B7A43]/30 transition-all cursor-pointer"
             >
               Enrol Now
             </button>

@@ -56,7 +56,6 @@ export type GalleryCategory =
   | 'Graduation'
   | 'Events'
   | 'Co-curricular Activities'
-  | 'Logo'
   | 'Convention'
   | 'Sports';
 

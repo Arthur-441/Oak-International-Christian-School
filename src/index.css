@@ -7,14 +7,14 @@
   --font-hand: "Kalam", cursive, sans-serif;
   --font-script: "Caveat", cursive, sans-serif;
 
-  /* Flier Brand Theme: Deep Teal & Fresh Oak Leaf Green */
-  --color-brand-950: #05181C;
-  --color-brand-900: #09262C;
-  --color-brand-800: #004D55;
-  --color-brand-700: #006D77;
-  --color-brand-600: #00868F;
-  --color-brand-500: #009EA8;
-  --color-brand-400: #00BCC7;
+  /* Brand Theme: Deep Forest Green & Fresh Oak Leaf Green */
+  --color-brand-950: #04140A;
+  --color-brand-900: #0D2E1B;
+  --color-brand-800: #114225;
+  --color-brand-700: #155E33;
+  --color-brand-600: #1B7A43;
+  --color-brand-500: #229653;
+  --color-brand-400: #5CD478;
 
   /* Leaf Green from Flier Badge Tree */
   --color-leaf-700: #4B8C24;
@@ -28,9 +28,9 @@
   --color-accent-600: #E04318;
   --color-accent-500: #F95738;
 
-  /* Light Ice Tinted Background */
-  --color-ice-50: #F2F8F8;
-  --color-ice-100: #E5F1F2;
+  /* Light Sage/Green Tinted Background */
+  --color-ice-50: #F2F9F4;
+  --color-ice-100: #E2F3E7;
 }
 
 html {

@@ -34,10 +34,10 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({
   return (
     <div className="w-full">
       {/* Page Header Banner */}
-      <section className="bg-gradient-to-br from-[#061C20] via-[#09262C] to-[#005C66] text-white py-16 lg:py-20 border-b border-[#0A333A]">
+      <section className="bg-gradient-to-br from-[#071E12] via-[#0D2E1B] to-[#14532D] text-white py-16 lg:py-20 border-b border-[#144027]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#00C2B8] block mb-2">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#68D37E] block mb-2">
               Curriculum & Learning Pathway
             </span>
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight mb-4">
@@ -55,15 +55,15 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#00868F] block">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#1B7A43] block">
                 The ACE Philosophy
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#09262C] leading-tight">
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#0D2E1B] leading-tight">
                 Mastery Over Memorisation, Character Over Pressure
               </h2>
 
-              <div className="bg-[#F2F8F8] border border-[#00868F]/30 rounded-2xl p-6 text-slate-800">
-                <p className="text-base sm:text-lg font-serif italic leading-relaxed text-[#09262C]">
+              <div className="bg-[#F2F9F4] border border-[#1B7A43]/30 rounded-2xl p-6 text-slate-800">
+                <p className="text-base sm:text-lg font-serif italic leading-relaxed text-[#0D2E1B]">
                   "{SCHOOL_INFO.aceSummary}"
                 </p>
               </div>
@@ -77,17 +77,17 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                <div className="flex items-start gap-3 p-4 rounded-xl bg-[#F2F8F8] border border-[#00868F]/20">
+                <div className="flex items-start gap-3 p-4 rounded-xl bg-[#F2F9F4] border border-[#1B7A43]/20">
                   <CheckCircle className="w-4 h-4 text-[#6DB33F] mt-1 shrink-0" />
                   <div className="text-xs">
-                    <strong className="text-[#09262C] block font-semibold text-sm">Individualised Pace</strong>
+                    <strong className="text-[#0D2E1B] block font-semibold text-sm">Individualised Pace</strong>
                     <span className="text-slate-600">No pressure to rush or wait for the class average</span>
                   </div>
                 </div>
-                <div className="flex items-start gap-3 p-4 rounded-xl bg-[#F2F8F8] border border-[#00868F]/20">
+                <div className="flex items-start gap-3 p-4 rounded-xl bg-[#F2F9F4] border border-[#1B7A43]/20">
                   <CheckCircle className="w-4 h-4 text-[#6DB33F] mt-1 shrink-0" />
                   <div className="text-xs">
-                    <strong className="text-[#09262C] block font-semibold text-sm">Biblical Integration</strong>
+                    <strong className="text-[#0D2E1B] block font-semibold text-sm">Biblical Integration</strong>
                     <span className="text-slate-600">Scriptural character traits in every subject PACE</span>
                   </div>
                 </div>
@@ -96,14 +96,14 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({
 
             {/* Right Card: ACE Learning Center Structure */}
             <div className="lg:col-span-5">
-              <div className="bg-[#09262C] text-white rounded-3xl p-8 border border-[#00868F]/30 shadow-xl space-y-6">
+              <div className="bg-[#0D2E1B] text-white rounded-3xl p-8 border border-[#1B7A43]/30 shadow-xl space-y-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-[#00868F] text-white flex items-center justify-center font-bold">
+                  <div className="w-10 h-10 rounded-lg bg-[#1B7A43] text-white flex items-center justify-center font-bold">
                     <BookOpen className="w-5 h-5" />
                   </div>
                   <div>
                     <h3 className="font-serif font-bold text-lg text-white">The ACE Advantage</h3>
-                    <p className="text-xs text-[#00C2B8]">Mastery-Based Education</p>
+                    <p className="text-xs text-[#68D37E]">Mastery-Based Education</p>
                   </div>
                 </div>
 
@@ -129,9 +129,9 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({
                 <div className="pt-2 flex flex-col gap-2.5">
                   <button
                     onClick={onOpenEnquiry}
-                    className="w-full py-3 bg-[#00868F] hover:bg-[#00747C] text-white font-bold text-xs sm:text-sm rounded-xl shadow-sm transition-colors cursor-pointer text-center"
+                    className="w-full py-3 bg-[#1B7A43] hover:bg-[#156334] text-white font-bold text-xs sm:text-sm rounded-xl shadow-sm transition-colors cursor-pointer text-center"
                   >
-                    Ask About Our Diagnostic Test
+                    Have any questions for us?
                   </button>
                 </div>
               </div>
@@ -141,13 +141,13 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({
       </section>
 
       {/* 4 GRADE LEVELS PATHWAY - Pure Card Layout (No Stock Photos) */}
-      <section className="py-20 bg-[#F2F8F8] border-y border-[#00868F]/15">
+      <section className="py-20 bg-[#F2F9F4] border-y border-[#1B7A43]/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#00868F]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#1B7A43]">
               Academic Progression
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#09262C] mt-2">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#0D2E1B] mt-2">
               Our 4-Stage Educational Pathway
             </h2>
             <p className="text-slate-600 text-sm sm:text-base mt-3">
@@ -159,21 +159,21 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({
             {GRADE_LEVELS.map((level, index) => (
               <div
                 key={level.id}
-                className="bg-white rounded-3xl p-6 sm:p-10 border border-[#00868F]/20 shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+                className="bg-white rounded-3xl p-6 sm:p-10 border border-[#1B7A43]/20 shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
               >
                 {/* Level Tag & Stage Number */}
                 <div className="lg:col-span-5 space-y-4">
                   <div className="flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-full bg-[#00868F] text-white font-bold text-xs flex items-center justify-center">
+                    <span className="w-8 h-8 rounded-full bg-[#1B7A43] text-white font-bold text-xs flex items-center justify-center">
                       {index + 1}
                     </span>
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#00868F] bg-[#F2F8F8] px-2.5 py-1 rounded-md border border-[#00868F]/20">
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#1B7A43] bg-[#F2F9F4] px-2.5 py-1 rounded-md border border-[#1B7A43]/20">
                       {level.badge}
                     </span>
                   </div>
 
                   <div>
-                    <h3 className="font-serif text-2xl font-bold text-[#09262C]">
+                    <h3 className="font-serif text-2xl font-bold text-[#0D2E1B]">
                       {level.name}
                     </h3>
                     <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-1">
@@ -188,7 +188,7 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({
                   <div className="pt-2">
                     <button
                       onClick={onOpenEnquiry}
-                      className="text-xs font-bold text-[#00868F] hover:underline inline-flex items-center gap-1 cursor-pointer"
+                      className="text-xs font-bold text-[#1B7A43] hover:underline inline-flex items-center gap-1 cursor-pointer"
                     >
                       <span>Enquire about {level.name}</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -197,8 +197,8 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({
                 </div>
 
                 {/* Highlights Card */}
-                <div className="lg:col-span-4 bg-[#F2F8F8] p-6 rounded-2xl border border-[#00868F]/20 space-y-3">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-[#09262C]">
+                <div className="lg:col-span-4 bg-[#F2F9F4] p-6 rounded-2xl border border-[#1B7A43]/20 space-y-3">
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-[#0D2E1B]">
                     Key Programme Highlights:
                   </h4>
                   <ul className="space-y-2.5">
@@ -212,10 +212,10 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({
                 </div>
 
                 {/* Replaced Image with Milestone & Outcomes Card */}
-                <div className="lg:col-span-3 bg-gradient-to-br from-[#061C20] to-[#09262C] text-white p-6 rounded-2xl border border-[#00868F]/30 flex flex-col justify-between h-full shadow-md">
+                <div className="lg:col-span-3 bg-gradient-to-br from-[#071E12] to-[#0D2E1B] text-white p-6 rounded-2xl border border-[#1B7A43]/30 flex flex-col justify-between h-full shadow-md">
                   <div>
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-[11px] font-bold text-[#00C2B8] uppercase tracking-wider">
+                      <span className="text-[11px] font-bold text-[#68D37E] uppercase tracking-wider">
                         Academic Milestone
                       </span>
                       <span className="font-script text-base text-[#6DB33F] font-bold">
@@ -238,7 +238,7 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({
                           onNavigate('gallery');
                           window.scrollTo({ top: 0, behavior: 'smooth' });
                         }}
-                        className="text-[#00C2B8] hover:underline font-bold text-[11px] cursor-pointer"
+                        className="text-[#68D37E] hover:underline font-bold text-[11px] cursor-pointer"
                       >
                         View Graduation &rarr;
                       </button>
@@ -254,10 +254,10 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({
       {/* DIAGNOSTIC TEST CALLOUT SECTION */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-[#061C20] via-[#09262C] to-[#005C66] text-white rounded-3xl p-8 sm:p-12 border border-[#00868F]/30 shadow-xl relative overflow-hidden">
+          <div className="bg-gradient-to-br from-[#071E12] via-[#0D2E1B] to-[#14532D] text-white rounded-3xl p-8 sm:p-12 border border-[#1B7A43]/30 shadow-xl relative overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
               <div className="lg:col-span-7 space-y-4">
-                <span className="text-xs font-bold uppercase tracking-widest text-[#00C2B8]">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#68D37E]">
                   Admissions Diagnostic Testing
                 </span>
                 <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white">
@@ -269,7 +269,7 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({
                 <div className="pt-2 flex flex-wrap items-center gap-3">
                   <button
                     onClick={onOpenEnquiry}
-                    className="px-5 py-3 bg-[#00868F] hover:bg-[#00747C] text-white font-bold text-xs sm:text-sm rounded-xl shadow-md transition-colors cursor-pointer"
+                    className="px-5 py-3 bg-[#1B7A43] hover:bg-[#156334] text-white font-bold text-xs sm:text-sm rounded-xl shadow-md transition-colors cursor-pointer"
                   >
                     Book a Diagnostic Consultation
                   </button>
@@ -278,7 +278,7 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({
                     download="Oak_International_Enrollment_Form.pdf"
                     className="px-4 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold text-xs sm:text-sm rounded-xl border border-white/25 transition-colors inline-flex items-center gap-1.5 cursor-pointer"
                   >
-                    <Download className="w-4 h-4 text-[#00C2B8]" />
+                    <Download className="w-4 h-4 text-[#68D37E]" />
                     <span>Enrollment Form (PDF)</span>
                   </a>
                   {onOpenEnrollmentForm && (
@@ -287,7 +287,7 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({
                       onClick={onOpenEnrollmentForm}
                       className="px-4 py-3 bg-white/5 hover:bg-white/15 text-slate-200 font-semibold text-xs sm:text-sm rounded-xl border border-white/15 transition-colors inline-flex items-center gap-1.5 cursor-pointer"
                     >
-                      <Eye className="w-4 h-4 text-[#00C2B8]" />
+                      <Eye className="w-4 h-4 text-[#68D37E]" />
                       <span>Preview</span>
                     </button>
                   )}
@@ -305,8 +305,8 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({
                       className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-500 ease-out"
                     />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#09262C]/90 via-[#09262C]/30 to-transparent flex flex-col justify-end p-4 text-white">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#00C2B8] block mb-0.5">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D2E1B]/90 via-[#0D2E1B]/30 to-transparent flex flex-col justify-end p-4 text-white">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#68D37E] block mb-0.5">
                       Career Exploration
                     </span>
                     <p className="text-xs font-semibold text-white">
@@ -323,13 +323,13 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({
 
 
       {/* CURRICULUM PARTNERS WITH REAL CROPPED LOGOS */}
-      <section className="py-16 bg-[#F2F8F8] border-t border-[#00868F]/15">
+      <section className="py-16 bg-[#F2F9F4] border-t border-[#1B7A43]/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#00868F]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#1B7A43]">
               Accreditation & Partners
             </span>
-            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#09262C] mt-1">
+            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0D2E1B] mt-1">
               Global Curriculum Affiliations
             </h3>
             <p className="text-slate-600 text-xs sm:text-sm mt-2">
@@ -341,11 +341,11 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({
             {CURRICULUM_PARTNERS.map((partner) => (
               <div
                 key={partner.short}
-                className="bg-white p-6 rounded-2xl border-2 border-[#00868F]/20 hover:border-[#00868F] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white p-6 rounded-2xl border-2 border-[#1B7A43]/20 hover:border-[#1B7A43] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   {/* Real Cropped Partner Logo */}
-                  <div className="h-20 w-full flex items-center justify-center p-3 mb-4 rounded-xl bg-slate-50/70 border border-slate-100 group-hover:bg-[#F2F8F8] transition-colors">
+                  <div className="h-20 w-full flex items-center justify-center p-3 mb-4 rounded-xl bg-slate-50/70 border border-slate-100 group-hover:bg-[#F2F9F4] transition-colors">
                     <img
                       src={partner.logo}
                       alt={partner.name}
@@ -354,7 +354,7 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({
                     />
                   </div>
 
-                  <h4 className="font-serif font-bold text-lg text-[#09262C] mb-1 group-hover:text-[#00868F] transition-colors">
+                  <h4 className="font-serif font-bold text-lg text-[#0D2E1B] mb-1 group-hover:text-[#1B7A43] transition-colors">
                     {partner.short}
                   </h4>
                   <div className="text-xs font-semibold text-slate-700 mb-2 leading-snug">
@@ -366,7 +366,7 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({
                 </div>
 
                 <div className="mt-4 pt-3 border-t border-slate-100 text-xs">
-                  <span className="font-script text-base text-[#00868F] font-bold block leading-tight">
+                  <span className="font-script text-base text-[#1B7A43] font-bold block leading-tight">
                     "{partner.motto}"
                   </span>
                 </div>

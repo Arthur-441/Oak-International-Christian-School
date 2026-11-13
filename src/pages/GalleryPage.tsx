@@ -34,7 +34,6 @@ const GALLERY_CATEGORIES: GalleryCategory[] = [
   'Graduation',
   'Events',
   'Co-curricular Activities',
-  'Logo',
   'Convention',
   'Sports',
 ];
@@ -129,10 +128,10 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
   return (
     <div className="w-full">
       {/* Page Header Banner */}
-      <section className="bg-gradient-to-br from-[#061C20] via-[#09262C] to-[#005C66] text-white py-16 lg:py-20 border-b border-[#0A333A]">
+      <section className="bg-gradient-to-br from-[#071E12] via-[#0D2E1B] to-[#14532D] text-white py-16 lg:py-20 border-b border-[#144027]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#00C2B8] block mb-2">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#68D37E] block mb-2">
               School Life & Photo Gallery
             </span>
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight mb-4">
@@ -146,21 +145,21 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
       </section>
 
       {/* Official Flier & Admissions Highlight Strip */}
-      <section className="py-12 bg-[#F2F8F8] border-b border-[#00868F]/15">
+      <section className="py-12 bg-[#F2F9F4] border-b border-[#1B7A43]/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-3xl p-6 sm:p-10 border border-[#00868F]/25 shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="bg-white rounded-3xl p-6 sm:p-10 border border-[#1B7A43]/25 shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left: Official Flier Showcase Card */}
             <div className="lg:col-span-4 flex justify-center">
               <div
                 onClick={() => setIsFlierPreviewOpen(true)}
-                className="group relative rounded-2xl overflow-hidden border-2 border-[#00868F]/30 shadow-md hover:shadow-xl transition-all cursor-pointer max-w-[280px]"
+                className="group relative rounded-2xl overflow-hidden border-2 border-[#1B7A43]/30 shadow-md hover:shadow-xl transition-all cursor-pointer max-w-[280px]"
               >
                 <img
                   src={SCHOOL_INFO.flierImageUrl}
                   alt="Official Oak International Christian School Admissions Flier"
                   className="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-[#09262C]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-bold gap-1.5 backdrop-blur-2xs">
+                <div className="absolute inset-0 bg-[#0D2E1B]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-bold gap-1.5 backdrop-blur-2xs">
                   <ExternalLink className="w-4 h-4" />
                   <span>Click to Expand Flier</span>
                 </div>
@@ -171,12 +170,12 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
             <div className="lg:col-span-8 space-y-4">
               <div className="flex items-center gap-3">
                 <SchoolCrest size="sm" />
-                <span className="text-xs font-bold uppercase tracking-wider text-[#00868F]">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#1B7A43]">
                   Official School Admissions Document
                 </span>
               </div>
 
-              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#09262C]">
+              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0D2E1B]">
                 ACE Curriculum & Enrolment Information
               </h2>
 
@@ -185,16 +184,16 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs">
-                <div className="p-3 rounded-xl bg-[#F2F8F8] border border-[#00868F]/20">
-                  <strong className="block text-[#09262C] font-semibold">Curriculum:</strong>
+                <div className="p-3 rounded-xl bg-[#F2F9F4] border border-[#1B7A43]/20">
+                  <strong className="block text-[#0D2E1B] font-semibold">Curriculum:</strong>
                   <span className="text-slate-600">Accelerated Christian Education (ACE)</span>
                 </div>
-                <div className="p-3 rounded-xl bg-[#F2F8F8] border border-[#00868F]/20">
-                  <strong className="block text-[#09262C] font-semibold">Campus:</strong>
+                <div className="p-3 rounded-xl bg-[#F2F9F4] border border-[#1B7A43]/20">
+                  <strong className="block text-[#0D2E1B] font-semibold">Campus:</strong>
                   <span className="text-slate-600">Kira – Kasangati Road, Buwate</span>
                 </div>
-                <div className="p-3 rounded-xl bg-[#F2F8F8] border border-[#00868F]/20">
-                  <strong className="block text-[#09262C] font-semibold">Contact:</strong>
+                <div className="p-3 rounded-xl bg-[#F2F9F4] border border-[#1B7A43]/20">
+                  <strong className="block text-[#0D2E1B] font-semibold">Contact:</strong>
                   <span className="text-slate-600">0783 368459</span>
                 </div>
               </div>
@@ -202,7 +201,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
               <div className="pt-2 flex flex-wrap gap-3">
                 <button
                   onClick={() => setIsFlierPreviewOpen(true)}
-                  className="px-5 py-2.5 bg-[#00868F] hover:bg-[#00747C] text-white text-xs font-bold rounded-xl transition-colors cursor-pointer inline-flex items-center gap-1.5 shadow-xs"
+                  className="px-5 py-2.5 bg-[#1B7A43] hover:bg-[#156334] text-white text-xs font-bold rounded-xl transition-colors cursor-pointer inline-flex items-center gap-1.5 shadow-xs"
                 >
                   <ExternalLink className="w-3.5 h-3.5" />
                   <span>View Full Size Flier</span>
@@ -210,17 +209,17 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
                 <a
                   href={SCHOOL_INFO.enrollmentFormPdfUrl}
                   download="Oak_International_Enrollment_Form.pdf"
-                  className="px-5 py-2.5 bg-[#09262C] hover:bg-[#061C20] text-white text-xs font-bold rounded-xl transition-colors cursor-pointer inline-flex items-center gap-1.5 shadow-xs"
+                  className="px-5 py-2.5 bg-[#0D2E1B] hover:bg-[#071E12] text-white text-xs font-bold rounded-xl transition-colors cursor-pointer inline-flex items-center gap-1.5 shadow-xs"
                 >
-                  <Download className="w-3.5 h-3.5 text-[#00C2B8]" />
+                  <Download className="w-3.5 h-3.5 text-[#68D37E]" />
                   <span>Download Enrollment Form (PDF)</span>
                 </a>
                 {onOpenEnrollmentForm && (
                   <button
                     onClick={onOpenEnrollmentForm}
-                    className="px-4 py-2.5 border border-[#00868F]/30 bg-[#F2F8F8] hover:bg-[#E5F1F2] text-[#09262C] text-xs font-semibold rounded-xl transition-colors cursor-pointer inline-flex items-center gap-1.5"
+                    className="px-4 py-2.5 border border-[#1B7A43]/30 bg-[#F2F9F4] hover:bg-[#E2F3E7] text-[#0D2E1B] text-xs font-semibold rounded-xl transition-colors cursor-pointer inline-flex items-center gap-1.5"
                   >
-                    <Eye className="w-3.5 h-3.5 text-[#00868F]" />
+                    <Eye className="w-3.5 h-3.5 text-[#1B7A43]" />
                     <span>Preview Form</span>
                   </button>
                 )}
@@ -237,7 +236,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
       </section>
 
       {/* ============================================================== */}
-      {/* NEW: School Life Photo Gallery Section (All 20 Categorized Photos) */}
+      {/* School Life Photo Gallery Section */}
       {/* ============================================================== */}
       <section className="py-16 sm:py-20 bg-slate-50/70 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -245,12 +244,12 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 pb-6 border-b border-slate-200">
             <div>
               <div className="flex items-center gap-2 mb-2">
-                <Camera className="w-4 h-4 text-[#00868F]" />
-                <span className="text-xs font-bold uppercase tracking-widest text-[#00868F]">
+                <Camera className="w-4 h-4 text-[#1B7A43]" />
+                <span className="text-xs font-bold uppercase tracking-widest text-[#1B7A43]">
                   School Life Photo Gallery
                 </span>
               </div>
-              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-[#09262C]">
+              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-[#0D2E1B]">
                 Capturing Oak Moments
               </h2>
               <p className="text-slate-600 text-sm mt-1 max-w-2xl">
@@ -271,7 +270,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
                     }}
                     className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer inline-flex items-center gap-1.5 ${
                       isActive
-                        ? 'bg-[#00868F] text-white shadow-sm ring-2 ring-[#00868F]/30'
+                        ? 'bg-[#1B7A43] text-white shadow-sm ring-2 ring-[#1B7A43]/30'
                         : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
                     }`}
                   >
@@ -297,7 +296,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
               <div
                 key={photo.id}
                 onClick={() => setLightboxPhotoIndex(index)}
-                className="group relative bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-[#00868F]/60 shadow-xs hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col"
+                className="group relative bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-[#1B7A43]/60 shadow-xs hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col"
               >
                 {/* Image Container with Consistent Ratio */}
                 <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
@@ -309,14 +308,14 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
                   />
 
                   {/* Dark gradient overlay on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#09262C]/90 via-[#09262C]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-3.5 text-white">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D2E1B]/90 via-[#0D2E1B]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-3.5 text-white">
                     <div className="flex justify-end">
                       <span className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center text-white shadow-xs">
                         <Maximize2 className="w-3.5 h-3.5" />
                       </span>
                     </div>
                     <div>
-                      <span className="text-[10px] uppercase font-bold tracking-wider text-[#00C2B8] block mb-0.5">
+                      <span className="text-[10px] uppercase font-bold tracking-wider text-[#68D37E] block mb-0.5">
                         {photo.category}
                       </span>
                       <p className="text-xs font-semibold text-white line-clamp-1">
@@ -327,7 +326,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
 
                   {/* Top-left category tag badge (always visible) */}
                   <div className="absolute top-2.5 left-2.5">
-                    <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-[#09262C]/85 text-white backdrop-blur-xs shadow-xs border border-white/10">
+                    <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-[#0D2E1B]/85 text-white backdrop-blur-xs shadow-xs border border-white/10">
                       {photo.category}
                     </span>
                   </div>
@@ -336,7 +335,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
                 {/* Card Title & Caption Footer */}
                 <div className="p-3.5 flex flex-col justify-between flex-grow bg-white">
                   <div>
-                    <h3 className="font-serif text-sm font-bold text-[#09262C] group-hover:text-[#00868F] transition-colors line-clamp-1">
+                    <h3 className="font-serif text-sm font-bold text-[#0D2E1B] group-hover:text-[#1B7A43] transition-colors line-clamp-1">
                       {photo.title}
                     </h3>
                     {photo.caption && (
@@ -345,11 +344,11 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
                       </p>
                     )}
                   </div>
-                  <div className="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-[#00868F] font-semibold">
+                  <div className="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-[#1B7A43] font-semibold">
                     <span className="group-hover:underline inline-flex items-center gap-1">
                       View details
                     </span>
-                    <Maximize2 className="w-3 h-3 text-slate-400 group-hover:text-[#00868F] transition-colors" />
+                    <Maximize2 className="w-3 h-3 text-slate-400 group-hover:text-[#1B7A43] transition-colors" />
                   </div>
                 </div>
               </div>
@@ -372,7 +371,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
               <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block">
                 Filter By Discipline
               </span>
-              <p className="text-sm text-[#09262C] font-semibold">
+              <p className="text-sm text-[#0D2E1B] font-semibold">
                 Showing {filteredShowcases.length} Core Areas
               </p>
             </div>
@@ -384,8 +383,8 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
                   onClick={() => setSelectedDisciplineCategory(cat)}
                   className={`px-4 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
                     selectedDisciplineCategory === cat
-                      ? 'bg-[#00868F] text-white shadow-2xs'
-                      : 'bg-[#F2F8F8] text-slate-700 hover:bg-[#E5F1F2]'
+                      ? 'bg-[#1B7A43] text-white shadow-2xs'
+                      : 'bg-[#F2F9F4] text-slate-700 hover:bg-[#E2F3E7]'
                   }`}
                 >
                   {cat}
@@ -399,11 +398,11 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
             {filteredShowcases.map((disc) => (
               <div
                 key={disc.id}
-                className="bg-white rounded-3xl p-8 border-2 border-[#00868F]/20 hover:border-[#00868F] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white rounded-3xl p-8 border-2 border-[#1B7A43]/20 hover:border-[#1B7A43] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#00868F] bg-[#F2F8F8] px-3 py-1 rounded-full border border-[#00868F]/20">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#1B7A43] bg-[#F2F9F4] px-3 py-1 rounded-full border border-[#1B7A43]/20">
                       {disc.category}
                     </span>
                     <span className="font-script text-base text-[#6DB33F] font-bold">
@@ -411,7 +410,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
                     </span>
                   </div>
 
-                  <h3 className="font-serif text-2xl font-bold text-[#09262C] mb-3 group-hover:text-[#00868F] transition-colors">
+                  <h3 className="font-serif text-2xl font-bold text-[#0D2E1B] mb-3 group-hover:text-[#1B7A43] transition-colors">
                     {disc.title}
                   </h3>
 
@@ -419,18 +418,18 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
                     {disc.description}
                   </p>
 
-                  <div className="bg-[#F2F8F8] p-4 rounded-2xl border border-[#00868F]/15 mb-5 space-y-1">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#00868F] block">
+                  <div className="bg-[#F2F9F4] p-4 rounded-2xl border border-[#1B7A43]/15 mb-5 space-y-1">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#1B7A43] block">
                       Scriptural Foundation
                     </span>
-                    <p className="font-script text-lg text-[#09262C] leading-snug">
+                    <p className="font-script text-lg text-[#0D2E1B] leading-snug">
                       {disc.scripturalPrinciple}
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-[#00868F]/15">
-                  <div className="text-xs font-semibold text-[#09262C] mb-2 uppercase tracking-wide">
+                <div className="pt-4 border-t border-[#1B7A43]/15">
+                  <div className="text-xs font-semibold text-[#0D2E1B] mb-2 uppercase tracking-wide">
                     Key Outcomes for Learners:
                   </div>
                   <ul className="space-y-1.5">
@@ -447,9 +446,9 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
           </div>
 
           {/* Bottom Enquiry Strip */}
-          <div className="mt-16 bg-[#09262C] text-white rounded-3xl p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 border border-[#00868F]/30 shadow-xl">
+          <div className="mt-16 bg-[#0D2E1B] text-white rounded-3xl p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 border border-[#1B7A43]/30 shadow-xl">
             <div className="space-y-1 text-center md:text-left">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#00C2B8]">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#68D37E]">
                 Admissions Now Open
               </span>
               <h4 className="font-serif text-2xl font-bold text-white">
@@ -462,7 +461,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
             <div className="flex flex-wrap items-center gap-3 shrink-0">
               <button
                 onClick={onOpenEnquiry}
-                className="px-6 py-3.5 bg-[#00868F] hover:bg-[#00747C] text-white text-sm font-bold rounded-xl shadow-md transition-colors cursor-pointer"
+                className="px-6 py-3.5 bg-[#1B7A43] hover:bg-[#156334] text-white text-sm font-bold rounded-xl shadow-md transition-colors cursor-pointer"
               >
                 Enrol Now
               </button>
@@ -485,13 +484,13 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
         >
           {/* Main Lightbox Card Container */}
           <div
-            className="relative max-w-5xl w-full bg-[#061C20] rounded-3xl overflow-hidden shadow-2xl border border-white/10 flex flex-col max-h-[92vh]"
+            className="relative max-w-5xl w-full bg-[#071E12] rounded-3xl overflow-hidden shadow-2xl border border-white/10 flex flex-col max-h-[92vh]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Top Bar: Title, Category & Close */}
-            <div className="flex items-center justify-between px-5 sm:px-7 py-4 bg-[#09262C] border-b border-white/10 text-white shrink-0">
+            <div className="flex items-center justify-between px-5 sm:px-7 py-4 bg-[#0D2E1B] border-b border-white/10 text-white shrink-0">
               <div className="flex items-center gap-3">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#00C2B8] bg-[#00868F]/25 px-2.5 py-1 rounded-full border border-[#00C2B8]/30">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#68D37E] bg-[#1B7A43]/25 px-2.5 py-1 rounded-full border border-[#68D37E]/30">
                   {activePhoto.category}
                 </span>
                 <span className="text-xs text-slate-300 hidden sm:inline">
@@ -526,7 +525,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
                     e.stopPropagation();
                     handlePrevPhoto();
                   }}
-                  className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 rounded-full bg-[#09262C]/80 hover:bg-[#00868F] text-white border border-white/20 shadow-lg backdrop-blur-xs transition-all cursor-pointer"
+                  className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 rounded-full bg-[#0D2E1B]/80 hover:bg-[#1B7A43] text-white border border-white/20 shadow-lg backdrop-blur-xs transition-all cursor-pointer"
                   title="Previous image (Left Arrow)"
                   aria-label="Previous photo"
                 >
@@ -541,7 +540,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
                     e.stopPropagation();
                     handleNextPhoto();
                   }}
-                  className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 rounded-full bg-[#09262C]/80 hover:bg-[#00868F] text-white border border-white/20 shadow-lg backdrop-blur-xs transition-all cursor-pointer"
+                  className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 rounded-full bg-[#0D2E1B]/80 hover:bg-[#1B7A43] text-white border border-white/20 shadow-lg backdrop-blur-xs transition-all cursor-pointer"
                   title="Next image (Right Arrow)"
                   aria-label="Next photo"
                 >
@@ -551,7 +550,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
             </div>
 
             {/* Bottom Bar: Title & Caption */}
-            <div className="px-5 sm:px-7 py-4 bg-[#09262C] border-t border-white/10 text-white shrink-0 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="px-5 sm:px-7 py-4 bg-[#0D2E1B] border-t border-white/10 text-white shrink-0 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
                 <h3 className="font-serif text-base sm:text-lg font-bold text-white">
                   {activePhoto.title}
@@ -585,8 +584,8 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
             className="relative max-w-2xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between px-6 py-3 bg-[#061C20] text-white">
-              <span className="text-xs font-bold text-[#00C2B8] uppercase tracking-wider">
+            <div className="flex items-center justify-between px-6 py-3 bg-[#071E12] text-white">
+              <span className="text-xs font-bold text-[#68D37E] uppercase tracking-wider">
                 Official Oak International Christian School Flier
               </span>
               <button

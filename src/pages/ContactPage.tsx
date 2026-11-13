@@ -29,10 +29,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenEnrollmentForm }
   return (
     <div className="w-full">
       {/* Page Header Banner */}
-      <section className="bg-gradient-to-br from-[#061C20] via-[#09262C] to-[#005C66] text-white py-16 lg:py-20 border-b border-[#0A333A]">
+      <section className="bg-gradient-to-br from-[#071E12] via-[#0D2E1B] to-[#14532D] text-white py-16 lg:py-20 border-b border-[#144027]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#00C2B8] block mb-2">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#68D37E] block mb-2">
               Get In Touch With Admissions
             </span>
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight mb-4">
@@ -46,16 +46,16 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenEnrollmentForm }
       </section>
 
       {/* Main Contact Grid */}
-      <section className="py-20 bg-[#F2F8F8]">
+      <section className="py-20 bg-[#F2F9F4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Column: Official Contact Information */}
             <div className="lg:col-span-5 space-y-8">
               <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-[#00868F] block mb-2">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#1B7A43] block mb-2">
                   Official Contact Details
                 </span>
-                <h2 className="font-serif text-3xl font-bold text-[#09262C] leading-tight">
+                <h2 className="font-serif text-3xl font-bold text-[#0D2E1B] leading-tight">
                   Reach Our Administrative Office
                 </h2>
                 <p className="text-slate-600 text-sm leading-relaxed mt-2">
@@ -66,9 +66,9 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenEnrollmentForm }
               {/* Contact Cards */}
               <div className="space-y-4">
                 {/* Phone Card */}
-                <div className="bg-white p-6 rounded-2xl border border-[#00868F]/20 shadow-2xs hover:border-[#00868F] transition-colors">
+                <div className="bg-white p-6 rounded-2xl border border-[#1B7A43]/20 shadow-2xs hover:border-[#1B7A43] transition-colors">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#F2F8F8] text-[#00868F] flex items-center justify-center shrink-0 border border-[#00868F]/20">
+                    <div className="w-12 h-12 rounded-xl bg-[#F2F9F4] text-[#1B7A43] flex items-center justify-center shrink-0 border border-[#1B7A43]/20">
                       <Phone className="w-6 h-6" />
                     </div>
                     <div className="space-y-1">
@@ -77,7 +77,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenEnrollmentForm }
                       </div>
                       <a
                         href={SCHOOL_INFO.phoneTel}
-                        className="font-serif text-xl font-bold text-[#09262C] hover:text-[#00868F] transition-colors block"
+                        className="font-serif text-xl font-bold text-[#0D2E1B] hover:text-[#1B7A43] transition-colors block"
                       >
                         {SCHOOL_INFO.phone}
                       </a>
@@ -98,7 +98,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenEnrollmentForm }
                       <div className="text-xs uppercase tracking-wider font-semibold text-slate-500">
                         Instant Admissions Line
                       </div>
-                      <div className="font-serif text-lg font-bold text-[#09262C]">
+                      <div className="font-serif text-lg font-bold text-[#0D2E1B]">
                         Direct WhatsApp Chat
                       </div>
                       <p className="text-xs text-slate-500">
@@ -112,9 +112,9 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenEnrollmentForm }
                 </div>
 
                 {/* Email Card */}
-                <div className="bg-white p-6 rounded-2xl border border-[#00868F]/20 shadow-2xs hover:border-[#00868F] transition-colors">
+                <div className="bg-white p-6 rounded-2xl border border-[#1B7A43]/20 shadow-2xs hover:border-[#1B7A43] transition-colors">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#F2F8F8] text-[#00868F] flex items-center justify-center shrink-0 border border-[#00868F]/20">
+                    <div className="w-12 h-12 rounded-xl bg-[#F2F9F4] text-[#1B7A43] flex items-center justify-center shrink-0 border border-[#1B7A43]/20">
                       <Mail className="w-6 h-6" />
                     </div>
                     <div className="space-y-1">
@@ -123,7 +123,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenEnrollmentForm }
                       </div>
                       <a
                         href={SCHOOL_INFO.emailMailto}
-                        className="text-sm font-semibold text-[#09262C] hover:text-[#00868F] transition-colors block break-all"
+                        className="text-sm font-semibold text-[#0D2E1B] hover:text-[#1B7A43] transition-colors block break-all"
                       >
                         {SCHOOL_INFO.email}
                       </a>
@@ -135,16 +135,16 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenEnrollmentForm }
                 </div>
 
                 {/* Official Enrollment Form PDF Card */}
-                <div className="bg-white p-6 rounded-2xl border-2 border-[#00868F]/25 shadow-2xs hover:border-[#00868F] transition-colors space-y-4">
+                <div className="bg-white p-6 rounded-2xl border-2 border-[#1B7A43]/25 shadow-2xs hover:border-[#1B7A43] transition-colors space-y-4">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#09262C] text-[#00C2B8] flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-[#0D2E1B] text-[#68D37E] flex items-center justify-center shrink-0">
                       <FileText className="w-6 h-6" />
                     </div>
                     <div className="space-y-1">
-                      <div className="text-xs uppercase tracking-wider font-bold text-[#00868F]">
+                      <div className="text-xs uppercase tracking-wider font-bold text-[#1B7A43]">
                         Official Registration Form (PDF)
                       </div>
-                      <div className="font-serif text-lg font-bold text-[#09262C]">
+                      <div className="font-serif text-lg font-bold text-[#0D2E1B]">
                         Student Enrollment Form
                       </div>
                       <p className="text-xs text-slate-600 leading-relaxed">
@@ -157,16 +157,16 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenEnrollmentForm }
                       <button
                         type="button"
                         onClick={onOpenEnrollmentForm}
-                        className="flex-1 py-2.5 px-3.5 bg-[#F2F8F8] hover:bg-[#E5F1F2] text-[#09262C] border border-[#00868F]/25 text-xs font-semibold rounded-xl transition-colors inline-flex items-center justify-center gap-1.5 cursor-pointer"
+                        className="flex-1 py-2.5 px-3.5 bg-[#F2F9F4] hover:bg-[#E2F3E7] text-[#0D2E1B] border border-[#1B7A43]/25 text-xs font-semibold rounded-xl transition-colors inline-flex items-center justify-center gap-1.5 cursor-pointer"
                       >
-                        <Eye className="w-3.5 h-3.5 text-[#00868F]" />
+                        <Eye className="w-3.5 h-3.5 text-[#1B7A43]" />
                         <span>View Form</span>
                       </button>
                     )}
                     <a
                       href={SCHOOL_INFO.enrollmentFormPdfUrl}
                       download="Oak_International_Enrollment_Form.pdf"
-                      className="flex-1 py-2.5 px-3.5 bg-[#00868F] hover:bg-[#00747C] text-white text-xs font-bold rounded-xl shadow-xs transition-colors inline-flex items-center justify-center gap-1.5 cursor-pointer"
+                      className="flex-1 py-2.5 px-3.5 bg-[#1B7A43] hover:bg-[#156334] text-white text-xs font-bold rounded-xl shadow-xs transition-colors inline-flex items-center justify-center gap-1.5 cursor-pointer"
                     >
                       <Download className="w-3.5 h-3.5" />
                       <span>Download PDF</span>
@@ -175,7 +175,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenEnrollmentForm }
                 </div>
 
                 {/* Address & Hours Card */}
-                <div className="bg-white p-6 rounded-2xl border border-[#00868F]/20 shadow-2xs hover:border-[#00868F] transition-colors">
+                <div className="bg-white p-6 rounded-2xl border border-[#1B7A43]/20 shadow-2xs hover:border-[#1B7A43] transition-colors">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center shrink-0">
                       <MapPin className="w-6 h-6" />
@@ -184,14 +184,14 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenEnrollmentForm }
                       <div className="text-xs uppercase tracking-wider font-semibold text-slate-500">
                         Campus Location & Hours
                       </div>
-                      <p className="text-sm font-semibold text-[#09262C]">
+                      <p className="text-sm font-semibold text-[#0D2E1B]">
                         {SCHOOL_INFO.address}
                       </p>
                       <p className="text-xs text-slate-500">
                         Conveniently accessible along Kira-Kasangati Road (Kira, Namugongo, Gayaza)
                       </p>
                       <div className="mt-2 pt-2 border-t border-slate-100 flex items-center gap-2 text-xs text-slate-600">
-                        <Clock className="w-3.5 h-3.5 text-[#00868F]" />
+                        <Clock className="w-3.5 h-3.5 text-[#1B7A43]" />
                         <span><strong>Campus Hours:</strong> {SCHOOL_INFO.campusHours}</span>
                       </div>
                     </div>
@@ -199,9 +199,9 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenEnrollmentForm }
                 </div>
 
                 {/* Social Media Channels Card */}
-                <div className="bg-white p-6 rounded-2xl border-2 border-[#00868F]/20 shadow-2xs hover:border-[#00868F] transition-colors space-y-3">
+                <div className="bg-white p-6 rounded-2xl border-2 border-[#1B7A43]/20 shadow-2xs hover:border-[#1B7A43] transition-colors space-y-3">
                   <div className="flex items-center justify-between">
-                    <div className="text-xs uppercase tracking-wider font-bold text-[#00868F]">
+                    <div className="text-xs uppercase tracking-wider font-bold text-[#1B7A43]">
                       Connect On Social Media
                     </div>
                     <span className="text-[11px] text-slate-400 font-serif italic">
@@ -296,12 +296,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenEnrollmentForm }
 
             {/* Right Column: Interactive Enquiry Form */}
             <div className="lg:col-span-7">
-              <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-[#00868F]/20">
+              <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-[#1B7A43]/20">
                 <div className="mb-8">
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#00868F] block mb-2">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#1B7A43] block mb-2">
                     Send An Enquiry
                   </span>
-                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#09262C]">
+                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0D2E1B]">
                     Have a Question for Us?
                   </h3>
                   <p className="text-slate-600 text-sm leading-relaxed mt-2">
@@ -322,10 +322,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenEnrollmentForm }
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
             <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-[#00868F] block mb-1">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#1B7A43] block mb-1">
                 Directions & Map
               </span>
-              <h3 className="font-serif text-2xl font-bold text-[#09262C]">
+              <h3 className="font-serif text-2xl font-bold text-[#0D2E1B]">
                 Find Us in Buwate, Kira
               </h3>
               <p className="text-slate-600 text-sm">
@@ -337,10 +337,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenEnrollmentForm }
               href={SCHOOL_INFO.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 bg-[#F2F8F8] hover:bg-[#E5F1F2] text-[#09262C] text-xs font-semibold rounded-lg transition-colors inline-flex items-center gap-1.5 self-start sm:self-center border border-[#00868F]/20"
+              className="px-5 py-2.5 bg-[#F2F9F4] hover:bg-[#E2F3E7] text-[#0D2E1B] text-xs font-semibold rounded-lg transition-colors inline-flex items-center gap-1.5 self-start sm:self-center border border-[#1B7A43]/20"
             >
               <span>Open in Google Maps</span>
-              <ExternalLink className="w-3.5 h-3.5 text-[#00868F]" />
+              <ExternalLink className="w-3.5 h-3.5 text-[#1B7A43]" />
             </a>
           </div>
 

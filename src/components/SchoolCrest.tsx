@@ -27,7 +27,7 @@ export const SchoolCrest: React.FC<SchoolCrestProps> = ({
           variant === 'dark'
             ? 'bg-white p-1 shadow-xs border border-slate-200'
             : variant === 'light'
-            ? 'bg-white p-1 shadow-xs border border-[#00868F]/30'
+            ? 'bg-white p-1 shadow-xs border border-[#1B7A43]/30'
             : 'bg-white/95 p-0.5 shadow-2xs'
         }`}
       >
@@ -45,10 +45,10 @@ export const SchoolCrest: React.FC<SchoolCrestProps> = ({
 
       {showText && (
         <div className="leading-tight">
-          <span className="block font-serif font-bold text-base text-[#09262C] tracking-tight whitespace-nowrap">
+          <span className="block font-serif font-bold text-base text-[#0D2E1B] tracking-tight whitespace-nowrap">
             Oak International
           </span>
-          <span className="block text-[10px] font-semibold text-[#00868F] tracking-wider uppercase">
+          <span className="block text-[10px] font-semibold text-[#1B7A43] tracking-wider uppercase">
             Christian School
           </span>
         </div>

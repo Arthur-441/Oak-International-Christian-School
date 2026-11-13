@@ -47,16 +47,16 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <>
       {/* Top Utility Strip with Flier Brand Colors */}
-      <div className="bg-[#061C20] text-slate-300 text-xs py-2 px-4 border-b border-[#0A333A]">
+      <div className="bg-[#071E12] text-slate-300 text-xs py-2 px-4 border-b border-[#144027]">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-y-1.5 gap-x-4">
           <div className="flex items-center gap-5 flex-wrap">
-            <span className="hidden sm:inline-flex items-center gap-1.5 text-[#00C2B8] font-medium tracking-wide">
+            <span className="hidden sm:inline-flex items-center gap-1.5 text-[#68D37E] font-medium tracking-wide">
               <span>Buwate Campus:</span>
               <span className="text-slate-300">Kira-Kasangati Road, Wakiso</span>
             </span>
             <a
               href={SCHOOL_INFO.phoneTel}
-              className="flex items-center gap-1.5 text-white hover:text-[#00C2B8] transition-colors font-medium"
+              className="flex items-center gap-1.5 text-white hover:text-[#68D37E] transition-colors font-medium"
               title="Call School Admissions"
             >
               <Phone className="w-3.5 h-3.5 text-[#6DB33F]" />
@@ -64,7 +64,7 @@ export const Header: React.FC<HeaderProps> = ({
             </a>
             <a
               href={SCHOOL_INFO.emailMailto}
-              className="hidden md:flex items-center gap-1.5 text-slate-300 hover:text-[#00C2B8] transition-colors"
+              className="hidden md:flex items-center gap-1.5 text-slate-300 hover:text-[#68D37E] transition-colors"
             >
               <Mail className="w-3.5 h-3.5 text-[#6DB33F]" />
               <span>{SCHOOL_INFO.email}</span>
@@ -78,15 +78,15 @@ export const Header: React.FC<HeaderProps> = ({
                 type="button"
                 onClick={onOpenEnrollmentForm}
                 title="View or Download Official Enrollment Form (PDF)"
-                className="px-2.5 py-1 rounded-md bg-[#00868F]/25 hover:bg-[#00868F] text-[#E4F1F2] hover:text-white border border-[#00868F]/50 text-[11px] font-semibold transition-all inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
+                className="px-2.5 py-1 rounded-md bg-[#1B7A43]/25 hover:bg-[#1B7A43] text-[#E2F3E7] hover:text-white border border-[#1B7A43]/50 text-[11px] font-semibold transition-all inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
               >
-                <FileText className="w-3.5 h-3.5 text-[#00C2B8]" />
+                <FileText className="w-3.5 h-3.5 text-[#68D37E]" />
                 <span>Enrollment Form (PDF)</span>
               </button>
             )}
 
             {/* Social Media Links: Instagram, Facebook, X */}
-            <div className="flex items-center gap-2 border-r border-[#0A333A] pr-3 mr-0.5">
+            <div className="flex items-center gap-2 border-r border-[#144027] pr-3 mr-0.5">
               <a
                 href={SCHOOL_INFO.instagramUrl}
                 target="_blank"
@@ -139,10 +139,10 @@ export const Header: React.FC<HeaderProps> = ({
           >
             <SchoolCrest size="md" variant="transparent" />
             <div>
-              <span className="block font-serif font-bold text-lg sm:text-xl text-[#09262C] tracking-tight leading-tight group-hover:text-[#00868F] transition-colors whitespace-nowrap">
+              <span className="block font-serif font-bold text-lg sm:text-xl text-[#0D2E1B] tracking-tight leading-tight group-hover:text-[#1B7A43] transition-colors whitespace-nowrap">
                 Oak International
               </span>
-              <span className="block text-[11px] font-bold text-[#00868F] tracking-wider uppercase leading-none">
+              <span className="block text-[11px] font-bold text-[#1B7A43] tracking-wider uppercase leading-none">
                 Christian School
               </span>
             </div>
@@ -158,24 +158,24 @@ export const Header: React.FC<HeaderProps> = ({
                   onClick={() => handleNavClick(item.id)}
                   className={`relative py-1 whitespace-nowrap shrink-0 transition-colors cursor-pointer ${
                     active
-                      ? 'text-[#00868F] font-bold'
-                      : 'text-slate-600 hover:text-[#00868F]'
+                      ? 'text-[#1B7A43] font-bold'
+                      : 'text-slate-600 hover:text-[#1B7A43]'
                   }`}
                 >
                   {item.label}
                   {active && (
-                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#00868F] rounded-full" />
+                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#1B7A43] rounded-full" />
                   )}
                 </button>
               );
             })}
           </nav>
 
-          {/* Zone 3: Flier Teal Action Button */}
+          {/* Zone 3: Primary Green Action Button */}
           <div className="flex items-center gap-3 shrink-0">
             <button
               onClick={onOpenEnquiry}
-              className="px-5 py-2.5 text-xs sm:text-sm font-semibold text-white bg-[#00868F] hover:bg-[#00747C] active:bg-[#005F66] rounded-lg shadow-sm hover:shadow transition-all whitespace-nowrap shrink-0 cursor-pointer flex items-center gap-1.5"
+              className="px-5 py-2.5 text-xs sm:text-sm font-semibold text-white bg-[#1B7A43] hover:bg-[#156334] active:bg-[#14532D] rounded-lg shadow-sm hover:shadow transition-all whitespace-nowrap shrink-0 cursor-pointer flex items-center gap-1.5"
             >
               <span>Enrol Now</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -204,12 +204,12 @@ export const Header: React.FC<HeaderProps> = ({
                     onClick={() => handleNavClick(item.id)}
                     className={`flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium text-left transition-colors cursor-pointer ${
                       active
-                        ? 'bg-[#F2F8F8] text-[#00868F] font-bold'
+                        ? 'bg-[#F2F9F4] text-[#1B7A43] font-bold'
                         : 'text-slate-700 hover:bg-slate-50'
                     }`}
                   >
                     <span>{item.label}</span>
-                    {active && <span className="text-[#00868F] text-xs font-bold uppercase">Current</span>}
+                    {active && <span className="text-[#1B7A43] text-xs font-bold uppercase">Current</span>}
                   </button>
                 );
               })}
@@ -221,7 +221,7 @@ export const Header: React.FC<HeaderProps> = ({
                   setMobileMenuOpen(false);
                   onOpenEnquiry();
                 }}
-                className="w-full py-2.5 px-4 text-center font-semibold text-sm text-white bg-[#00868F] hover:bg-[#00747C] rounded-lg shadow-xs transition-colors cursor-pointer"
+                className="w-full py-2.5 px-4 text-center font-semibold text-sm text-white bg-[#1B7A43] hover:bg-[#156334] rounded-lg shadow-xs transition-colors cursor-pointer"
               >
                 Make an Enquiry
               </button>
@@ -231,9 +231,9 @@ export const Header: React.FC<HeaderProps> = ({
                     setMobileMenuOpen(false);
                     onOpenEnrollmentForm();
                   }}
-                  className="w-full py-2.5 px-4 text-center font-semibold text-sm text-[#09262C] bg-[#F2F8F8] hover:bg-[#E5F1F2] border border-[#00868F]/25 rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full py-2.5 px-4 text-center font-semibold text-sm text-[#0D2E1B] bg-[#F2F9F4] hover:bg-[#E2F3E7] border border-[#1B7A43]/25 rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <FileText className="w-4 h-4 text-[#00868F]" />
+                  <FileText className="w-4 h-4 text-[#1B7A43]" />
                   <span>Enrollment Form (PDF)</span>
                 </button>
               )}

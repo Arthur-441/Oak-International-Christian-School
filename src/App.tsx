@@ -57,7 +57,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-slate-800 font-sans selection:bg-[#E5F1F2] selection:text-[#00868F]">
+    <div className="min-h-screen flex flex-col bg-white text-slate-800 font-sans selection:bg-[#E2F3E7] selection:text-[#1B7A43]">
       {/* Sticky Top Header Navigation */}
       <Header
         currentPage={currentPage}

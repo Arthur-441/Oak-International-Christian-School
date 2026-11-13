@@ -87,11 +87,11 @@ export const EnrollmentPdfModal: React.FC<EnrollmentPdfModalProps> = ({ isOpen, 
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Header Bar */}
-        <div className="bg-[#09262C] text-white px-5 sm:px-7 py-4 border-b border-[#00868F]/30 flex flex-wrap items-center justify-between gap-3 shrink-0">
+        <div className="bg-[#0D2E1B] text-white px-5 sm:px-7 py-4 border-b border-[#1B7A43]/30 flex flex-wrap items-center justify-between gap-3 shrink-0">
           <div className="flex items-center gap-3">
             <SchoolCrest size="sm" variant="dark" />
             <div>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#00C2B8] block">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-[#68D37E] block">
                 Official Registration Document &middot; 7 Pages
               </span>
               <h3 className="font-serif text-base sm:text-lg font-bold text-white leading-tight">
@@ -114,7 +114,7 @@ export const EnrollmentPdfModal: React.FC<EnrollmentPdfModalProps> = ({ isOpen, 
             <a
               href={SCHOOL_INFO.enrollmentFormPdfUrl}
               download="Oak_International_Enrollment_Form.pdf"
-              className="px-4 py-2 bg-[#00868F] hover:bg-[#00747C] text-white text-xs font-bold rounded-xl shadow-sm transition-colors inline-flex items-center gap-1.5 cursor-pointer"
+              className="px-4 py-2 bg-[#1B7A43] hover:bg-[#156334] text-white text-xs font-bold rounded-xl shadow-sm transition-colors inline-flex items-center gap-1.5 cursor-pointer"
             >
               <Download className="w-3.5 h-3.5" />
               <span>Download PDF</span>
@@ -131,7 +131,7 @@ export const EnrollmentPdfModal: React.FC<EnrollmentPdfModalProps> = ({ isOpen, 
         </div>
 
         {/* Page Jump Navigation Strip */}
-        <div className="bg-[#061C20] border-b border-[#0A333A] px-4 sm:px-6 py-2.5 flex items-center justify-between gap-3 overflow-x-auto shrink-0">
+        <div className="bg-[#071E12] border-b border-[#144027] px-4 sm:px-6 py-2.5 flex items-center justify-between gap-3 overflow-x-auto shrink-0">
           <div className="flex items-center gap-1.5">
             {ENROLLMENT_PAGES.map((p) => {
               const isCurrent = activePage === p.page;
@@ -142,7 +142,7 @@ export const EnrollmentPdfModal: React.FC<EnrollmentPdfModalProps> = ({ isOpen, 
                   onClick={() => scrollToPage(p.page)}
                   className={`px-2.5 py-1 rounded-lg text-[11px] font-semibold whitespace-nowrap transition-all cursor-pointer ${
                     isCurrent
-                      ? 'bg-[#00868F] text-white shadow-xs'
+                      ? 'bg-[#1B7A43] text-white shadow-xs'
                       : 'bg-white/5 text-slate-300 hover:bg-white/15 hover:text-white'
                   }`}
                   title={p.title}
@@ -163,7 +163,7 @@ export const EnrollmentPdfModal: React.FC<EnrollmentPdfModalProps> = ({ isOpen, 
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
-            <span className="font-mono text-[11px] text-[#00C2B8]">
+            <span className="font-mono text-[11px] text-[#68D37E]">
               {activePage} / {ENROLLMENT_PAGES.length}
             </span>
             <button
@@ -195,7 +195,7 @@ export const EnrollmentPdfModal: React.FC<EnrollmentPdfModalProps> = ({ isOpen, 
               }`}
             >
               <div className="bg-slate-50 border-b border-slate-200 px-4 py-2 flex items-center justify-between text-[11px] text-slate-500">
-                <span className="font-semibold text-[#09262C]">
+                <span className="font-semibold text-[#0D2E1B]">
                   Page {p.page} of {ENROLLMENT_PAGES.length}
                 </span>
                 <span>{p.title}</span>
@@ -211,14 +211,14 @@ export const EnrollmentPdfModal: React.FC<EnrollmentPdfModalProps> = ({ isOpen, 
         </div>
 
         {/* Bottom Helpful Instructions */}
-        <div className="bg-[#F2F8F8] border-t border-[#00868F]/20 px-5 sm:px-7 py-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-slate-700 shrink-0">
+        <div className="bg-[#F2F9F4] border-t border-[#1B7A43]/20 px-5 sm:px-7 py-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-slate-700 shrink-0">
           <div className="flex items-center gap-2">
-            <FileText className="w-4 h-4 text-[#00868F] shrink-0" />
+            <FileText className="w-4 h-4 text-[#1B7A43] shrink-0" />
             <span>
               Download, complete, and submit this form to our Buwate Campus office or via{' '}
               <a
                 href={SCHOOL_INFO.emailMailto}
-                className="font-semibold text-[#00868F] hover:underline"
+                className="font-semibold text-[#1B7A43] hover:underline"
               >
                 {SCHOOL_INFO.email}
               </a>
@@ -231,7 +231,7 @@ export const EnrollmentPdfModal: React.FC<EnrollmentPdfModalProps> = ({ isOpen, 
               Kira – Kasangati Rd
             </span>
             <span className="inline-flex items-center gap-1">
-              <Mail className="w-3 h-3 text-[#00868F]" />
+              <Mail className="w-3 h-3 text-[#1B7A43]" />
               0783 368459
             </span>
           </div>
