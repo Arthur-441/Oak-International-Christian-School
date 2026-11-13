@@ -429,29 +429,29 @@ export const SCHOOL_LIFE_GALLERY: GalleryPhoto[] = [
     id: 'event-4',
     url: 'https://i.ibb.co/RT9jsBrf/Whats-App-Image-2026-11-11-at-10-28-38-AM.jpg',
     category: 'Events',
-    title: 'Student Leadership & Community Outreach',
-    caption: 'Practical training in servanthood, responsibility, and team-oriented leadership.'
+    title: 'Exhibition',
+    caption: 'Students show parents what they have been studying at school.'
   },
   {
     id: 'event-5',
     url: 'https://i.ibb.co/Xr1Tdqxd/Whats-App-Image-2026-11-11-at-10-28-37-AM.jpg',
     category: 'Events',
-    title: 'Learning Through Play',
-    caption: 'Encouraging creativity, imagination and discovery through engaging activities that make learning enjoyable, meaningful and memorable.'
+    title: 'Future Doctors & Healthcare',
+    caption: 'Learners step into the shoes of doctors and nurses, exploring healthcare through hands-on classroom role-play.'
   },
   {
     id: 'event-6',
     url: 'https://i.ibb.co/hxgJHZ0g/Whats-App-Image-2026-11-11-at-10-28-37-AM-1.jpg',
     category: 'Events',
-    title: 'Career Exploration',
-    caption: 'Inspiring young minds to dream big and explore different professions through hands-on role play.'
+    title: 'Future Engineers & Builders',
+    caption: 'Dressed in safety gear, students explore engineering and construction while dreaming big about future careers.'
   },
   {
     id: 'event-7',
     url: 'https://i.ibb.co/d4vp0sK3/Whats-App-Image-2026-11-11-at-10-41-51-AM.jpg',
     category: 'Events',
-    title: 'Worship & Musical Praise Session',
-    caption: 'Singing joyful praises to the Lord during our weekly campus chapel service.'
+    title: 'Outdoor School Assembly',
+    caption: 'Students gather attentively under the campus tent for school-wide announcements, teaching, and fellowship.'
   },
   {
     id: 'event-8',
@@ -526,16 +526,16 @@ export const GRADUATION_GALLERY: GraduationPhoto[] = [
   {
     id: 'grad-1',
     url: 'https://i.ibb.co/xqQgZ4Bc/Grad-2.jpg',
-    title: 'Graduation Honours Ceremony',
-    category: 'Commencement',
+    title: 'Graduation Speech',
+    category: 'Graduation',
     year: 'Oak Academy',
-    caption: 'A proud graduate shares heartfelt reflections on her academic journey, faith, and milestones at Oak International.',
+    caption: 'A proud graduate reflects on her academic journey, faith, and milestones at Oak International Christian School.',
     honors: 'Academic Excellence & Character'
   },
   {
     id: 'grad-2',
     url: 'https://i.ibb.co/vvYZ88Dh/Grad-3.jpg',
-    title: 'Young Graduates Celebrate',
+    title: 'Early Years Graduation Joy',
     category: 'Celebration',
     year: 'Oak Academy',
     caption: 'Our youngest learners celebrate completing their foundational milestones with joy, confidence, and bright smiles.',

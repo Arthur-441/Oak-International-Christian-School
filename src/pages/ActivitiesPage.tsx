@@ -212,22 +212,22 @@ export const ActivitiesPage: React.FC<ActivitiesPageProps> = ({
                 <div className="aspect-[4/3] overflow-hidden bg-slate-100 relative">
                   <img
                     src="https://i.ibb.co/RGGrCntr/Whats-App-Image-2026-11-09-at-2-08-36-PM.jpg"
-                    alt="Practical Living & Kitchen Skills at Oak International"
+                    alt="Traditional Food Preparation at Oak International"
                     loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                   />
                   <div className="absolute top-3 left-3">
                     <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#0D2E1B]/85 backdrop-blur-xs px-2.5 py-1 rounded-full border border-white/20">
-                      Life Skills
+                      Co-curricular Activities
                     </span>
                   </div>
                 </div>
                 <div className="p-5">
                   <h4 className="font-serif text-lg font-bold text-[#0D2E1B] group-hover:text-[#1B7A43] transition-colors">
-                    Practical Living & Kitchen Skills
+                    Traditional Food Preparation
                   </h4>
                   <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                    Building everyday independence, teamwork, and self-reliance through safe food preparation and hands-on, real-world practice with caring instructors.
+                    Learners build practical kitchen skills by preparing fresh local ingredients together.
                   </p>
                 </div>
               </div>

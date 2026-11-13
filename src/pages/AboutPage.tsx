@@ -1,6 +1,6 @@
 import React from 'react';
 import { PageId } from '../types';
-import { SCHOOL_INFO, CORE_PHILOSOPHY, LEADERSHIP_QUOTES, FLIER_PILLARS } from '../data/schoolData';
+import { SCHOOL_INFO, CORE_PHILOSOPHY, CORE_VALUES, LEADERSHIP_QUOTES, FLIER_PILLARS } from '../data/schoolData';
 import { SchoolCrest } from '../components/SchoolCrest';
 import {
   Shield,
@@ -258,22 +258,22 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
               <div className="aspect-[16/10] overflow-hidden bg-slate-100 relative">
                 <img
                   src="https://i.ibb.co/Xr1Tdqxd/Whats-App-Image-2026-11-11-at-10-28-37-AM.jpg"
-                  alt="Learning Through Play at Oak International Christian School"
+                  alt="Future Doctors & Healthcare at Oak International Christian School"
                   loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-500 ease-out"
                 />
                 <div className="absolute top-3 left-3">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#0D2E1B]/85 backdrop-blur-xs px-3 py-1 rounded-full border border-white/20">
-                    Interactive Learning
+                    Events
                   </span>
                 </div>
               </div>
               <div className="p-5">
                 <h4 className="font-serif text-lg font-bold text-[#0D2E1B] group-hover:text-[#1B7A43] transition-colors">
-                  Learning Through Play
+                  Future Doctors &amp; Healthcare
                 </h4>
                 <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                  Encouraging creativity, imagination and discovery through engaging activities that make learning enjoyable, meaningful and memorable.
+                  Learners step into the shoes of doctors and nurses, exploring healthcare through hands-on classroom role-play.
                 </p>
               </div>
             </div>
@@ -400,16 +400,65 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
         </div>
       </section>
 
-      {/* Leadership Quotes Showcase */}
+      {/* Guiding Convictions - Our Core Values */}
       <section className="py-20 bg-[#0D2E1B] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-12">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#68D37E]">
+              Guiding Convictions
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold mt-2 text-white">
+              Our Core Values
+            </h2>
+            <p className="text-slate-300 text-sm mt-3">
+              The Biblical virtues of Godliness, Integrity, Care and Excellence that anchor our daily life and learning at Oak International.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {CORE_VALUES.map((val) => {
+              const IconComp =
+                val.title === 'Godliness'
+                  ? Sparkles
+                  : val.title === 'Integrity'
+                  ? Shield
+                  : val.title === 'Care'
+                  ? Heart
+                  : Award;
+              return (
+                <div
+                  key={val.id}
+                  className="bg-[#071E12] p-7 rounded-2xl border border-[#1B7A43]/30 flex flex-col justify-between hover:border-[#68D37E]/60 transition-colors"
+                >
+                  <div>
+                    <div className="w-11 h-11 rounded-xl bg-[#1B7A43]/30 border border-[#68D37E]/30 text-[#68D37E] flex items-center justify-center mb-5">
+                      <IconComp className="w-5 h-5" />
+                    </div>
+                    <h3 className="font-serif text-2xl font-bold text-white mb-3">
+                      {val.title}
+                    </h3>
+                    <p className="text-slate-200 text-sm leading-relaxed mb-5">
+                      {val.description}
+                    </p>
+                  </div>
+                  <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                    <span className="font-semibold text-[#68D37E]">
+                      {val.tag}
+                    </span>
+                    <span className="text-[11px] text-slate-400 uppercase">Oak Value</span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="text-center max-w-2xl mx-auto mb-10 pt-8 border-t border-white/10">
             <span className="text-xs font-bold uppercase tracking-widest text-[#68D37E]">
               Words That Guide Us
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold mt-2">
+            <h3 className="font-serif text-2xl sm:text-3xl font-bold mt-2">
               Leadership Quotes
-            </h2>
+            </h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

@@ -569,34 +569,17 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* GRADUATION CELEBRATIONS SPOTLIGHT - Real Students in Caps & Gowns */}
       <section className="py-20 bg-[#F2F9F4] border-t border-[#1B7A43]/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-[#1B7A43]/25 text-[#1B7A43] text-xs font-bold uppercase tracking-wider mb-3 shadow-2xs">
-                <GraduationCap className="w-4 h-4 text-[#6DB33F]" />
-                <span>Student Milestones & Celebrations</span>
-              </div>
-              <h2 className="font-serif text-3xl sm:text-4xl text-[#0D2E1B] font-bold">
-                Graduation at Oak International
-              </h2>
-              <p className="text-slate-600 text-sm mt-2 max-w-xl">
-                Honoring our students' diligence, character, and academic mastery as they complete their learning stages and prepare for higher education.
-              </p>
-            </div>
-
-            <button
-              onClick={() => {
-                onNavigate('gallery');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              className="px-5 py-2.5 bg-[#1B7A43] hover:bg-[#156334] text-white text-xs sm:text-sm font-bold rounded-xl shadow-sm transition-colors inline-flex items-center gap-2 cursor-pointer self-start md:self-auto"
-            >
-              <span>View All Graduation Ceremonies</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
+          <div className="mb-12">
+            <h2 className="font-serif text-3xl sm:text-4xl text-[#0D2E1B] font-bold">
+              Graduation at Oak International
+            </h2>
+            <p className="text-slate-600 text-sm mt-2 max-w-xl">
+              Honoring our students' diligence, character, and academic mastery as they complete their learning stages and prepare for higher education.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {GRADUATION_GALLERY.slice(0, 3).map((photo) => (
+            {GRADUATION_GALLERY.filter((photo) => ['grad-1', 'grad-2', 'grad-4'].includes(photo.id)).map((photo) => (
               <div
                 key={photo.id}
                 onClick={() => {
@@ -622,11 +605,6 @@ export const HomePage: React.FC<HomePageProps> = ({
                       {photo.category}
                     </span>
                   </div>
-                  <div className="absolute top-3 right-3">
-                    <span className="text-[10px] font-bold text-white bg-[#1B7A43]/90 backdrop-blur-xs px-2 py-0.5 rounded-full">
-                      {photo.year}
-                    </span>
-                  </div>
                 </div>
 
                 <div className="p-6 flex-1 flex flex-col justify-between">
@@ -639,8 +617,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                     </p>
                   </div>
 
-                  <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs text-[#1B7A43] font-bold">
-                    <span>Explore Graduation &rarr;</span>
+                  <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-end text-xs">
                     <span className="text-[11px] text-slate-400 font-normal">Buwate Campus</span>
                   </div>
                 </div>

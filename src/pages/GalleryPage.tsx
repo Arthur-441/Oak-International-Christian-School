@@ -339,7 +339,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
                       {photo.title}
                     </h3>
                     {photo.caption && (
-                      <p className="text-slate-500 text-xs mt-1 line-clamp-2 leading-relaxed">
+                      <p className="text-slate-500 text-xs mt-1 line-clamp-3 leading-relaxed">
                         {photo.caption}
                       </p>
                     )}
