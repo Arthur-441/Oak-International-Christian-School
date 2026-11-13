@@ -18,11 +18,15 @@ import {
   Maximize2,
   Camera,
   Layers,
+  FileText,
+  Download,
+  Eye,
 } from 'lucide-react';
 
 interface GalleryPageProps {
   onNavigate: (page: PageId) => void;
   onOpenEnquiry: () => void;
+  onOpenEnrollmentForm?: () => void;
 }
 
 const GALLERY_CATEGORIES: GalleryCategory[] = [
@@ -38,6 +42,7 @@ const GALLERY_CATEGORIES: GalleryCategory[] = [
 export const GalleryPage: React.FC<GalleryPageProps> = ({
   onNavigate,
   onOpenEnquiry,
+  onOpenEnrollmentForm,
 }) => {
   // Discipline showcase filter state
   const [selectedDisciplineCategory, setSelectedDisciplineCategory] = useState<string>('All');
@@ -202,6 +207,23 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
                   <ExternalLink className="w-3.5 h-3.5" />
                   <span>View Full Size Flier</span>
                 </button>
+                <a
+                  href={SCHOOL_INFO.enrollmentFormPdfUrl}
+                  download="Oak_International_Enrollment_Form.pdf"
+                  className="px-5 py-2.5 bg-[#09262C] hover:bg-[#061C20] text-white text-xs font-bold rounded-xl transition-colors cursor-pointer inline-flex items-center gap-1.5 shadow-xs"
+                >
+                  <Download className="w-3.5 h-3.5 text-[#00C2B8]" />
+                  <span>Download Enrollment Form (PDF)</span>
+                </a>
+                {onOpenEnrollmentForm && (
+                  <button
+                    onClick={onOpenEnrollmentForm}
+                    className="px-4 py-2.5 border border-[#00868F]/30 bg-[#F2F8F8] hover:bg-[#E5F1F2] text-[#09262C] text-xs font-semibold rounded-xl transition-colors cursor-pointer inline-flex items-center gap-1.5"
+                  >
+                    <Eye className="w-3.5 h-3.5 text-[#00868F]" />
+                    <span>Preview Form</span>
+                  </button>
+                )}
                 <button
                   onClick={onOpenEnquiry}
                   className="px-5 py-2.5 border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-xl transition-colors cursor-pointer inline-flex items-center gap-1.5"

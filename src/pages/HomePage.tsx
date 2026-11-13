@@ -28,16 +28,20 @@ import {
   MessageCircle,
   Clock,
   Check,
+  Download,
+  Eye,
 } from 'lucide-react';
 
 interface HomePageProps {
   onNavigate: (page: PageId) => void;
   onOpenEnquiry: () => void;
+  onOpenEnrollmentForm?: () => void;
 }
 
 export const HomePage: React.FC<HomePageProps> = ({
   onNavigate,
   onOpenEnquiry,
+  onOpenEnrollmentForm,
 }) => {
   return (
     <div className="w-full">
@@ -713,14 +717,51 @@ export const HomePage: React.FC<HomePageProps> = ({
             ))}
           </div>
 
-          <div className="mt-12 text-center">
-            <button
-              onClick={onOpenEnquiry}
-              className="px-8 py-3.5 bg-[#00868F] hover:bg-[#00747C] text-white text-sm font-bold rounded-lg shadow-sm transition-colors cursor-pointer inline-flex items-center gap-2"
-            >
-              <span>Begin Your Admission Enquiry</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
+          {/* Official Enrollment Form PDF Download Banner */}
+          <div className="mt-10 bg-gradient-to-r from-[#09262C] to-[#005C66] rounded-3xl p-6 sm:p-8 text-white border border-[#00868F]/30 shadow-lg flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center shrink-0 text-[#00C2B8]">
+                <FileText className="w-6 h-6" />
+              </div>
+              <div className="space-y-1">
+                <span className="text-[11px] font-bold uppercase tracking-widest text-[#00C2B8] block">
+                  Official Admissions Document &middot; 7-Page PDF
+                </span>
+                <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">
+                  Registration &amp; Enrollment Form
+                </h3>
+                <p className="text-slate-200 text-xs sm:text-sm max-w-2xl leading-relaxed">
+                  Includes Student &amp; Family Information, Medical &amp; Religious details, School &amp; Financial Regulations, and Code of Conduct. Download, complete, and submit to our Buwate Campus or via admissions email.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3 shrink-0">
+              {onOpenEnrollmentForm && (
+                <button
+                  onClick={onOpenEnrollmentForm}
+                  className="px-5 py-3 bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-semibold rounded-xl border border-white/25 transition-colors inline-flex items-center gap-2 cursor-pointer"
+                >
+                  <Eye className="w-4 h-4 text-[#00C2B8]" />
+                  <span>Preview Form</span>
+                </button>
+              )}
+              <a
+                href={SCHOOL_INFO.enrollmentFormPdfUrl}
+                download="Oak_International_Enrollment_Form.pdf"
+                className="px-5 py-3 bg-[#00868F] hover:bg-[#00747C] text-white text-xs sm:text-sm font-bold rounded-xl shadow-md transition-colors inline-flex items-center gap-2 cursor-pointer"
+              >
+                <Download className="w-4 h-4" />
+                <span>Download Enrollment PDF</span>
+              </a>
+              <button
+                onClick={onOpenEnquiry}
+                className="px-5 py-3 bg-white hover:bg-slate-100 text-[#09262C] text-xs sm:text-sm font-bold rounded-xl shadow-sm transition-colors inline-flex items-center gap-2 cursor-pointer"
+              >
+                <span>Enquire Online</span>
+                <ArrowRight className="w-4 h-4 text-[#00868F]" />
+              </button>
+            </div>
           </div>
         </div>
       </section>

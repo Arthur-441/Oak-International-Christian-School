@@ -16,13 +16,16 @@ import {
   FileText,
   Instagram,
   Facebook,
+  Download,
+  Eye,
 } from 'lucide-react';
 
 interface ContactPageProps {
   onNavigate: (page: PageId) => void;
+  onOpenEnrollmentForm?: () => void;
 }
 
-export const ContactPage: React.FC<ContactPageProps> = () => {
+export const ContactPage: React.FC<ContactPageProps> = ({ onOpenEnrollmentForm }) => {
   return (
     <div className="w-full">
       {/* Page Header Banner */}
@@ -128,6 +131,46 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
                         Submit formal applications & document verification
                       </p>
                     </div>
+                  </div>
+                </div>
+
+                {/* Official Enrollment Form PDF Card */}
+                <div className="bg-white p-6 rounded-2xl border-2 border-[#00868F]/25 shadow-2xs hover:border-[#00868F] transition-colors space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-[#09262C] text-[#00C2B8] flex items-center justify-center shrink-0">
+                      <FileText className="w-6 h-6" />
+                    </div>
+                    <div className="space-y-1">
+                      <div className="text-xs uppercase tracking-wider font-bold text-[#00868F]">
+                        Official Registration Form (PDF)
+                      </div>
+                      <div className="font-serif text-lg font-bold text-[#09262C]">
+                        Student Enrollment Form
+                      </div>
+                      <p className="text-xs text-slate-600 leading-relaxed">
+                        Download our 7-page registration form (includes student/family details, school &amp; financial regulations, and code of conduct).
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2.5 pt-1">
+                    {onOpenEnrollmentForm && (
+                      <button
+                        type="button"
+                        onClick={onOpenEnrollmentForm}
+                        className="flex-1 py-2.5 px-3.5 bg-[#F2F8F8] hover:bg-[#E5F1F2] text-[#09262C] border border-[#00868F]/25 text-xs font-semibold rounded-xl transition-colors inline-flex items-center justify-center gap-1.5 cursor-pointer"
+                      >
+                        <Eye className="w-3.5 h-3.5 text-[#00868F]" />
+                        <span>View Form</span>
+                      </button>
+                    )}
+                    <a
+                      href={SCHOOL_INFO.enrollmentFormPdfUrl}
+                      download="Oak_International_Enrollment_Form.pdf"
+                      className="flex-1 py-2.5 px-3.5 bg-[#00868F] hover:bg-[#00747C] text-white text-xs font-bold rounded-xl shadow-xs transition-colors inline-flex items-center justify-center gap-1.5 cursor-pointer"
+                    >
+                      <Download className="w-3.5 h-3.5" />
+                      <span>Download PDF</span>
+                    </a>
                   </div>
                 </div>
 

@@ -16,6 +16,7 @@ export const SCHOOL_INFO = {
   googleMapsEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15958.825272661858!2d32.6288!3d0.3951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb7e8d6722d3%3A0x7d6f5f9aa9b45bf9!2sBuwate%2C%20Kira%2C%20Uganda!5e0!3m2!1sen!2sug!4v1700000000000!5m2!1sen!2sug',
   flierImageUrl: 'https://i.ibb.co/fG4CsFf5/Oak-Admission-Flyer-3.png',
   logoImageUrl: '/assets/aistudio/oak_school_logo_transparent.png',
+  enrollmentFormPdfUrl: '/assets/aistudio/Enrollment_form_1e3c00d3.pdf',
   curriculum: 'Accelerated Christian Education (ACE)',
   mission: 'Our mission is to equip each learner with essential life skills and Godly character through academic and physical programs based on the Word of God.',
   goal: 'God-fearing, dependable, transformational leaders in any sphere of society.',

@@ -9,12 +9,14 @@ interface HeaderProps {
   currentPage: PageId;
   onNavigate: (page: PageId) => void;
   onOpenEnquiry: () => void;
+  onOpenEnrollmentForm?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   currentPage,
   onNavigate,
   onOpenEnquiry,
+  onOpenEnrollmentForm,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -69,9 +71,22 @@ export const Header: React.FC<HeaderProps> = ({
             </a>
           </div>
 
-          <div className="flex items-center gap-3.5 text-xs ml-auto">
+          <div className="flex items-center gap-2.5 sm:gap-3.5 text-xs ml-auto flex-wrap justify-end">
+            {/* Enrollment Form PDF Quick Button in Top Bar */}
+            {onOpenEnrollmentForm && (
+              <button
+                type="button"
+                onClick={onOpenEnrollmentForm}
+                title="View or Download Official Enrollment Form (PDF)"
+                className="px-2.5 py-1 rounded-md bg-[#00868F]/25 hover:bg-[#00868F] text-[#E4F1F2] hover:text-white border border-[#00868F]/50 text-[11px] font-semibold transition-all inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
+              >
+                <FileText className="w-3.5 h-3.5 text-[#00C2B8]" />
+                <span>Enrollment Form (PDF)</span>
+              </button>
+            )}
+
             {/* Social Media Links: Instagram, Facebook, X */}
-            <div className="flex items-center gap-2 border-r border-[#0A333A] pr-3.5 mr-1">
+            <div className="flex items-center gap-2 border-r border-[#0A333A] pr-3 mr-0.5">
               <a
                 href={SCHOOL_INFO.instagramUrl}
                 target="_blank"
@@ -210,6 +225,18 @@ export const Header: React.FC<HeaderProps> = ({
               >
                 Make an Enquiry
               </button>
+              {onOpenEnrollmentForm && (
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenEnrollmentForm();
+                  }}
+                  className="w-full py-2.5 px-4 text-center font-semibold text-sm text-[#09262C] bg-[#F2F8F8] hover:bg-[#E5F1F2] border border-[#00868F]/25 rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  <FileText className="w-4 h-4 text-[#00868F]" />
+                  <span>Enrollment Form (PDF)</span>
+                </button>
+              )}
               <WhatsAppButton className="w-full justify-center" />
 
               <div className="grid grid-cols-3 gap-2 pt-1">

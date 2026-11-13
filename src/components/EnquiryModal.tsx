@@ -1,14 +1,19 @@
 import React, { useEffect } from 'react';
 import { EnquiryForm } from './EnquiryForm';
-import { X, GraduationCap } from 'lucide-react';
+import { X, GraduationCap, FileText, Download, Eye } from 'lucide-react';
 import { SCHOOL_INFO } from '../data/schoolData';
 
 interface EnquiryModalProps {
   isOpen: boolean;
   onClose: () => void;
+  onOpenEnrollmentForm?: () => void;
 }
 
-export const EnquiryModal: React.FC<EnquiryModalProps> = ({ isOpen, onClose }) => {
+export const EnquiryModal: React.FC<EnquiryModalProps> = ({
+  isOpen,
+  onClose,
+  onOpenEnrollmentForm,
+}) => {
   useEffect(() => {
     if (!isOpen) return;
 
@@ -61,11 +66,42 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({ isOpen, onClose }) =
           </p>
         </div>
 
+        {/* Official Enrollment Form Quick Bar */}
+        <div className="bg-[#F2F8F8] border-b border-[#00868F]/20 px-6 sm:px-8 py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div className="flex items-center gap-2.5 text-xs text-[#09262C]">
+            <FileText className="w-4 h-4 text-[#00868F] shrink-0" />
+            <span className="font-semibold">
+              Ready to apply? Get our official Registration & Enrollment Form (PDF)
+            </span>
+          </div>
+          <div className="flex items-center gap-2 shrink-0">
+            {onOpenEnrollmentForm && (
+              <button
+                type="button"
+                onClick={onOpenEnrollmentForm}
+                className="px-3 py-1.5 bg-white hover:bg-slate-50 text-[#09262C] border border-[#00868F]/30 rounded-lg text-xs font-semibold inline-flex items-center gap-1 cursor-pointer transition-colors"
+              >
+                <Eye className="w-3.5 h-3.5 text-[#00868F]" />
+                <span>View</span>
+              </button>
+            )}
+            <a
+              href={SCHOOL_INFO.enrollmentFormPdfUrl}
+              download="Oak_International_Enrollment_Form.pdf"
+              className="px-3 py-1.5 bg-[#00868F] hover:bg-[#00747C] text-white rounded-lg text-xs font-bold inline-flex items-center gap-1 cursor-pointer transition-colors"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>Download PDF</span>
+            </a>
+          </div>
+        </div>
+
         {/* Body Form */}
-        <div className="p-6 sm:p-8 max-h-[75vh] overflow-y-auto">
+        <div className="p-6 sm:p-8 max-h-[68vh] overflow-y-auto">
           <EnquiryForm onSuccess={onClose} compact />
         </div>
       </div>
     </div>
   );
 };
+

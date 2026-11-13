@@ -3,14 +3,15 @@ import { PageId } from '../types';
 import { SCHOOL_INFO, CURRICULUM_PARTNERS } from '../data/schoolData';
 import { SchoolCrest } from './SchoolCrest';
 import { WhatsAppButton } from './WhatsAppButton';
-import { Phone, Mail, MapPin, ChevronRight, Heart, Instagram, Facebook } from 'lucide-react';
+import { Phone, Mail, MapPin, ChevronRight, Heart, Instagram, Facebook, FileText, Download } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (page: PageId) => void;
   onOpenEnquiry: () => void;
+  onOpenEnrollmentForm?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry }) => {
+export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry, onOpenEnrollmentForm }) => {
   const currentYear = new Date().getFullYear();
 
   const handleNav = (page: PageId) => {
@@ -174,6 +175,26 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry }) => 
                   <ChevronRight className="w-3.5 h-3.5 text-[#00868F]" />
                   <span>Contact & Enquiries</span>
                 </button>
+              </li>
+              <li className="pt-1">
+                {onOpenEnrollmentForm ? (
+                  <button
+                    onClick={onOpenEnrollmentForm}
+                    className="flex items-center gap-1.5 text-[#00C2B8] hover:text-white font-semibold transition-colors cursor-pointer"
+                  >
+                    <FileText className="w-3.5 h-3.5" />
+                    <span>Enrollment Form (PDF)</span>
+                  </button>
+                ) : (
+                  <a
+                    href={SCHOOL_INFO.enrollmentFormPdfUrl}
+                    download="Oak_International_Enrollment_Form.pdf"
+                    className="flex items-center gap-1.5 text-[#00C2B8] hover:text-white font-semibold transition-colors"
+                  >
+                    <Download className="w-3.5 h-3.5" />
+                    <span>Enrollment Form (PDF)</span>
+                  </a>
+                )}
               </li>
             </ul>
           </div>

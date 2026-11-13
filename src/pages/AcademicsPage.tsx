@@ -16,16 +16,20 @@ import {
   FileText,
   Clock,
   Compass,
+  Download,
+  Eye,
 } from 'lucide-react';
 
 interface AcademicsPageProps {
   onNavigate: (page: PageId) => void;
   onOpenEnquiry: () => void;
+  onOpenEnrollmentForm?: () => void;
 }
 
 export const AcademicsPage: React.FC<AcademicsPageProps> = ({
   onNavigate,
   onOpenEnquiry,
+  onOpenEnrollmentForm,
 }) => {
   return (
     <div className="w-full">
@@ -262,13 +266,31 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({
                 <p className="text-slate-200 text-sm sm:text-base leading-relaxed">
                   Whether transitioning from UNEB, Cambridge, or another international curriculum, our comprehensive Diagnostic Test pinpoints your child's exact reading, mathematical, and comprehension levels without guesswork.
                 </p>
-                <div className="pt-2 flex flex-wrap items-center gap-4">
+                <div className="pt-2 flex flex-wrap items-center gap-3">
                   <button
                     onClick={onOpenEnquiry}
-                    className="px-6 py-3.5 bg-[#00868F] hover:bg-[#00747C] text-white font-bold text-sm rounded-xl shadow-md transition-colors cursor-pointer"
+                    className="px-5 py-3 bg-[#00868F] hover:bg-[#00747C] text-white font-bold text-xs sm:text-sm rounded-xl shadow-md transition-colors cursor-pointer"
                   >
                     Book a Diagnostic Consultation
                   </button>
+                  <a
+                    href={SCHOOL_INFO.enrollmentFormPdfUrl}
+                    download="Oak_International_Enrollment_Form.pdf"
+                    className="px-4 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold text-xs sm:text-sm rounded-xl border border-white/25 transition-colors inline-flex items-center gap-1.5 cursor-pointer"
+                  >
+                    <Download className="w-4 h-4 text-[#00C2B8]" />
+                    <span>Enrollment Form (PDF)</span>
+                  </a>
+                  {onOpenEnrollmentForm && (
+                    <button
+                      type="button"
+                      onClick={onOpenEnrollmentForm}
+                      className="px-4 py-3 bg-white/5 hover:bg-white/15 text-slate-200 font-semibold text-xs sm:text-sm rounded-xl border border-white/15 transition-colors inline-flex items-center gap-1.5 cursor-pointer"
+                    >
+                      <Eye className="w-4 h-4 text-[#00C2B8]" />
+                      <span>Preview</span>
+                    </button>
+                  )}
                   <WhatsAppButton size="md" />
                 </div>
               </div>

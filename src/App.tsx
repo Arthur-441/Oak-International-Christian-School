@@ -3,6 +3,7 @@ import { PageId } from './types';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { EnquiryModal } from './components/EnquiryModal';
+import { EnrollmentPdfModal } from './components/EnrollmentPdfModal';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { AcademicsPage } from './pages/AcademicsPage';
@@ -13,6 +14,7 @@ import { ContactPage } from './pages/ContactPage';
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageId>('home');
   const [isEnquiryModalOpen, setIsEnquiryModalOpen] = useState(false);
+  const [isEnrollmentPdfOpen, setIsEnrollmentPdfOpen] = useState(false);
 
   // Guarantee Home page is always shown first when the website opens or reloads
   useEffect(() => {
@@ -61,6 +63,7 @@ export default function App() {
         currentPage={currentPage}
         onNavigate={navigateTo}
         onOpenEnquiry={() => setIsEnquiryModalOpen(true)}
+        onOpenEnrollmentForm={() => setIsEnrollmentPdfOpen(true)}
       />
 
       {/* Main Multi-Page Content Area */}
@@ -69,6 +72,7 @@ export default function App() {
           <HomePage
             onNavigate={navigateTo}
             onOpenEnquiry={() => setIsEnquiryModalOpen(true)}
+            onOpenEnrollmentForm={() => setIsEnrollmentPdfOpen(true)}
           />
         )}
         {currentPage === 'about' && (
@@ -81,6 +85,7 @@ export default function App() {
           <AcademicsPage
             onNavigate={navigateTo}
             onOpenEnquiry={() => setIsEnquiryModalOpen(true)}
+            onOpenEnrollmentForm={() => setIsEnrollmentPdfOpen(true)}
           />
         )}
         {currentPage === 'activities' && (
@@ -93,10 +98,14 @@ export default function App() {
           <GalleryPage
             onNavigate={navigateTo}
             onOpenEnquiry={() => setIsEnquiryModalOpen(true)}
+            onOpenEnrollmentForm={() => setIsEnrollmentPdfOpen(true)}
           />
         )}
         {currentPage === 'contact' && (
-          <ContactPage onNavigate={navigateTo} />
+          <ContactPage
+            onNavigate={navigateTo}
+            onOpenEnrollmentForm={() => setIsEnrollmentPdfOpen(true)}
+          />
         )}
       </main>
 
@@ -104,15 +113,27 @@ export default function App() {
       <Footer
         onNavigate={navigateTo}
         onOpenEnquiry={() => setIsEnquiryModalOpen(true)}
+        onOpenEnrollmentForm={() => setIsEnrollmentPdfOpen(true)}
       />
 
       {/* Global Quick Enquiry Modal */}
       <EnquiryModal
         isOpen={isEnquiryModalOpen}
         onClose={() => setIsEnquiryModalOpen(false)}
+        onOpenEnrollmentForm={() => {
+          setIsEnquiryModalOpen(false);
+          setIsEnrollmentPdfOpen(true);
+        }}
+      />
+
+      {/* Official Enrollment Form PDF Modal */}
+      <EnrollmentPdfModal
+        isOpen={isEnrollmentPdfOpen}
+        onClose={() => setIsEnrollmentPdfOpen(false)}
       />
     </div>
   );
 }
+
 
 
