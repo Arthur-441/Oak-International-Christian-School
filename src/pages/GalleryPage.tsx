@@ -3,13 +3,8 @@ import { PageId, GalleryCategory } from '../types';
 import { DISCIPLINE_SHOWCASES, SCHOOL_INFO, SCHOOL_LIFE_GALLERY } from '../data/schoolData';
 import { SchoolCrest } from '../components/SchoolCrest';
 import { WhatsAppButton } from '../components/WhatsAppButton';
+import { Reveal } from '../components/Reveal';
 import {
-  BookOpen,
-  Shield,
-  GraduationCap,
-  Sparkles,
-  Trophy,
-  Heart,
   CheckCircle,
   ExternalLink,
   ChevronLeft,
@@ -17,8 +12,6 @@ import {
   X,
   Maximize2,
   Camera,
-  Layers,
-  FileText,
   Download,
   Eye,
 } from 'lucide-react';
@@ -39,7 +32,6 @@ const GALLERY_CATEGORIES: GalleryCategory[] = [
 ];
 
 export const GalleryPage: React.FC<GalleryPageProps> = ({
-  onNavigate,
   onOpenEnquiry,
   onOpenEnrollmentForm,
 }) => {
@@ -126,18 +118,26 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
       : null;
 
   return (
-    <div className="w-full">
-      {/* Page Header Banner */}
-      <section className="bg-gradient-to-br from-[#071E12] via-[#0D2E1B] to-[#14532D] text-white py-16 lg:py-20 border-b border-[#144027]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="w-full bg-white">
+      {/* Unified Light Page Header */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#F4FAF6] via-white to-[#E6F5EC] py-16 lg:py-20 border-b border-[#DCEFE2]">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-24 -right-24 w-72 h-72 rounded-full bg-[#319B59]/10 animate-float-slow"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-16 left-12 w-40 h-40 rounded-full bg-[#319B59]/5 animate-float-gentle"
+        />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#68D37E] block mb-2">
+            <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#1F6E3D] bg-[#E6F5EC] border border-[#CFE8D8] px-3 py-1 rounded-full mb-4">
               School Life & Photo Gallery
             </span>
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight mb-4">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#0F3820] tracking-tight leading-tight mb-4">
               Life at Oak International
             </h1>
-            <p className="text-slate-200 text-base sm:text-lg leading-relaxed">
+            <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
               Explore our real school moments — from graduation milestones and vibrant assemblies to co-curricular clubs, sports, and Christian conventions.
             </p>
           </div>
@@ -145,213 +145,218 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
       </section>
 
       {/* Official Flier & Admissions Highlight Strip */}
-      <section className="py-12 bg-[#F2F9F4] border-b border-[#1B7A43]/15">
+      <section className="py-12 sm:py-14 bg-[#F4FAF6] border-b border-[#DCEFE2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-3xl p-6 sm:p-10 border border-[#1B7A43]/25 shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Left: Official Flier Showcase Card */}
-            <div className="lg:col-span-4 flex justify-center">
-              <div
-                onClick={() => setIsFlierPreviewOpen(true)}
-                className="group relative rounded-2xl overflow-hidden border-2 border-[#1B7A43]/30 shadow-md hover:shadow-xl transition-all cursor-pointer max-w-[280px]"
-              >
-                <img
-                  src={SCHOOL_INFO.flierImageUrl}
-                  alt="Official Oak International Christian School Admissions Flier"
-                  className="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-[#0D2E1B]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-bold gap-1.5 backdrop-blur-2xs">
-                  <ExternalLink className="w-4 h-4" />
-                  <span>Click to Expand Flier</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right: Flier Description & Information */}
-            <div className="lg:col-span-8 space-y-4">
-              <div className="flex items-center gap-3">
-                <SchoolCrest size="sm" />
-                <span className="text-xs font-bold uppercase tracking-wider text-[#1B7A43]">
-                  Official School Admissions Document
-                </span>
-              </div>
-
-              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0D2E1B]">
-                ACE Curriculum & Enrolment Information
-              </h2>
-
-              <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
-                Featured above is the official Oak International Christian School admissions publication, displaying our curriculum pillars, kindergarten through Grade 12 educational pathway, self-paced learning model, and our student body.
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs">
-                <div className="p-3 rounded-xl bg-[#F2F9F4] border border-[#1B7A43]/20">
-                  <strong className="block text-[#0D2E1B] font-semibold">Curriculum:</strong>
-                  <span className="text-slate-600">Accelerated Christian Education (ACE)</span>
-                </div>
-                <div className="p-3 rounded-xl bg-[#F2F9F4] border border-[#1B7A43]/20">
-                  <strong className="block text-[#0D2E1B] font-semibold">Campus:</strong>
-                  <span className="text-slate-600">Kira – Kasangati Road, Buwate</span>
-                </div>
-                <div className="p-3 rounded-xl bg-[#F2F9F4] border border-[#1B7A43]/20">
-                  <strong className="block text-[#0D2E1B] font-semibold">Contact:</strong>
-                  <span className="text-slate-600">0783 368459</span>
-                </div>
-              </div>
-
-              <div className="pt-2 flex flex-wrap gap-3">
-                <button
+          <Reveal>
+            <div className="bg-white rounded-3xl p-6 sm:p-10 border border-[#CFE8D8] shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              {/* Left: Official Flier Showcase Card */}
+              <div className="lg:col-span-4 flex justify-center">
+                <div
                   onClick={() => setIsFlierPreviewOpen(true)}
-                  className="px-5 py-2.5 bg-[#1B7A43] hover:bg-[#156334] text-white text-xs font-bold rounded-xl transition-colors cursor-pointer inline-flex items-center gap-1.5 shadow-xs"
+                  className="group relative rounded-2xl overflow-hidden border-2 border-[#319B59]/25 shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer max-w-[280px]"
                 >
-                  <ExternalLink className="w-3.5 h-3.5" />
-                  <span>View Full Size Flier</span>
-                </button>
-                <a
-                  href={SCHOOL_INFO.enrollmentFormPdfUrl}
-                  download="Oak_International_Enrollment_Form.pdf"
-                  className="px-5 py-2.5 bg-[#0D2E1B] hover:bg-[#071E12] text-white text-xs font-bold rounded-xl transition-colors cursor-pointer inline-flex items-center gap-1.5 shadow-xs"
-                >
-                  <Download className="w-3.5 h-3.5 text-[#68D37E]" />
-                  <span>Download Enrollment Form (PDF)</span>
-                </a>
-                {onOpenEnrollmentForm && (
+                  <img
+                    src={SCHOOL_INFO.flierImageUrl}
+                    alt="Official Oak International Christian School Admissions Flier"
+                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-[#0F3820]/35 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-bold gap-1.5 backdrop-blur-2xs">
+                    <ExternalLink className="w-4 h-4" />
+                    <span>Click to Expand Flier</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right: Flier Description & Information */}
+              <div className="lg:col-span-8 space-y-4">
+                <div className="flex items-center gap-3">
+                  <SchoolCrest size="sm" />
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#1F6E3D]">
+                    Official School Admissions Document
+                  </span>
+                </div>
+
+                <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0F3820]">
+                  ACE Curriculum & Enrolment Information
+                </h2>
+
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                  Featured above is the official Oak International Christian School admissions publication, displaying our curriculum pillars, kindergarten through Grade 12 educational pathway, self-paced learning model, and our student body.
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs">
+                  <div className="p-3.5 rounded-xl bg-[#F4FAF6] border border-[#DCEFE2]">
+                    <strong className="block text-[#0F3820] font-semibold">Curriculum:</strong>
+                    <span className="text-slate-600">Accelerated Christian Education (ACE)</span>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-[#F4FAF6] border border-[#DCEFE2]">
+                    <strong className="block text-[#0F3820] font-semibold">Campus:</strong>
+                    <span className="text-slate-600">Kira – Kasangati Road, Buwate</span>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-[#F4FAF6] border border-[#DCEFE2]">
+                    <strong className="block text-[#0F3820] font-semibold">Contact:</strong>
+                    <span className="text-slate-600">0783 368459</span>
+                  </div>
+                </div>
+
+                <div className="pt-2 flex flex-wrap gap-3">
                   <button
-                    onClick={onOpenEnrollmentForm}
-                    className="px-4 py-2.5 border border-[#1B7A43]/30 bg-[#F2F9F4] hover:bg-[#E2F3E7] text-[#0D2E1B] text-xs font-semibold rounded-xl transition-colors cursor-pointer inline-flex items-center gap-1.5"
+                    onClick={() => setIsFlierPreviewOpen(true)}
+                    className="px-5 py-2.5 bg-[#319B59] hover:bg-[#1F6E3D] text-white text-xs font-bold rounded-xl transition-colors cursor-pointer inline-flex items-center gap-1.5 shadow-xs"
                   >
-                    <Eye className="w-3.5 h-3.5 text-[#1B7A43]" />
-                    <span>Preview Form</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    <span>View Full Size Flier</span>
                   </button>
-                )}
-                <button
-                  onClick={onOpenEnquiry}
-                  className="px-5 py-2.5 border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-xl transition-colors cursor-pointer inline-flex items-center gap-1.5"
-                >
-                  <span>Enquire About Admissions</span>
-                </button>
+                  <a
+                    href={SCHOOL_INFO.enrollmentFormPdfUrl}
+                    download="Oak_International_Enrollment_Form.pdf"
+                    className="px-5 py-2.5 bg-[#1F6E3D] hover:bg-[#0F3820] text-white text-xs font-bold rounded-xl transition-colors cursor-pointer inline-flex items-center gap-1.5 shadow-xs"
+                  >
+                    <Download className="w-3.5 h-3.5 text-[#E6F5EC]" />
+                    <span>Download Enrollment Form (PDF)</span>
+                  </a>
+                  {onOpenEnrollmentForm && (
+                    <button
+                      onClick={onOpenEnrollmentForm}
+                      className="px-4 py-2.5 border border-[#CFE8D8] bg-[#F4FAF6] hover:bg-[#E6F5EC] text-[#0F3820] text-xs font-semibold rounded-xl transition-colors cursor-pointer inline-flex items-center gap-1.5"
+                    >
+                      <Eye className="w-3.5 h-3.5 text-[#319B59]" />
+                      <span>Preview Form</span>
+                    </button>
+                  )}
+                  <button
+                    onClick={onOpenEnquiry}
+                    className="px-5 py-2.5 border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-xl transition-colors cursor-pointer inline-flex items-center gap-1.5"
+                  >
+                    <span>Enquire About Admissions</span>
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* ============================================================== */}
       {/* School Life Photo Gallery Section */}
       {/* ============================================================== */}
-      <section className="py-16 sm:py-20 bg-slate-50/70 border-b border-slate-200">
+      <section className="py-16 sm:py-20 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Heading & Category Filter Tabs */}
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 pb-6 border-b border-slate-200">
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <Camera className="w-4 h-4 text-[#1B7A43]" />
-                <span className="text-xs font-bold uppercase tracking-widest text-[#1B7A43]">
-                  School Life Photo Gallery
-                </span>
+          <Reveal>
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 pb-6 border-b border-[#DCEFE2]">
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <Camera className="w-4 h-4 text-[#319B59]" />
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#1F6E3D]">
+                    School Life Photo Gallery
+                  </span>
+                </div>
+                <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-[#0F3820]">
+                  Capturing Oak Moments
+                </h2>
+                <p className="text-slate-600 text-sm mt-1 max-w-2xl">
+                  Browse real photographs from our campus life, graduations, spiritual conventions, co-curricular workshops, and sports.
+                </p>
               </div>
-              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-[#0D2E1B]">
-                Capturing Oak Moments
-              </h2>
-              <p className="text-slate-600 text-sm mt-1 max-w-2xl">
-                Browse real photographs from our campus life, graduations, spiritual conventions, co-curricular workshops, and sports.
-              </p>
-            </div>
 
-            {/* Filter Pill Tabs */}
-            <div className="flex flex-wrap items-center gap-2">
-              {GALLERY_CATEGORIES.map((cat) => {
-                const count = getCategoryCount(cat);
-                const isActive = activeGalleryCategory === cat;
-                return (
-                  <button
-                    key={cat}
-                    onClick={() => {
-                      setActiveGalleryCategory(cat);
-                    }}
-                    className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer inline-flex items-center gap-1.5 ${
-                      isActive
-                        ? 'bg-[#1B7A43] text-white shadow-sm ring-2 ring-[#1B7A43]/30'
-                        : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
-                    }`}
-                  >
-                    <span>{cat}</span>
-                    <span
-                      className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold ${
+              {/* Filter Pill Tabs */}
+              <div className="flex flex-wrap items-center gap-2">
+                {GALLERY_CATEGORIES.map((cat) => {
+                  const count = getCategoryCount(cat);
+                  const isActive = activeGalleryCategory === cat;
+                  return (
+                    <button
+                      key={cat}
+                      onClick={() => {
+                        setActiveGalleryCategory(cat);
+                      }}
+                      className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer inline-flex items-center gap-1.5 ${
                         isActive
-                          ? 'bg-white/25 text-white'
-                          : 'bg-slate-100 text-slate-500'
+                          ? 'bg-[#319B59] text-white shadow-sm ring-2 ring-[#319B59]/25'
+                          : 'bg-[#F4FAF6] text-slate-700 hover:bg-[#E6F5EC] border border-[#DCEFE2]'
                       }`}
                     >
-                      {count}
-                    </span>
-                  </button>
-                );
-              })}
+                      <span>{cat}</span>
+                      <span
+                        className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold ${
+                          isActive
+                            ? 'bg-white/25 text-white'
+                            : 'bg-white text-[#1F6E3D]'
+                        }`}
+                      >
+                        {count}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
-          </div>
+          </Reveal>
 
           {/* Gallery Photos Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
             {filteredPhotos.map((photo, index) => (
-              <div
-                key={photo.id}
-                onClick={() => setLightboxPhotoIndex(index)}
-                className="group relative bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-[#1B7A43]/60 shadow-xs hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col"
-              >
-                {/* Image Container with Consistent Ratio */}
-                <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
-                  <img
-                    src={photo.url}
-                    alt={photo.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-500 ease-out"
-                  />
+              <Reveal key={photo.id} delayMs={(index % 4) * 70}>
+                <div
+                  onClick={() => setLightboxPhotoIndex(index)}
+                  className="group relative h-full bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-[#319B59]/60 shadow-xs hover:shadow-lg transition-all duration-300 cursor-pointer flex flex-col"
+                >
+                  {/* Image Container with Consistent Ratio */}
+                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#F4FAF6]">
+                    <img
+                      src={photo.url}
+                      alt={photo.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                    />
 
-                  {/* Dark gradient overlay on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D2E1B]/90 via-[#0D2E1B]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-3.5 text-white">
-                    <div className="flex justify-end">
-                      <span className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center text-white shadow-xs">
-                        <Maximize2 className="w-3.5 h-3.5" />
-                      </span>
+                    {/* Subtle green overlay on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0F3820]/85 via-[#0F3820]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-3.5 text-white">
+                      <div className="flex justify-end">
+                        <span className="w-8 h-8 rounded-full bg-white/25 backdrop-blur-xs flex items-center justify-center text-white shadow-xs">
+                          <Maximize2 className="w-3.5 h-3.5" />
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-[10px] uppercase font-bold tracking-wider text-[#B6E6C6] block mb-0.5">
+                          {photo.category}
+                        </span>
+                        <p className="text-xs font-semibold text-white line-clamp-1">
+                          Click to view full photo
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <span className="text-[10px] uppercase font-bold tracking-wider text-[#68D37E] block mb-0.5">
+
+                    {/* Top-left category tag badge (always visible) */}
+                    <div className="absolute top-2.5 left-2.5">
+                      <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-white/95 text-[#1F6E3D] backdrop-blur-xs shadow-xs border border-[#CFE8D8]">
                         {photo.category}
                       </span>
-                      <p className="text-xs font-semibold text-white line-clamp-1">
-                        Click to view full photo
-                      </p>
                     </div>
                   </div>
 
-                  {/* Top-left category tag badge (always visible) */}
-                  <div className="absolute top-2.5 left-2.5">
-                    <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-[#0D2E1B]/85 text-white backdrop-blur-xs shadow-xs border border-white/10">
-                      {photo.category}
-                    </span>
+                  {/* Card Title & Caption Footer */}
+                  <div className="p-4 flex flex-col justify-between flex-grow bg-white">
+                    <div>
+                      <h3 className="font-serif text-sm font-bold text-[#0F3820] group-hover:text-[#319B59] transition-colors line-clamp-1">
+                        {photo.title}
+                      </h3>
+                      {photo.caption && (
+                        <p className="text-slate-600 text-xs mt-1 line-clamp-3 leading-relaxed">
+                          {photo.caption}
+                        </p>
+                      )}
+                    </div>
+                    <div className="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-[#1F6E3D] font-semibold">
+                      <span className="group-hover:underline inline-flex items-center gap-1">
+                        View details
+                      </span>
+                      <Maximize2 className="w-3 h-3 text-slate-400 group-hover:text-[#319B59] transition-colors" />
+                    </div>
                   </div>
                 </div>
-
-                {/* Card Title & Caption Footer */}
-                <div className="p-3.5 flex flex-col justify-between flex-grow bg-white">
-                  <div>
-                    <h3 className="font-serif text-sm font-bold text-[#0D2E1B] group-hover:text-[#1B7A43] transition-colors line-clamp-1">
-                      {photo.title}
-                    </h3>
-                    {photo.caption && (
-                      <p className="text-slate-500 text-xs mt-1 line-clamp-3 leading-relaxed">
-                        {photo.caption}
-                      </p>
-                    )}
-                  </div>
-                  <div className="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-[#1B7A43] font-semibold">
-                    <span className="group-hover:underline inline-flex items-center gap-1">
-                      View details
-                    </span>
-                    <Maximize2 className="w-3 h-3 text-slate-400 group-hover:text-[#1B7A43] transition-colors" />
-                  </div>
-                </div>
-              </div>
+              </Reveal>
             ))}
           </div>
 
@@ -362,112 +367,115 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
         </div>
       </section>
 
-      {/* Disciplines & School Life Cards (Pure Cards, No Stock Photos) */}
-      <section className="py-16 bg-white min-h-[500px]">
+      {/* Disciplines & School Life Cards */}
+      <section className="py-16 sm:py-20 bg-[#FAFBF8] min-h-[500px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Category Filter Controls */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10 pb-4 border-b border-slate-200">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block">
-                Filter By Discipline
-              </span>
-              <p className="text-sm text-[#0D2E1B] font-semibold">
-                Showing {filteredShowcases.length} Core Areas
-              </p>
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              {disciplineCategories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedDisciplineCategory(cat)}
-                  className={`px-4 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
-                    selectedDisciplineCategory === cat
-                      ? 'bg-[#1B7A43] text-white shadow-2xs'
-                      : 'bg-[#F2F9F4] text-slate-700 hover:bg-[#E2F3E7]'
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Cards Grid with Elevated Cards & Handwriting Script */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredShowcases.map((disc) => (
-              <div
-                key={disc.id}
-                className="bg-white rounded-3xl p-8 border-2 border-[#1B7A43]/20 hover:border-[#1B7A43] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#1B7A43] bg-[#F2F9F4] px-3 py-1 rounded-full border border-[#1B7A43]/20">
-                      {disc.category}
-                    </span>
-                    <span className="font-script text-base text-[#6DB33F] font-bold">
-                      Oak Discipline
-                    </span>
-                  </div>
-
-                  <h3 className="font-serif text-2xl font-bold text-[#0D2E1B] mb-3 group-hover:text-[#1B7A43] transition-colors">
-                    {disc.title}
-                  </h3>
-
-                  <p className="text-slate-600 text-sm leading-relaxed mb-5">
-                    {disc.description}
-                  </p>
-
-                  <div className="bg-[#F2F9F4] p-4 rounded-2xl border border-[#1B7A43]/15 mb-5 space-y-1">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#1B7A43] block">
-                      Scriptural Foundation
-                    </span>
-                    <p className="font-script text-lg text-[#0D2E1B] leading-snug">
-                      {disc.scripturalPrinciple}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="pt-4 border-t border-[#1B7A43]/15">
-                  <div className="text-xs font-semibold text-[#0D2E1B] mb-2 uppercase tracking-wide">
-                    Key Outcomes for Learners:
-                  </div>
-                  <ul className="space-y-1.5">
-                    {disc.outcomes.map((out, i) => (
-                      <li key={i} className="text-xs text-slate-700 flex items-center gap-2">
-                        <CheckCircle className="w-3.5 h-3.5 text-[#6DB33F] shrink-0" />
-                        <span>{out}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+          <Reveal>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10 pb-4 border-b border-[#DCEFE2]">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-[#1F6E3D] block">
+                  Filter By Discipline
+                </span>
+                <p className="text-sm text-[#0F3820] font-semibold">
+                  Showing {filteredShowcases.length} Core Areas
+                </p>
               </div>
+
+              <div className="flex flex-wrap gap-2">
+                {disciplineCategories.map((cat) => (
+                  <button
+                    key={cat}
+                    onClick={() => setSelectedDisciplineCategory(cat)}
+                    className={`px-4 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
+                      selectedDisciplineCategory === cat
+                        ? 'bg-[#319B59] text-white shadow-2xs'
+                        : 'bg-[#F4FAF6] text-slate-700 hover:bg-[#E6F5EC] border border-[#DCEFE2]'
+                    }`}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+            {filteredShowcases.map((disc, idx) => (
+              <Reveal key={disc.id} delayMs={(idx % 3) * 80}>
+                <div className="h-full bg-white rounded-3xl p-8 border border-[#DCEFE2] hover:border-[#319B59]/50 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#1F6E3D] bg-[#F4FAF6] px-3 py-1 rounded-full border border-[#CFE8D8]">
+                        {disc.category}
+                      </span>
+                      <span className="font-script text-base text-[#319B59] font-bold">
+                        Oak Discipline
+                      </span>
+                    </div>
+
+                    <h3 className="font-serif text-2xl font-bold text-[#0F3820] mb-3 group-hover:text-[#319B59] transition-colors">
+                      {disc.title}
+                    </h3>
+
+                    <p className="text-slate-600 text-sm leading-relaxed mb-5">
+                      {disc.description}
+                    </p>
+
+                    <div className="bg-[#F4FAF6] p-4 rounded-2xl border border-[#DCEFE2] mb-5 space-y-1">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#1F6E3D] block">
+                        Scriptural Foundation
+                      </span>
+                      <p className="font-script text-lg text-[#0F3820] leading-snug">
+                        {disc.scripturalPrinciple}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="pt-4 border-t border-[#DCEFE2]">
+                    <div className="text-xs font-semibold text-[#0F3820] mb-2 uppercase tracking-wide">
+                      Key Outcomes for Learners:
+                    </div>
+                    <ul className="space-y-1.5">
+                      {disc.outcomes.map((out, i) => (
+                        <li key={i} className="text-xs text-slate-700 flex items-center gap-2">
+                          <CheckCircle className="w-3.5 h-3.5 text-[#319B59] shrink-0" />
+                          <span>{out}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </Reveal>
             ))}
           </div>
 
-          {/* Bottom Enquiry Strip */}
-          <div className="mt-16 bg-[#0D2E1B] text-white rounded-3xl p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 border border-[#1B7A43]/30 shadow-xl">
-            <div className="space-y-1 text-center md:text-left">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#68D37E]">
-                Admissions Now Open
-              </span>
-              <h4 className="font-serif text-2xl font-bold text-white">
-                Book a Visit to Our Buwate Learning Center
-              </h4>
-              <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
-                Experience our individualized workstations, observe our PACE curriculum in action, and schedule your child's diagnostic test.
-              </p>
+          {/* Bottom Bright Light-Green Enquiry Strip */}
+          <Reveal className="mt-16">
+            <div className="bg-gradient-to-r from-[#F4FAF6] to-[#E6F5EC] text-[#0F3820] rounded-3xl p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 border border-[#CFE8D8] shadow-xs">
+              <div className="space-y-1.5 text-center md:text-left">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#1F6E3D] block">
+                  Admissions Now Open
+                </span>
+                <h4 className="font-serif text-2xl font-bold text-[#0F3820]">
+                  Book a Visit to Our Buwate Learning Center
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-600 max-w-xl">
+                  Experience our individualized workstations, observe our PACE curriculum in action, and schedule your child&apos;s diagnostic test.
+                </p>
+              </div>
+              <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
+                <button
+                  onClick={onOpenEnquiry}
+                  className="px-6 py-3.5 bg-[#1F6E3D] hover:bg-[#0F3820] text-white text-sm font-bold rounded-xl shadow-xs transition-colors cursor-pointer"
+                >
+                  Enrol Now
+                </button>
+                <WhatsAppButton size="md" />
+              </div>
             </div>
-            <div className="flex flex-wrap items-center gap-3 shrink-0">
-              <button
-                onClick={onOpenEnquiry}
-                className="px-6 py-3.5 bg-[#1B7A43] hover:bg-[#156334] text-white text-sm font-bold rounded-xl shadow-md transition-colors cursor-pointer"
-              >
-                Enrol Now
-              </button>
-              <WhatsAppButton size="md" />
-            </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -479,21 +487,21 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
           role="dialog"
           aria-modal="true"
           aria-label={activePhoto.title}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-3 sm:p-6 backdrop-blur-md animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/90 p-3 sm:p-6 backdrop-blur-md animate-in fade-in duration-200"
           onClick={handleCloseLightbox}
         >
           {/* Main Lightbox Card Container */}
           <div
-            className="relative max-w-5xl w-full bg-[#071E12] rounded-3xl overflow-hidden shadow-2xl border border-white/10 flex flex-col max-h-[92vh]"
+            className="relative max-w-5xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl border border-[#DCEFE2] flex flex-col max-h-[92vh]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Top Bar: Title, Category & Close */}
-            <div className="flex items-center justify-between px-5 sm:px-7 py-4 bg-[#0D2E1B] border-b border-white/10 text-white shrink-0">
+            <div className="flex items-center justify-between px-5 sm:px-7 py-4 bg-[#F4FAF6] border-b border-[#DCEFE2] text-[#0F3820] shrink-0">
               <div className="flex items-center gap-3">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#68D37E] bg-[#1B7A43]/25 px-2.5 py-1 rounded-full border border-[#68D37E]/30">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#1F6E3D] bg-[#E6F5EC] px-2.5 py-1 rounded-full border border-[#CFE8D8]">
                   {activePhoto.category}
                 </span>
-                <span className="text-xs text-slate-300 hidden sm:inline">
+                <span className="text-xs text-slate-600 hidden sm:inline">
                   Photo {lightboxPhotoIndex + 1} of {filteredPhotos.length}
                 </span>
               </div>
@@ -501,7 +509,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
               <div className="flex items-center gap-2">
                 <button
                   onClick={handleCloseLightbox}
-                  className="p-1.5 text-slate-400 hover:text-white hover:bg-white/10 rounded-full transition-colors cursor-pointer"
+                  className="p-1.5 text-slate-500 hover:text-[#0F3820] hover:bg-[#E6F5EC] rounded-full transition-colors cursor-pointer"
                   title="Close (Esc)"
                   aria-label="Close lightbox"
                 >
@@ -511,11 +519,11 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
             </div>
 
             {/* Middle: Photo Display with Next/Prev Arrow Overlay */}
-            <div className="relative flex-grow flex items-center justify-center bg-black/60 p-2 sm:p-4 min-h-[300px] overflow-hidden">
+            <div className="relative flex-grow flex items-center justify-center bg-slate-950 p-2 sm:p-4 min-h-[300px] overflow-hidden">
               <img
                 src={activePhoto.url}
                 alt={activePhoto.title}
-                className="max-h-[64vh] w-auto max-w-full object-contain rounded-xl select-none shadow-2xl"
+                className="max-h-[62vh] w-auto max-w-full object-contain rounded-xl select-none shadow-2xl"
               />
 
               {/* Prev Button */}
@@ -525,7 +533,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
                     e.stopPropagation();
                     handlePrevPhoto();
                   }}
-                  className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 rounded-full bg-[#0D2E1B]/80 hover:bg-[#1B7A43] text-white border border-white/20 shadow-lg backdrop-blur-xs transition-all cursor-pointer"
+                  className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 rounded-full bg-white/90 hover:bg-[#319B59] text-[#0F3820] hover:text-white border border-white/40 shadow-lg backdrop-blur-xs transition-all cursor-pointer"
                   title="Previous image (Left Arrow)"
                   aria-label="Previous photo"
                 >
@@ -540,7 +548,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
                     e.stopPropagation();
                     handleNextPhoto();
                   }}
-                  className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 rounded-full bg-[#0D2E1B]/80 hover:bg-[#1B7A43] text-white border border-white/20 shadow-lg backdrop-blur-xs transition-all cursor-pointer"
+                  className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 rounded-full bg-white/90 hover:bg-[#319B59] text-[#0F3820] hover:text-white border border-white/40 shadow-lg backdrop-blur-xs transition-all cursor-pointer"
                   title="Next image (Right Arrow)"
                   aria-label="Next photo"
                 >
@@ -550,20 +558,20 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
             </div>
 
             {/* Bottom Bar: Title & Caption */}
-            <div className="px-5 sm:px-7 py-4 bg-[#0D2E1B] border-t border-white/10 text-white shrink-0 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="px-5 sm:px-7 py-4 bg-white border-t border-[#DCEFE2] text-[#0F3820] shrink-0 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
-                <h3 className="font-serif text-base sm:text-lg font-bold text-white">
+                <h3 className="font-serif text-base sm:text-lg font-bold text-[#0F3820]">
                   {activePhoto.title}
                 </h3>
                 {activePhoto.caption && (
-                  <p className="text-xs sm:text-sm text-slate-300 mt-0.5 max-w-2xl">
+                  <p className="text-xs sm:text-sm text-slate-600 mt-0.5 max-w-2xl">
                     {activePhoto.caption}
                   </p>
                 )}
               </div>
 
               <div className="flex items-center gap-2 self-end sm:self-center shrink-0">
-                <span className="text-xs text-slate-400 font-mono">
+                <span className="text-xs text-slate-500 font-mono">
                   {lightboxPhotoIndex + 1} / {filteredPhotos.length}
                 </span>
               </div>
@@ -577,25 +585,25 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 sm:p-6 backdrop-blur-xs animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/85 p-4 sm:p-6 backdrop-blur-xs animate-in fade-in duration-200"
           onClick={() => setIsFlierPreviewOpen(false)}
         >
           <div
-            className="relative max-w-2xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl"
+            className="relative max-w-2xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-[#DCEFE2]"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between px-6 py-3 bg-[#071E12] text-white">
-              <span className="text-xs font-bold text-[#68D37E] uppercase tracking-wider">
+            <div className="flex items-center justify-between px-6 py-3.5 bg-[#F4FAF6] border-b border-[#DCEFE2]">
+              <span className="text-xs font-bold text-[#1F6E3D] uppercase tracking-wider">
                 Official Oak International Christian School Flier
               </span>
               <button
                 onClick={() => setIsFlierPreviewOpen(false)}
-                className="text-slate-400 hover:text-white text-sm font-bold cursor-pointer"
+                className="text-slate-500 hover:text-[#0F3820] text-sm font-bold cursor-pointer"
               >
                 Close &times;
               </button>
             </div>
-            <div className="p-3 bg-slate-900 flex justify-center">
+            <div className="p-3 bg-slate-100 flex justify-center">
               <img
                 src={SCHOOL_INFO.flierImageUrl}
                 alt="Full Size Official Flier"
@@ -608,4 +616,3 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
     </div>
   );
 };
-

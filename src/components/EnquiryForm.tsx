@@ -218,7 +218,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ onSuccess, compact = f
           className={`w-full px-4 py-3 rounded-lg border text-sm text-slate-900 placeholder:text-slate-400 bg-white focus:outline-none focus:ring-2 transition-all ${
             errors.fullName
               ? 'border-red-400 focus:ring-red-200'
-              : 'border-slate-300 focus:border-[#0D2E1B] focus:ring-slate-200'
+              : 'border-slate-300 focus:border-[#319B59] focus:ring-[#E6F5EC]'
           }`}
         />
         {errors.fullName && (
@@ -244,7 +244,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ onSuccess, compact = f
             className={`w-full px-4 py-3 rounded-lg border text-sm text-slate-900 placeholder:text-slate-400 bg-white focus:outline-none focus:ring-2 transition-all ${
               errors.phone
                 ? 'border-red-400 focus:ring-red-200'
-                : 'border-slate-300 focus:border-[#0D2E1B] focus:ring-slate-200'
+                : 'border-slate-300 focus:border-[#319B59] focus:ring-[#E6F5EC]'
             }`}
           />
           {errors.phone && (
@@ -269,7 +269,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ onSuccess, compact = f
             className={`w-full px-4 py-3 rounded-lg border text-sm text-slate-900 placeholder:text-slate-400 bg-white focus:outline-none focus:ring-2 transition-all ${
               errors.email
                 ? 'border-red-400 focus:ring-red-200'
-                : 'border-slate-300 focus:border-[#0D2E1B] focus:ring-slate-200'
+                : 'border-slate-300 focus:border-[#319B59] focus:ring-[#E6F5EC]'
             }`}
           />
           {errors.email && (
@@ -295,7 +295,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ onSuccess, compact = f
           className={`w-full px-4 py-3 rounded-lg border text-sm text-slate-900 placeholder:text-slate-400 bg-white focus:outline-none focus:ring-2 transition-all ${
             errors.question
               ? 'border-red-400 focus:ring-red-200'
-              : 'border-slate-300 focus:border-[#0D2E1B] focus:ring-slate-200'
+              : 'border-slate-300 focus:border-[#319B59] focus:ring-[#E6F5EC]'
           }`}
         />
         {errors.question && (
@@ -319,7 +319,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ onSuccess, compact = f
                 key={mode}
                 className={`flex items-center gap-2.5 px-3.5 py-2 rounded-lg border text-sm cursor-pointer select-none transition-all ${
                   isChecked
-                    ? 'bg-amber-50/70 border-amber-500/70 text-slate-900 font-medium'
+                    ? 'bg-[#E6F5EC] border-[#319B59]/60 text-[#0F3820] font-medium'
                     : 'bg-slate-50 border-slate-200 text-slate-600 hover:border-slate-300'
                 }`}
               >
@@ -327,11 +327,11 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ onSuccess, compact = f
                   type="checkbox"
                   checked={isChecked}
                   onChange={() => handleModeToggle(mode)}
-                  className="w-4 h-4 text-[#1B7A43] rounded border-slate-300 focus:ring-[#1B7A43]"
+                  className="w-4 h-4 accent-[#1F6E3D] text-[#319B59] rounded border-slate-300 focus:ring-[#319B59]"
                 />
-                {mode === 'Phone Call' && <Phone className="w-3.5 h-3.5 text-slate-500" />}
-                {mode === 'WhatsApp' && <MessageCircle className="w-3.5 h-3.5 text-emerald-600" />}
-                {mode === 'Email' && <Mail className="w-3.5 h-3.5 text-[#1B7A43]" />}
+                {mode === 'Phone Call' && <Phone className="w-3.5 h-3.5 text-[#1F6E3D]" />}
+                {mode === 'WhatsApp' && <MessageCircle className="w-3.5 h-3.5 text-[#319B59]" />}
+                {mode === 'Email' && <Mail className="w-3.5 h-3.5 text-[#1F6E3D]" />}
                 <span>{mode}</span>
               </label>
             );
@@ -355,7 +355,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ onSuccess, compact = f
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full sm:w-auto px-8 py-3.5 bg-[#1B7A43] hover:bg-[#156334] active:bg-[#14532D] text-white font-bold text-sm rounded-lg shadow-sm hover:shadow transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
+          className="w-full sm:w-auto px-8 py-3.5 bg-[#1F6E3D] hover:bg-[#0F3820] active:bg-[#0F3820] text-white font-bold text-sm rounded-xl shadow-sm hover:shadow transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
         >
           {isSubmitting ? (
             <span>Sending to Admissions...</span>

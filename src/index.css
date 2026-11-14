@@ -7,39 +7,46 @@
   --font-hand: "Kalam", cursive, sans-serif;
   --font-script: "Caveat", cursive, sans-serif;
 
-  /* Brand Theme: Deep Forest Green & Fresh Oak Leaf Green */
-  --color-brand-950: #04140A;
-  --color-brand-900: #0D2E1B;
-  --color-brand-800: #114225;
-  --color-brand-700: #155E33;
-  --color-brand-600: #1B7A43;
-  --color-brand-500: #229653;
-  --color-brand-400: #5CD478;
+  /* Fresh Natural Green & Light Institutional Palette */
+  --color-brand-950: #0F3820;
+  --color-brand-900: #144D2B;
+  --color-brand-800: #1F6E3D;
+  --color-brand-700: #268449;
+  --color-brand-600: #319B59;
+  --color-brand-500: #3EB26A;
+  --color-brand-400: #68C98D;
 
-  /* Leaf Green from Flier Badge Tree */
-  --color-leaf-700: #4B8C24;
-  --color-leaf-600: #5C9E31;
-  --color-leaf-500: #6DB33F;
-  --color-leaf-400: #86C95A;
-  --color-leaf-100: #EBF7E3;
-  --color-leaf-50: #F4FAEE;
+  /* Supporting Soft Greens & Warm Cream */
+  --color-leaf-700: #2A7B46;
+  --color-leaf-600: #319B59;
+  --color-leaf-500: #4AB873;
+  --color-leaf-400: #7AD29A;
+  --color-leaf-100: #E6F5EC;
+  --color-leaf-50: #F4FAF6;
 
-  /* Warm Accent */
-  --color-accent-600: #E04318;
-  --color-accent-500: #F95738;
+  --color-cream-50: #FAFBF8;
+  --color-cream-100: #F4F6F0;
 
-  /* Light Sage/Green Tinted Background */
-  --color-ice-50: #F2F9F4;
-  --color-ice-100: #E2F3E7;
+  /* Light Sage Tinted Surface */
+  --color-ice-50: #F2FAF5;
+  --color-ice-100: #E6F5EC;
 }
 
 html {
   scroll-behavior: smooth;
+  background-color: #ffffff;
+  color: #1e293b;
+}
+
+body {
+  background-color: #ffffff;
+  overflow-x: hidden;
 }
 
 /* Base typography refinement */
 h1, h2, h3, .font-display {
   letter-spacing: -0.015em;
+  text-wrap: balance;
 }
 
 .font-marker {
@@ -54,7 +61,100 @@ h1, h2, h3, .font-display {
   font-family: var(--font-script), cursive, sans-serif;
 }
 
-/* Subtle transitions */
+/* Smooth GPU-composited interactive transitions */
 a, button {
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-property: color, background-color, border-color, opacity, transform, box-shadow;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Floating decorative shape animations */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(6px, -8px, 0) scale(1.03);
+  }
+}
+
+@keyframes heroTextIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes dropdownSlide {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 6px, 0) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.animate-float-gentle {
+  animation: floatGentle 7s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatSlow 9s ease-in-out infinite;
+}
+
+.animate-hero-text {
+  animation: heroTextIn 550ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-page-enter {
+  animation: pageEnter 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-dropdown-slide {
+  animation: dropdownSlide 180ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Respect reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-float-gentle,
+  .animate-float-slow,
+  .animate-hero-text,
+  .animate-page-enter,
+  .animate-dropdown-slide {
+    animation: none !important;
+  }
+
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+  }
 }

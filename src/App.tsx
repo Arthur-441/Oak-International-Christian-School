@@ -57,7 +57,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-slate-800 font-sans selection:bg-[#E2F3E7] selection:text-[#1B7A43]">
+    <div className="min-h-screen flex flex-col bg-white text-slate-800 font-sans selection:bg-[#E6F5EC] selection:text-[#1F6E3D]">
       {/* Sticky Top Header Navigation */}
       <Header
         currentPage={currentPage}
@@ -66,47 +66,49 @@ export default function App() {
         onOpenEnrollmentForm={() => setIsEnrollmentPdfOpen(true)}
       />
 
-      {/* Main Multi-Page Content Area */}
+      {/* Main Multi-Page Content Area with Smooth Page Transition */}
       <main className="flex-1 w-full">
-        {currentPage === 'home' && (
-          <HomePage
-            onNavigate={navigateTo}
-            onOpenEnquiry={() => setIsEnquiryModalOpen(true)}
-            onOpenEnrollmentForm={() => setIsEnrollmentPdfOpen(true)}
-          />
-        )}
-        {currentPage === 'about' && (
-          <AboutPage
-            onNavigate={navigateTo}
-            onOpenEnquiry={() => setIsEnquiryModalOpen(true)}
-          />
-        )}
-        {currentPage === 'academics' && (
-          <AcademicsPage
-            onNavigate={navigateTo}
-            onOpenEnquiry={() => setIsEnquiryModalOpen(true)}
-            onOpenEnrollmentForm={() => setIsEnrollmentPdfOpen(true)}
-          />
-        )}
-        {currentPage === 'activities' && (
-          <ActivitiesPage
-            onNavigate={navigateTo}
-            onOpenEnquiry={() => setIsEnquiryModalOpen(true)}
-          />
-        )}
-        {currentPage === 'gallery' && (
-          <GalleryPage
-            onNavigate={navigateTo}
-            onOpenEnquiry={() => setIsEnquiryModalOpen(true)}
-            onOpenEnrollmentForm={() => setIsEnrollmentPdfOpen(true)}
-          />
-        )}
-        {currentPage === 'contact' && (
-          <ContactPage
-            onNavigate={navigateTo}
-            onOpenEnrollmentForm={() => setIsEnrollmentPdfOpen(true)}
-          />
-        )}
+        <div key={currentPage} className="animate-page-enter">
+          {currentPage === 'home' && (
+            <HomePage
+              onNavigate={navigateTo}
+              onOpenEnquiry={() => setIsEnquiryModalOpen(true)}
+              onOpenEnrollmentForm={() => setIsEnrollmentPdfOpen(true)}
+            />
+          )}
+          {currentPage === 'about' && (
+            <AboutPage
+              onNavigate={navigateTo}
+              onOpenEnquiry={() => setIsEnquiryModalOpen(true)}
+            />
+          )}
+          {currentPage === 'academics' && (
+            <AcademicsPage
+              onNavigate={navigateTo}
+              onOpenEnquiry={() => setIsEnquiryModalOpen(true)}
+              onOpenEnrollmentForm={() => setIsEnrollmentPdfOpen(true)}
+            />
+          )}
+          {currentPage === 'activities' && (
+            <ActivitiesPage
+              onNavigate={navigateTo}
+              onOpenEnquiry={() => setIsEnquiryModalOpen(true)}
+            />
+          )}
+          {currentPage === 'gallery' && (
+            <GalleryPage
+              onNavigate={navigateTo}
+              onOpenEnquiry={() => setIsEnquiryModalOpen(true)}
+              onOpenEnrollmentForm={() => setIsEnrollmentPdfOpen(true)}
+            />
+          )}
+          {currentPage === 'contact' && (
+            <ContactPage
+              onNavigate={navigateTo}
+              onOpenEnrollmentForm={() => setIsEnrollmentPdfOpen(true)}
+            />
+          )}
+        </div>
       </main>
 
       {/* Institutional Footer */}

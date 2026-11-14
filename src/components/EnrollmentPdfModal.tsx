@@ -87,14 +87,14 @@ export const EnrollmentPdfModal: React.FC<EnrollmentPdfModalProps> = ({ isOpen, 
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Header Bar */}
-        <div className="bg-[#0D2E1B] text-white px-5 sm:px-7 py-4 border-b border-[#1B7A43]/30 flex flex-wrap items-center justify-between gap-3 shrink-0">
+        <div className="bg-white text-[#0F3820] px-5 sm:px-7 py-4 border-b border-[#DCEFE2] flex flex-wrap items-center justify-between gap-3 shrink-0">
           <div className="flex items-center gap-3">
-            <SchoolCrest size="sm" variant="dark" />
+            <SchoolCrest size="sm" variant="light" />
             <div>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#68D37E] block">
+              <span className="text-[11px] font-bold uppercase tracking-widest text-[#319B59] block">
                 Official Registration Document &middot; 7 Pages
               </span>
-              <h3 className="font-serif text-base sm:text-lg font-bold text-white leading-tight">
+              <h3 className="font-serif text-base sm:text-lg font-bold text-[#0F3820] leading-tight">
                 Oak International Enrollment Form (PDF)
               </h3>
             </div>
@@ -104,7 +104,7 @@ export const EnrollmentPdfModal: React.FC<EnrollmentPdfModalProps> = ({ isOpen, 
             <button
               type="button"
               onClick={() => setIsZoomed((z) => !z)}
-              className="hidden sm:inline-flex px-3 py-2 bg-white/10 hover:bg-white/20 text-white text-xs font-semibold rounded-xl border border-white/15 transition-colors items-center gap-1.5 cursor-pointer"
+              className="hidden sm:inline-flex px-3 py-2 bg-[#F4FAF6] hover:bg-[#E6F5EC] text-[#1F6E3D] text-xs font-semibold rounded-xl border border-[#CFE8D8] transition-colors items-center gap-1.5 cursor-pointer"
               title={isZoomed ? 'Fit Width' : 'Zoom In'}
             >
               {isZoomed ? <ZoomOut className="w-3.5 h-3.5" /> : <ZoomIn className="w-3.5 h-3.5" />}
@@ -114,15 +114,16 @@ export const EnrollmentPdfModal: React.FC<EnrollmentPdfModalProps> = ({ isOpen, 
             <a
               href={SCHOOL_INFO.enrollmentFormPdfUrl}
               download="Oak_International_Enrollment_Form.pdf"
-              className="px-4 py-2 bg-[#1B7A43] hover:bg-[#156334] text-white text-xs font-bold rounded-xl shadow-sm transition-colors inline-flex items-center gap-1.5 cursor-pointer"
+              className="px-4 py-2 bg-[#1F6E3D] hover:bg-[#144D2B] text-white text-xs font-bold rounded-xl shadow-xs transition-colors inline-flex items-center gap-1.5 cursor-pointer"
             >
               <Download className="w-3.5 h-3.5" />
               <span>Download PDF</span>
             </a>
 
             <button
+              type="button"
               onClick={onClose}
-              className="p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+              className="p-2 rounded-xl text-slate-500 hover:text-[#0F3820] hover:bg-[#F4FAF6] transition-colors cursor-pointer"
               aria-label="Close enrollment form preview"
             >
               <X className="w-5 h-5" />
@@ -131,7 +132,7 @@ export const EnrollmentPdfModal: React.FC<EnrollmentPdfModalProps> = ({ isOpen, 
         </div>
 
         {/* Page Jump Navigation Strip */}
-        <div className="bg-[#071E12] border-b border-[#144027] px-4 sm:px-6 py-2.5 flex items-center justify-between gap-3 overflow-x-auto shrink-0">
+        <div className="bg-[#F4FAF6] border-b border-[#DCEFE2] px-4 sm:px-6 py-2.5 flex items-center justify-between gap-3 overflow-x-auto shrink-0">
           <div className="flex items-center gap-1.5">
             {ENROLLMENT_PAGES.map((p) => {
               const isCurrent = activePage === p.page;
@@ -142,8 +143,8 @@ export const EnrollmentPdfModal: React.FC<EnrollmentPdfModalProps> = ({ isOpen, 
                   onClick={() => scrollToPage(p.page)}
                   className={`px-2.5 py-1 rounded-lg text-[11px] font-semibold whitespace-nowrap transition-all cursor-pointer ${
                     isCurrent
-                      ? 'bg-[#1B7A43] text-white shadow-xs'
-                      : 'bg-white/5 text-slate-300 hover:bg-white/15 hover:text-white'
+                      ? 'bg-[#319B59] text-white shadow-2xs'
+                      : 'bg-white text-slate-600 border border-[#DCEFE2] hover:bg-[#E6F5EC] hover:text-[#1F6E3D]'
                   }`}
                   title={p.title}
                 >
@@ -153,24 +154,24 @@ export const EnrollmentPdfModal: React.FC<EnrollmentPdfModalProps> = ({ isOpen, 
             })}
           </div>
 
-          <div className="hidden md:flex items-center gap-2 text-xs text-slate-300 shrink-0">
+          <div className="hidden md:flex items-center gap-2 text-xs text-slate-600 shrink-0">
             <button
               type="button"
               onClick={() => scrollToPage(Math.max(1, activePage - 1))}
               disabled={activePage === 1}
-              className="p-1 rounded hover:bg-white/10 disabled:opacity-40 cursor-pointer"
+              className="p-1 rounded hover:bg-[#E6F5EC] disabled:opacity-40 cursor-pointer"
               aria-label="Previous page"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
-            <span className="font-mono text-[11px] text-[#68D37E]">
+            <span className="font-mono tabular-nums text-[11px] font-semibold text-[#1F6E3D]">
               {activePage} / {ENROLLMENT_PAGES.length}
             </span>
             <button
               type="button"
               onClick={() => scrollToPage(Math.min(ENROLLMENT_PAGES.length, activePage + 1))}
               disabled={activePage === ENROLLMENT_PAGES.length}
-              className="p-1 rounded hover:bg-white/10 disabled:opacity-40 cursor-pointer"
+              className="p-1 rounded hover:bg-[#E6F5EC] disabled:opacity-40 cursor-pointer"
               aria-label="Next page"
             >
               <ChevronRight className="w-4 h-4" />

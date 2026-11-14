@@ -44,34 +44,35 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="bg-[#0D2E1B] text-white px-6 sm:px-8 py-6 relative border-b border-[#1B7A43]/30">
+        <div className="bg-gradient-to-r from-[#F4FAF6] to-[#E6F5EC] text-[#0F3820] px-6 sm:px-8 py-6 relative border-b border-[#CFE8D8]">
           <button
+            type="button"
             onClick={onClose}
-            className="absolute top-5 right-5 p-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+            className="absolute top-5 right-5 p-2 rounded-xl text-slate-500 hover:text-[#0F3820] hover:bg-white/80 transition-colors cursor-pointer"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
           </button>
 
-          <div className="flex items-center gap-2.5 text-[#68D37E] text-xs font-bold uppercase tracking-wider mb-2">
+          <div className="flex items-center gap-2 text-[#319B59] text-xs font-bold uppercase tracking-wider mb-2">
             <GraduationCap className="w-4 h-4" />
-            <span>Admissions & Enquiries</span>
+            <span>Admissions &amp; Enquiries</span>
           </div>
 
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-1">
+          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0F3820] mb-1">
             Have a Question for Us?
           </h3>
-          <p className="text-slate-300 text-sm leading-relaxed max-w-lg">
+          <p className="text-slate-600 text-sm leading-relaxed max-w-lg">
             Ask us about our Diagnostic Test, switching from other curricula, exit routes, or any other questions about our school.
           </p>
         </div>
 
         {/* Official Enrollment Form Quick Bar */}
-        <div className="bg-[#F2F9F4] border-b border-[#1B7A43]/20 px-6 sm:px-8 py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <div className="flex items-center gap-2.5 text-xs text-[#0D2E1B]">
-            <FileText className="w-4 h-4 text-[#1B7A43] shrink-0" />
+        <div className="bg-white border-b border-[#E2EFE7] px-6 sm:px-8 py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div className="flex items-center gap-2.5 text-xs text-[#0F3820]">
+            <FileText className="w-4 h-4 text-[#319B59] shrink-0" />
             <span className="font-semibold">
-              Ready to apply? Get our official Registration & Enrollment Form (PDF)
+              Ready to apply? Get our official Registration &amp; Enrollment Form (PDF)
             </span>
           </div>
           <div className="flex items-center gap-2 shrink-0">
@@ -79,16 +80,16 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
               <button
                 type="button"
                 onClick={onOpenEnrollmentForm}
-                className="px-3 py-1.5 bg-white hover:bg-slate-50 text-[#0D2E1B] border border-[#1B7A43]/30 rounded-lg text-xs font-semibold inline-flex items-center gap-1 cursor-pointer transition-colors"
+                className="px-3 py-1.5 bg-[#F4FAF6] hover:bg-[#E6F5EC] text-[#1F6E3D] border border-[#CFE8D8] rounded-lg text-xs font-semibold inline-flex items-center gap-1 cursor-pointer transition-colors"
               >
-                <Eye className="w-3.5 h-3.5 text-[#1B7A43]" />
+                <Eye className="w-3.5 h-3.5 text-[#319B59]" />
                 <span>View</span>
               </button>
             )}
             <a
               href={SCHOOL_INFO.enrollmentFormPdfUrl}
               download="Oak_International_Enrollment_Form.pdf"
-              className="px-3 py-1.5 bg-[#1B7A43] hover:bg-[#156334] text-white rounded-lg text-xs font-bold inline-flex items-center gap-1 cursor-pointer transition-colors"
+              className="px-3 py-1.5 bg-[#1F6E3D] hover:bg-[#144D2B] text-white rounded-lg text-xs font-bold inline-flex items-center gap-1 cursor-pointer transition-colors"
             >
               <Download className="w-3.5 h-3.5" />
               <span>Download PDF</span>

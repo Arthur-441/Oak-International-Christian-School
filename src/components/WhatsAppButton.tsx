@@ -55,7 +55,7 @@ export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
         target="_blank"
         rel="noopener noreferrer"
         aria-label="WhatsApp Oak International Christian School"
-        className={`inline-flex items-center justify-center font-bold text-white bg-white/10 hover:bg-white/20 border border-white/25 hover:border-[#25D366] rounded-xl sm:rounded-2xl transition-all duration-200 cursor-pointer group ${sizeClasses} ${className}`}
+        className={`inline-flex items-center justify-center font-bold text-[#1F6E3D] bg-white hover:bg-[#E6F5EC] border border-[#319B59]/40 hover:border-[#319B59] rounded-xl shadow-xs transition-all duration-200 cursor-pointer group ${sizeClasses} ${className}`}
       >
         <UniversalWhatsAppIcon
           className={`${iconSizes} text-[#25D366] group-hover:scale-110 transition-transform shrink-0`}
@@ -72,7 +72,7 @@ export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
       target="_blank"
       rel="noopener noreferrer"
       aria-label="WhatsApp Oak International Christian School: +256 783 368459"
-      className={`inline-flex items-center justify-center font-bold text-white bg-[#25D366] hover:bg-[#20ba59] active:bg-[#1da850] rounded-xl sm:rounded-2xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer group ${sizeClasses} ${className}`}
+      className={`inline-flex items-center justify-center font-bold text-white bg-[#25D366] hover:bg-[#20ba59] active:bg-[#1da850] rounded-xl shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer group ${sizeClasses} ${className}`}
     >
       <UniversalWhatsAppIcon
         className={`${iconSizes} fill-white group-hover:scale-110 transition-transform shrink-0`}
