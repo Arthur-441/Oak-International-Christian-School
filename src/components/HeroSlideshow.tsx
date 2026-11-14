@@ -19,9 +19,9 @@ interface HeroSlide {
 
 const HERO_SLIDES: HeroSlide[] = [
   {
-    id: 'slide-leaders',
-    imageUrl: 'https://i.ibb.co/x8Rwk7LM/Whats-App-Image-2026-11-11-at-10-41-52-AM-2.jpg',
-    imageAlt: 'Oak International Christian School student leaders co-hosting campus praise and events',
+    id: 'slide-1',
+    imageUrl: 'https://i.ibb.co/bMn4v4dM/Grad-1.jpg',
+    imageAlt: 'Oak International Choir students singing harmoniously on stage at Oak International Christian School',
     imagePosition: 'object-[center_20%]',
     kicker: 'Oak International Christian School · Buwate, Kira',
     heading: "Raising Tomorrow's Leaders Through",
@@ -34,10 +34,10 @@ const HERO_SLIDES: HeroSlide[] = [
     secondaryAction: 'enquiry',
   },
   {
-    id: 'slide-discovery',
-    imageUrl: 'https://i.ibb.co/Xr1Tdqxd/Whats-App-Image-2026-11-11-at-10-28-37-AM.jpg',
-    imageAlt: 'Early years learners engaged in joyful healthcare role-play at Oak International',
-    imagePosition: 'object-[center_28%]',
+    id: 'slide-2',
+    imageUrl: 'https://i.ibb.co/gbvJXkty/Remove-Bottom-Left-Watermark.png',
+    imageAlt: 'Students and learning life at Oak International Christian School',
+    imagePosition: 'object-[center_22%]',
     kicker: 'Step by Step (3 yrs) to Grade 12 · Mastery Learning',
     heading: 'Joyful Discovery &',
     highlight: 'Personalised Excellence.',
@@ -49,25 +49,25 @@ const HERO_SLIDES: HeroSlide[] = [
     secondaryAction: 'enquiry',
   },
   {
-    id: 'slide-choir',
-    imageUrl: 'https://i.ibb.co/bMn4v4dM/Grad-1.jpg',
-    imageAlt: 'Oak International Choir students singing harmoniously on stage',
+    id: 'slide-3',
+    imageUrl: 'https://i.ibb.co/0VD1KwXh/Whats-App-Image-2026-11-09-at-1-21-26-PM.jpg',
+    imageAlt: 'Oak International learners representing the school at the Regional Christian Student Convention',
     imagePosition: 'object-[center_20%]',
     kicker: 'Godliness · Integrity · Care · Excellence',
     heading: 'Rooted in Faith,',
     highlight: 'Vibrant in Community.',
     description:
-      'Through uplifting chapel worship, music, culinary arts, and sports, our students grow into well-rounded, compassionate, and joyful young leaders.',
+      'Through uplifting chapel worship, student conventions, music, culinary arts, and sports, our students grow into well-rounded, compassionate, and joyful young leaders.',
     primaryCtaLabel: 'Explore School Life',
     primaryAction: 'gallery',
     secondaryCtaLabel: 'Admissions & Visits',
     secondaryAction: 'contact',
   },
   {
-    id: 'slide-future',
-    imageUrl: 'https://i.ibb.co/FbbSfQTm/Whats-App-Image-2026-11-11-at-10-43-05-AM.jpg',
-    imageAlt: 'Students and instructors in uniform showcasing leadership and teamwork',
-    imagePosition: 'object-[center_22%]',
+    id: 'slide-4',
+    imageUrl: 'https://i.ibb.co/Q38jhm09/Whats-App-Image-2026-11-14-at-5-09-16-PM.jpg',
+    imageAlt: 'Oak International Christian School students celebrating learning and leadership together',
+    imagePosition: 'object-[center_20%]',
     kicker: 'Learner Today, Leader Tomorrow · Wakiso District',
     heading: 'Shaping Dependable Leaders for',
     highlight: 'Lifelong Impact.',
@@ -162,7 +162,7 @@ export const HeroSlideshow: React.FC<HeroSlideshowProps> = ({
               src={slide.imageUrl}
               alt={slide.imageAlt}
               referrerPolicy="no-referrer"
-              loading={idx === 0 ? 'eager' : 'lazy'}
+              loading="eager"
               className={`w-full h-full object-cover ${slide.imagePosition} transition-transform duration-[5500ms] ease-out ${
                 isActive ? 'scale-100' : 'scale-105'
               }`}
