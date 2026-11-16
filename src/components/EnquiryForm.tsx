@@ -160,7 +160,10 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ onSuccess, compact = f
         }),
       });
 
-      if (apiRes.status === 404 || apiRes.status === 405) {
+      const isJsonResponse = (apiRes.headers.get('content-type') || '').includes('application/json');
+      // On static hosting (e.g. Netlify) the Express API isn't running: the SPA
+      // fallback returns index.html (HTML, status 200) or a 404/405 instead.
+      if (apiRes.status === 404 || apiRes.status === 405 || !isJsonResponse) {
         const direct = await submitViaDirectFormSubmit();
         setSubmittedReceipt({
           ...formData,
