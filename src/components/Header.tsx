@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { PageId } from '../types';
 import { SCHOOL_INFO } from '../data/schoolData';
-import { SchoolCrest } from './SchoolCrest';
 import { WhatsAppButton } from './WhatsAppButton';
 import {
   Phone,
@@ -156,16 +155,18 @@ export const Header: React.FC<HeaderProps> = ({
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3 xl:gap-6">
-          {/* Zone 1: School Crest + Crisp Wordmark */}
+          {/* Zone 1: Official Horizontal School Logo */}
           <button
             type="button"
             onClick={() => handleNavClick('home')}
-            className="flex items-center gap-2.5 sm:gap-3 text-left group shrink-0 focus-visible:outline-2 focus-visible:outline-[#319B59] rounded-xl cursor-pointer"
+            aria-label="Oak International Christian School Home"
+            className="flex items-center text-left group shrink-0 focus-visible:outline-2 focus-visible:outline-[#319B59] rounded-xl cursor-pointer py-0.5"
           >
-            <SchoolCrest size="md" variant="light" />
-            <span className="font-serif font-bold text-sm sm:text-base xl:text-lg text-[#0F3820] tracking-tight leading-tight group-hover:text-[#319B59] transition-colors max-w-[165px] sm:max-w-none sm:whitespace-nowrap">
-              Oak International Christian School
-            </span>
+            <img
+              src="/assets/aistudio/image_c056ea4b.png"
+              alt="Oak International Christian School"
+              className="h-9 sm:h-11 xl:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+            />
           </button>
 
           {/* Zone 2: Clean Typography Navigation Links with Hover & Active Highlight + Dropdown */}
