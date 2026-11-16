@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { PageId } from '../types';
 import {
   SCHOOL_INFO,
@@ -12,6 +12,7 @@ import {
 import { HeroSlideshow } from '../components/HeroSlideshow';
 import { Reveal } from '../components/Reveal';
 import { WhatsAppButton } from '../components/WhatsAppButton';
+import { PhotoLightboxModal } from '../components/PhotoLightboxModal';
 import {
   ArrowRight,
   Shield,
@@ -37,6 +38,11 @@ export const HomePage: React.FC<HomePageProps> = ({
   onOpenEnquiry,
   onOpenEnrollmentForm,
 }) => {
+  const graduationCards = GRADUATION_GALLERY.filter((photo) =>
+    ['grad-1', 'grad-2', 'grad-4'].includes(photo.id)
+  );
+  const [gradLightboxIdx, setGradLightboxIdx] = useState<number | null>(null);
+
   return (
     <div className="w-full bg-white">
       {/* 1. FULL-WIDTH UPLOADED PHOTO HERO SLIDESHOW (HOMEPAGE ONLY) */}
@@ -195,7 +201,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
                 <div className="pt-6 mt-6 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-[#319B59]">
                   <CheckCircle className="w-4 h-4" />
-                  <span>Christ-Centred Transformation</span>
+                  <span>Academic Excellence &amp; Christ-like Character</span>
                 </div>
               </div>
             </Reveal>
@@ -247,7 +253,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
                 <div className="pt-6 mt-6 border-t border-[#319B59]/20 flex items-center gap-2 text-xs font-semibold text-[#1F6E3D]">
                   <CheckCircle className="w-4 h-4 text-[#319B59]" />
-                  <span>God-Fearing &middot; Dependable &middot; Transformational</span>
+                  <span>God-fearing, Dependable, Impactful</span>
                 </div>
               </div>
             </Reveal>
@@ -435,13 +441,10 @@ export const HomePage: React.FC<HomePageProps> = ({
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {GRADUATION_GALLERY.filter((photo) => ['grad-1', 'grad-2', 'grad-4'].includes(photo.id)).map((photo, idx) => (
+            {graduationCards.map((photo, idx) => (
               <Reveal key={photo.id} delayMs={idx * 90}>
                 <div
-                  onClick={() => {
-                    onNavigate('gallery');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
+                  onClick={() => setGradLightboxIdx(idx)}
                   className="h-full bg-white rounded-3xl overflow-hidden border border-[#DCEFE2] hover:border-[#319B59]/60 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer"
                 >
                   <div className="relative aspect-4/3 overflow-hidden bg-[#F4FAF6]">
@@ -455,7 +458,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                           e.currentTarget.src = photo.fallbackUrl;
                         }
                       }}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
                     />
                     <div className="absolute top-3 left-3">
                       <span className="text-[11px] font-bold uppercase tracking-wider text-[#0F3820] bg-white/92 backdrop-blur-xs px-3 py-1 rounded-full shadow-xs border border-[#DCEFE2]">
@@ -486,6 +489,26 @@ export const HomePage: React.FC<HomePageProps> = ({
           </div>
         </div>
       </section>
+
+      <PhotoLightboxModal
+        photos={graduationCards}
+        activeIndex={gradLightboxIdx}
+        onClose={() => setGradLightboxIdx(null)}
+        onPrev={() =>
+          setGradLightboxIdx((prev) =>
+            prev !== null ? (prev - 1 + graduationCards.length) % graduationCards.length : 0
+          )
+        }
+        onNext={() =>
+          setGradLightboxIdx((prev) =>
+            prev !== null ? (prev + 1) % graduationCards.length : 0
+          )
+        }
+        onViewAllGallery={() => {
+          onNavigate('gallery');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
+      />
 
       {/* 8. EXTRACURRICULAR ACTIVITIES PREVIEW */}
       <section className="py-20 bg-[#F4FAF6] border-y border-[#DCEFE2]">

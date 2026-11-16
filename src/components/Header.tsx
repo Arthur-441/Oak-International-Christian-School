@@ -155,21 +155,21 @@ export const Header: React.FC<HeaderProps> = ({
             : 'border-[#E6F2EB] py-3.5'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6">
-          {/* Zone 1: School Crest + Crisp Single Wordmark */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3 xl:gap-6">
+          {/* Zone 1: School Crest + Crisp Wordmark */}
           <button
             type="button"
             onClick={() => handleNavClick('home')}
-            className="flex items-center gap-3 text-left group shrink-0 focus-visible:outline-2 focus-visible:outline-[#319B59] rounded-xl cursor-pointer"
+            className="flex items-center gap-2.5 sm:gap-3 text-left group shrink-0 focus-visible:outline-2 focus-visible:outline-[#319B59] rounded-xl cursor-pointer"
           >
             <SchoolCrest size="md" variant="light" />
-            <span className="font-serif font-bold text-lg sm:text-xl text-[#0F3820] tracking-tight leading-tight group-hover:text-[#319B59] transition-colors whitespace-nowrap">
-              Oak International
+            <span className="font-serif font-bold text-sm sm:text-base xl:text-lg text-[#0F3820] tracking-tight leading-tight group-hover:text-[#319B59] transition-colors max-w-[165px] sm:max-w-none sm:whitespace-nowrap">
+              Oak International Christian School
             </span>
           </button>
 
           {/* Zone 2: Clean Typography Navigation Links with Hover & Active Highlight + Dropdown */}
-          <nav aria-label="Primary navigation" className="hidden lg:flex items-center gap-1.5 text-sm font-medium text-slate-700">
+          <nav aria-label="Primary navigation" className="hidden lg:flex items-center gap-0.5 xl:gap-1.5 text-xs xl:text-sm font-medium text-slate-700">
             {navItems.map((item) => {
               const active = currentPage === item.id;
               if (item.hasDropdown) {
@@ -191,11 +191,11 @@ export const Header: React.FC<HeaderProps> = ({
                       <button
                         type="button"
                         onClick={() => handleNavClick(item.id)}
-                        className="relative pl-3.5 pr-1.5 py-2 whitespace-nowrap shrink-0 cursor-pointer group/nav"
+                        className="relative pl-2.5 xl:pl-3.5 pr-1 xl:pr-1.5 py-2 whitespace-nowrap shrink-0 cursor-pointer group/nav"
                       >
                         <span>{item.label}</span>
                         <span
-                          className={`absolute bottom-1 left-3.5 right-1.5 h-0.5 bg-[#319B59] rounded-full transition-transform duration-200 origin-left ${
+                          className={`absolute bottom-1 left-2.5 xl:left-3.5 right-1 xl:right-1.5 h-0.5 bg-[#319B59] rounded-full transition-transform duration-200 origin-left ${
                             active ? 'scale-x-100' : 'scale-x-0 group-hover/nav:scale-x-100'
                           }`}
                         />
@@ -285,7 +285,7 @@ export const Header: React.FC<HeaderProps> = ({
                   key={item.id}
                   type="button"
                   onClick={() => handleNavClick(item.id)}
-                  className={`relative px-3.5 py-2 rounded-lg whitespace-nowrap shrink-0 transition-colors cursor-pointer group/nav ${
+                  className={`relative px-2.5 xl:px-3.5 py-2 rounded-lg whitespace-nowrap shrink-0 transition-colors cursor-pointer group/nav ${
                     active
                       ? 'bg-[#E6F5EC] text-[#1F6E3D] font-semibold'
                       : 'text-slate-700 hover:text-[#1F6E3D] hover:bg-[#F4FAF6]'
@@ -293,7 +293,7 @@ export const Header: React.FC<HeaderProps> = ({
                 >
                   <span>{item.label}</span>
                   <span
-                    className={`absolute bottom-1 left-3.5 right-3.5 h-0.5 bg-[#319B59] rounded-full transition-transform duration-200 origin-left ${
+                    className={`absolute bottom-1 left-2.5 xl:left-3.5 right-2.5 xl:right-3.5 h-0.5 bg-[#319B59] rounded-full transition-transform duration-200 origin-left ${
                       active ? 'scale-x-100' : 'scale-x-0 group-hover/nav:scale-x-100'
                     }`}
                   />

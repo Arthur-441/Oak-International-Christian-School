@@ -50,7 +50,7 @@ const HERO_SLIDES: HeroSlide[] = [
   },
   {
     id: 'slide-3',
-    imageUrl: 'https://i.ibb.co/0VD1KwXh/Whats-App-Image-2026-11-09-at-1-21-26-PM.jpg',
+    imageUrl: 'https://i.ibb.co/fzCtD8Xw/convention.jpg',
     imageAlt: 'Oak International learners representing the school at the Regional Christian Student Convention',
     imagePosition: 'object-[center_20%]',
     kicker: 'Godliness · Integrity · Care · Excellence',
@@ -171,16 +171,28 @@ export const HeroSlideshow: React.FC<HeroSlideshowProps> = ({
         );
       })}
 
-      {/* Luminous White Scrim Gradient (Left-Heavy for Legibility, Open Photo Right) */}
+      {/* Reduced-Fade Luminous Gradient Scrim (Crisp Photo Visibility, Legible Left Text) */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-t from-white/95 via-white/82 to-white/25 lg:bg-gradient-to-r lg:from-white/96 lg:via-white/84 lg:to-white/15"
+        className="absolute inset-0 z-10 pointer-events-none lg:hidden"
+        style={{
+          background:
+            'linear-gradient(to top, rgba(255,255,255,0.84) 0%, rgba(255,255,255,0.42) 42%, rgba(255,255,255,0.04) 72%, rgba(255,255,255,0) 100%)',
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="hidden lg:block absolute inset-0 z-10 pointer-events-none"
+        style={{
+          background:
+            'linear-gradient(to right, rgba(255,255,255,0.84) 0%, rgba(255,255,255,0.58) 26%, rgba(255,255,255,0.14) 46%, rgba(255,255,255,0) 62%)',
+        }}
       />
 
       {/* Tasteful Floating Geometric & Botanical Decorative Elements (Orchardics-Inspired) */}
       <div aria-hidden="true" className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
         {/* Soft Rounded Leaf Arc Top-Left */}
-        <div className="hidden sm:block absolute -top-20 -left-20 w-72 h-72 rounded-full bg-[#319B59]/10 animate-float-slow" />
+        <div className="hidden sm:block absolute -top-20 -left-20 w-72 h-72 rounded-full bg-[#319B59]/8 animate-float-slow" />
         {/* Warm Soft Cream Accent Circle Bottom-Left */}
         <div className="hidden md:block absolute bottom-10 left-[8%] w-20 h-20 rounded-full border-2 border-[#319B59]/20 bg-[#FAFBF8]/70 animate-float-gentle" />
         {/* Delicate Green Ring Accent */}

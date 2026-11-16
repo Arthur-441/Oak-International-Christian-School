@@ -221,7 +221,7 @@ export const ActivitiesPage: React.FC<ActivitiesPageProps> = ({
                       alt="Traditional Food Preparation at Oak International"
                       referrerPolicy="no-referrer"
                       loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
                     />
                     <div className="absolute top-3 left-3">
                       <span className="text-[11px] font-bold uppercase tracking-wider text-[#0F3820] bg-white/92 backdrop-blur-xs px-3 py-1 rounded-full border border-[#DCEFE2]">
@@ -248,7 +248,7 @@ export const ActivitiesPage: React.FC<ActivitiesPageProps> = ({
                       alt="Physical Athletics & Sports at Oak International"
                       referrerPolicy="no-referrer"
                       loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
                     />
                     <div className="absolute top-3 left-3">
                       <span className="text-[11px] font-bold uppercase tracking-wider text-[#0F3820] bg-white/92 backdrop-blur-xs px-3 py-1 rounded-full border border-[#DCEFE2]">
@@ -275,7 +275,7 @@ export const ActivitiesPage: React.FC<ActivitiesPageProps> = ({
                       alt="Student Christian Convention"
                       referrerPolicy="no-referrer"
                       loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
                     />
                     <div className="absolute top-3 left-3">
                       <span className="text-[11px] font-bold uppercase tracking-wider text-[#0F3820] bg-white/92 backdrop-blur-xs px-3 py-1 rounded-full border border-[#DCEFE2]">

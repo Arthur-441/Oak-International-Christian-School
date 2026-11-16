@@ -176,7 +176,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
 
                 <div className="mt-8 pt-6 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-[#319B59]">
                   <CheckCircle className="w-4 h-4" />
-                  <span>Christ-Centred Transformation</span>
+                  <span>Academic Excellence &amp; Christ-like Character</span>
                 </div>
               </div>
             </Reveal>
@@ -232,7 +232,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
 
                 <div className="mt-8 pt-6 border-t border-[#DCEFE2] flex items-center gap-2 text-xs font-bold text-[#1F6E3D]">
                   <CheckCircle className="w-4 h-4 text-[#319B59]" />
-                  <span>God-Fearing &middot; Dependable &middot; Transformational</span>
+                  <span>God-fearing, Dependable, Impactful</span>
                 </div>
               </div>
             </Reveal>
@@ -242,13 +242,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
             <Reveal delayMs={60}>
               <div className="group bg-white rounded-3xl overflow-hidden border border-[#DCEFE2] hover:border-[#319B59] shadow-xs hover:shadow-xl transition-all duration-300">
-                <div className="aspect-[16/10] overflow-hidden bg-[#F4FAF6] relative">
+                <div className="aspect-[4/3] overflow-hidden bg-[#F4FAF6] relative">
                   <img
                     src="https://i.ibb.co/yBWrh5VK/Whats-App-Image-2026-11-11-at-10-41-52-AM-1.jpg"
                     alt="School Assembly & Chapel Devotion at Oak International"
                     referrerPolicy="no-referrer"
                     loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
                   />
                   <div className="absolute top-3 left-3">
                     <span className="text-[11px] font-bold uppercase tracking-wider text-[#0F3820] bg-white/92 backdrop-blur-xs px-3 py-1 rounded-full border border-[#DCEFE2]">
@@ -269,13 +269,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenEnquiry 
 
             <Reveal delayMs={140}>
               <div className="group bg-white rounded-3xl overflow-hidden border border-[#DCEFE2] hover:border-[#319B59] shadow-xs hover:shadow-xl transition-all duration-300">
-                <div className="aspect-[16/10] overflow-hidden bg-[#F4FAF6] relative">
+                <div className="aspect-[4/3] overflow-hidden bg-[#F4FAF6] relative">
                   <img
                     src="https://i.ibb.co/Xr1Tdqxd/Whats-App-Image-2026-11-11-at-10-28-37-AM.jpg"
                     alt="Future Doctors & Healthcare at Oak International Christian School"
                     referrerPolicy="no-referrer"
                     loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
                   />
                   <div className="absolute top-3 left-3">
                     <span className="text-[11px] font-bold uppercase tracking-wider text-[#0F3820] bg-white/92 backdrop-blur-xs px-3 py-1 rounded-full border border-[#DCEFE2]">

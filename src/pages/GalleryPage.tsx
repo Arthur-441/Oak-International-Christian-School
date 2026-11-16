@@ -1,19 +1,19 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import { PageId, GalleryCategory } from '../types';
 import { DISCIPLINE_SHOWCASES, SCHOOL_INFO, SCHOOL_LIFE_GALLERY } from '../data/schoolData';
 import { SchoolCrest } from '../components/SchoolCrest';
 import { WhatsAppButton } from '../components/WhatsAppButton';
 import { Reveal } from '../components/Reveal';
+import { PhotoLightboxModal } from '../components/PhotoLightboxModal';
 import {
   CheckCircle,
   ExternalLink,
-  ChevronLeft,
-  ChevronRight,
-  X,
   Maximize2,
   Camera,
   Download,
   Eye,
+  X,
 } from 'lucide-react';
 
 interface GalleryPageProps {
@@ -77,45 +77,31 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
     setLightboxPhotoIndex(null);
   }, []);
 
-  // Keyboard navigation for lightbox
+  // Lock body & html scroll when Flier modal is open (PhotoLightboxModal handles its own scroll lock)
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (lightboxPhotoIndex === null) return;
-      if (e.key === 'Escape') {
-        handleCloseLightbox();
-      } else if (e.key === 'ArrowRight') {
-        handleNextPhoto();
-      } else if (e.key === 'ArrowLeft') {
-        handlePrevPhoto();
-      }
+    if (!isFlierPreviewOpen) return;
+    const prevBodyOverflow = document.body.style.overflow;
+    const prevHtmlOverflow = document.documentElement.style.overflow;
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsFlierPreviewOpen(false);
     };
+    window.addEventListener('keydown', handleEsc);
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [lightboxPhotoIndex, handleCloseLightbox, handleNextPhoto, handlePrevPhoto]);
-
-  // Lock body scroll when any modal is open
-  useEffect(() => {
-    if (lightboxPhotoIndex !== null || isFlierPreviewOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = prevBodyOverflow;
+      document.documentElement.style.overflow = prevHtmlOverflow;
+      window.removeEventListener('keydown', handleEsc);
     };
-  }, [lightboxPhotoIndex, isFlierPreviewOpen]);
+  }, [isFlierPreviewOpen]);
 
   // Helper count for each category
   const getCategoryCount = (cat: GalleryCategory): number => {
     if (cat === 'All') return SCHOOL_LIFE_GALLERY.length;
     return SCHOOL_LIFE_GALLERY.filter((p) => p.category === cat).length;
   };
-
-  const activePhoto =
-    lightboxPhotoIndex !== null && filteredPhotos[lightboxPhotoIndex]
-      ? filteredPhotos[lightboxPhotoIndex]
-      : null;
 
   return (
     <div className="w-full bg-white">
@@ -158,6 +144,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
                   <img
                     src={SCHOOL_INFO.flierImageUrl}
                     alt="Official Oak International Christian School Admissions Flier"
+                    referrerPolicy="no-referrer"
                     className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                   />
                   <div className="absolute inset-0 bg-[#0F3820]/35 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-bold gap-1.5 backdrop-blur-2xs">
@@ -302,13 +289,14 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
                   onClick={() => setLightboxPhotoIndex(index)}
                   className="group relative h-full bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-[#319B59]/60 shadow-xs hover:shadow-lg transition-all duration-300 cursor-pointer flex flex-col"
                 >
-                  {/* Image Container with Consistent Ratio */}
-                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#F4FAF6]">
+                  {/* Image Container with Portrait-Safe Top Framing */}
+                  <div className="relative aspect-[5/4] w-full overflow-hidden bg-[#F4FAF6]">
                     <img
                       src={photo.url}
                       alt={photo.title}
+                      referrerPolicy="no-referrer"
                       loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                      className="w-full h-full object-cover object-top origin-top group-hover:scale-105 transition-transform duration-500 ease-out"
                     />
 
                     {/* Subtle green overlay on hover */}
@@ -479,140 +467,55 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
         </div>
       </section>
 
-      {/* ============================================================== */}
-      {/* Photo Lightbox Modal with Next / Prev Navigation */}
-      {/* ============================================================== */}
-      {activePhoto && lightboxPhotoIndex !== null && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label={activePhoto.title}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/90 p-3 sm:p-6 backdrop-blur-md animate-in fade-in duration-200"
-          onClick={handleCloseLightbox}
-        >
-          {/* Main Lightbox Card Container */}
-          <div
-            className="relative max-w-5xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl border border-[#DCEFE2] flex flex-col max-h-[92vh]"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Top Bar: Title, Category & Close */}
-            <div className="flex items-center justify-between px-5 sm:px-7 py-4 bg-[#F4FAF6] border-b border-[#DCEFE2] text-[#0F3820] shrink-0">
-              <div className="flex items-center gap-3">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#1F6E3D] bg-[#E6F5EC] px-2.5 py-1 rounded-full border border-[#CFE8D8]">
-                  {activePhoto.category}
-                </span>
-                <span className="text-xs text-slate-600 hidden sm:inline">
-                  Photo {lightboxPhotoIndex + 1} of {filteredPhotos.length}
-                </span>
-              </div>
+      {/* Portal Photo Lightbox Modal (Viewport-Locked, Immune to Scroll) */}
+      <PhotoLightboxModal
+        photos={filteredPhotos}
+        activeIndex={lightboxPhotoIndex}
+        onClose={handleCloseLightbox}
+        onPrev={handlePrevPhoto}
+        onNext={handleNextPhoto}
+      />
 
-              <div className="flex items-center gap-2">
+      {/* Portal Flier Lightbox Modal */}
+      {isFlierPreviewOpen &&
+        typeof document !== 'undefined' &&
+        createPortal(
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Official Oak International Christian School Flier"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/90 p-3 sm:p-6 backdrop-blur-md overscroll-contain"
+            onClick={() => setIsFlierPreviewOpen(false)}
+          >
+            <div
+              className="relative max-w-2xl w-full max-h-[94dvh] bg-white rounded-2xl overflow-hidden shadow-2xl border border-[#DCEFE2] flex flex-col"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex items-center justify-between px-5 sm:px-6 py-3.5 bg-[#F4FAF6] border-b border-[#DCEFE2] shrink-0">
+                <span className="text-xs font-bold text-[#1F6E3D] uppercase tracking-wider">
+                  Official Oak International Christian School Flier
+                </span>
                 <button
-                  onClick={handleCloseLightbox}
+                  type="button"
+                  onClick={() => setIsFlierPreviewOpen(false)}
                   className="p-1.5 text-slate-500 hover:text-[#0F3820] hover:bg-[#E6F5EC] rounded-full transition-colors cursor-pointer"
-                  title="Close (Esc)"
-                  aria-label="Close lightbox"
+                  aria-label="Close flier preview"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
-            </div>
-
-            {/* Middle: Photo Display with Next/Prev Arrow Overlay */}
-            <div className="relative flex-grow flex items-center justify-center bg-slate-950 p-2 sm:p-4 min-h-[300px] overflow-hidden">
-              <img
-                src={activePhoto.url}
-                alt={activePhoto.title}
-                className="max-h-[62vh] w-auto max-w-full object-contain rounded-xl select-none shadow-2xl"
-              />
-
-              {/* Prev Button */}
-              {filteredPhotos.length > 1 && (
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handlePrevPhoto();
-                  }}
-                  className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 rounded-full bg-white/90 hover:bg-[#319B59] text-[#0F3820] hover:text-white border border-white/40 shadow-lg backdrop-blur-xs transition-all cursor-pointer"
-                  title="Previous image (Left Arrow)"
-                  aria-label="Previous photo"
-                >
-                  <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-                </button>
-              )}
-
-              {/* Next Button */}
-              {filteredPhotos.length > 1 && (
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleNextPhoto();
-                  }}
-                  className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 rounded-full bg-white/90 hover:bg-[#319B59] text-[#0F3820] hover:text-white border border-white/40 shadow-lg backdrop-blur-xs transition-all cursor-pointer"
-                  title="Next image (Right Arrow)"
-                  aria-label="Next photo"
-                >
-                  <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
-                </button>
-              )}
-            </div>
-
-            {/* Bottom Bar: Title & Caption */}
-            <div className="px-5 sm:px-7 py-4 bg-white border-t border-[#DCEFE2] text-[#0F3820] shrink-0 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <div>
-                <h3 className="font-serif text-base sm:text-lg font-bold text-[#0F3820]">
-                  {activePhoto.title}
-                </h3>
-                {activePhoto.caption && (
-                  <p className="text-xs sm:text-sm text-slate-600 mt-0.5 max-w-2xl">
-                    {activePhoto.caption}
-                  </p>
-                )}
-              </div>
-
-              <div className="flex items-center gap-2 self-end sm:self-center shrink-0">
-                <span className="text-xs text-slate-500 font-mono">
-                  {lightboxPhotoIndex + 1} / {filteredPhotos.length}
-                </span>
+              <div className="flex-1 min-h-0 p-3 bg-slate-100 flex items-center justify-center overflow-hidden">
+                <img
+                  src={SCHOOL_INFO.flierImageUrl}
+                  alt="Full Size Official Flier"
+                  referrerPolicy="no-referrer"
+                  className="max-h-[calc(94dvh-84px)] max-w-full w-auto h-auto object-contain rounded-lg"
+                />
               </div>
             </div>
-          </div>
-        </div>
-      )}
-
-      {/* Flier Lightbox Modal */}
-      {isFlierPreviewOpen && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/85 p-4 sm:p-6 backdrop-blur-xs animate-in fade-in duration-200"
-          onClick={() => setIsFlierPreviewOpen(false)}
-        >
-          <div
-            className="relative max-w-2xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-[#DCEFE2]"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex items-center justify-between px-6 py-3.5 bg-[#F4FAF6] border-b border-[#DCEFE2]">
-              <span className="text-xs font-bold text-[#1F6E3D] uppercase tracking-wider">
-                Official Oak International Christian School Flier
-              </span>
-              <button
-                onClick={() => setIsFlierPreviewOpen(false)}
-                className="text-slate-500 hover:text-[#0F3820] text-sm font-bold cursor-pointer"
-              >
-                Close &times;
-              </button>
-            </div>
-            <div className="p-3 bg-slate-100 flex justify-center">
-              <img
-                src={SCHOOL_INFO.flierImageUrl}
-                alt="Full Size Official Flier"
-                className="max-h-[80vh] w-auto object-contain rounded-lg"
-              />
-            </div>
-          </div>
-        </div>
-      )}
+          </div>,
+          document.body
+        )}
     </div>
   );
 };
