@@ -150,27 +150,31 @@ export const Header: React.FC<HeaderProps> = ({
       <header
         className={`sticky top-0 z-40 transition-all duration-200 bg-white/95 backdrop-blur-md border-b ${
           isScrolled
-            ? 'border-[#D9EDE1] shadow-sm py-2.5'
-            : 'border-[#E6F2EB] py-3.5'
+            ? 'border-[#D9EDE1] shadow-sm py-1.5'
+            : 'border-[#E6F2EB] py-2'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3 xl:gap-6">
-          {/* Zone 1: Official Horizontal School Logo */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-4 lg:gap-3 xl:gap-4">
+          {/* Zone 1: Official Horizontal School Logo (Trimmed Margin Frame for Maximum Crisp Scale) */}
           <button
             type="button"
             onClick={() => handleNavClick('home')}
             aria-label="Oak International Christian School Home"
-            className="flex items-center text-left group shrink-0 focus-visible:outline-2 focus-visible:outline-[#319B59] rounded-xl cursor-pointer py-0.5"
+            className={`relative block overflow-hidden shrink-0 aspect-[687/154] group focus-visible:outline-2 focus-visible:outline-[#319B59] rounded-lg cursor-pointer transition-all duration-200 ${
+              isScrolled
+                ? 'h-[36px] sm:h-[46px] lg:h-[48px] xl:h-[58px]'
+                : 'h-[40px] sm:h-[52px] lg:h-[54px] xl:h-[68px]'
+            }`}
           >
             <img
               src="/assets/aistudio/image_c056ea4b.png"
               alt="Oak International Christian School"
-              className="h-9 sm:h-11 xl:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+              className="absolute top-[-5.84%] left-[-10.33%] w-[125.33%] h-[135.06%] max-w-none object-fill transition-transform duration-200 group-hover:scale-[1.02]"
             />
           </button>
 
-          {/* Zone 2: Clean Typography Navigation Links with Hover & Active Highlight + Dropdown */}
-          <nav aria-label="Primary navigation" className="hidden lg:flex items-center gap-0.5 xl:gap-1.5 text-xs xl:text-sm font-medium text-slate-700">
+          {/* Zone 2: Clean Typography Navigation Links centered to utilize horizontal space cleanly */}
+          <nav aria-label="Primary navigation" className="hidden lg:flex flex-1 items-center justify-center gap-0.5 xl:gap-1.5 text-[12.5px] xl:text-sm font-medium text-slate-700">
             {navItems.map((item) => {
               const active = currentPage === item.id;
               if (item.hasDropdown) {
@@ -192,11 +196,11 @@ export const Header: React.FC<HeaderProps> = ({
                       <button
                         type="button"
                         onClick={() => handleNavClick(item.id)}
-                        className="relative pl-2.5 xl:pl-3.5 pr-1 xl:pr-1.5 py-2 whitespace-nowrap shrink-0 cursor-pointer group/nav"
+                        className="relative pl-2 xl:pl-3 pr-1 py-2 whitespace-nowrap shrink-0 cursor-pointer group/nav"
                       >
                         <span>{item.label}</span>
                         <span
-                          className={`absolute bottom-1 left-2.5 xl:left-3.5 right-1 xl:right-1.5 h-0.5 bg-[#319B59] rounded-full transition-transform duration-200 origin-left ${
+                          className={`absolute bottom-1 left-2 xl:left-3 right-1 h-0.5 bg-[#319B59] rounded-full transition-transform duration-200 origin-left ${
                             active ? 'scale-x-100' : 'scale-x-0 group-hover/nav:scale-x-100'
                           }`}
                         />
@@ -286,7 +290,7 @@ export const Header: React.FC<HeaderProps> = ({
                   key={item.id}
                   type="button"
                   onClick={() => handleNavClick(item.id)}
-                  className={`relative px-2.5 xl:px-3.5 py-2 rounded-lg whitespace-nowrap shrink-0 transition-colors cursor-pointer group/nav ${
+                  className={`relative px-2 xl:px-3 py-2 rounded-lg whitespace-nowrap shrink-0 transition-colors cursor-pointer group/nav ${
                     active
                       ? 'bg-[#E6F5EC] text-[#1F6E3D] font-semibold'
                       : 'text-slate-700 hover:text-[#1F6E3D] hover:bg-[#F4FAF6]'
@@ -294,7 +298,7 @@ export const Header: React.FC<HeaderProps> = ({
                 >
                   <span>{item.label}</span>
                   <span
-                    className={`absolute bottom-1 left-2.5 xl:left-3.5 right-2.5 xl:right-3.5 h-0.5 bg-[#319B59] rounded-full transition-transform duration-200 origin-left ${
+                    className={`absolute bottom-1 left-2 xl:left-3 right-2 xl:right-3 h-0.5 bg-[#319B59] rounded-full transition-transform duration-200 origin-left ${
                       active ? 'scale-x-100' : 'scale-x-0 group-hover/nav:scale-x-100'
                     }`}
                   />
@@ -304,11 +308,11 @@ export const Header: React.FC<HeaderProps> = ({
           </nav>
 
           {/* Zone 3: Single Primary Action CTA + Mobile Toggle */}
-          <div className="flex items-center gap-2.5 shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
             <button
               type="button"
               onClick={onOpenEnquiry}
-              className="px-5 py-2.5 text-xs sm:text-sm font-bold text-white bg-[#1F6E3D] hover:bg-[#144D2B] active:bg-[#0F3820] rounded-xl shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all whitespace-nowrap shrink-0 cursor-pointer inline-flex items-center gap-1.5 min-h-[40px]"
+              className="px-3.5 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-bold text-white bg-[#1F6E3D] hover:bg-[#144D2B] active:bg-[#0F3820] rounded-xl shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all whitespace-nowrap shrink-0 cursor-pointer inline-flex items-center gap-1.5 min-h-[38px] sm:min-h-[40px]"
             >
               <span>Enrol Now</span>
               <ArrowRight className="w-3.5 h-3.5" />
